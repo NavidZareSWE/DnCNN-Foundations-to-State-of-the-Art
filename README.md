@@ -80,7 +80,7 @@ The TAs evaluate the rigour of the chosen papers, verify the 70/30 split, and ap
 
 | # | Task | Owner | Status |
 |---|---|---|---|
-| 1 | Confirm topic in writing with the TA | | ☐ |
+| 1 | Confirm topic in writing with the TA | | ✅ |
 | 2 | Freeze the classical half (BM3D, NLM, WNNM, CSF, TNRD, DnCNN) with per-source notes | | ☐ |
 | 3 | Hunt 4–6 papers from 2022+ in CVPR / ICCV / ECCV / NeurIPS / TPAMI proceedings | | ☐ |
 | 4 | Verify venue + year + authors for every new entry | | ☐ |
