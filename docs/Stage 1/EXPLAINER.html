@@ -1,490 +1,983 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Speaker Companion — Stage 1 Deck · راهنمای ارائه</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#FBFAF7;--surface:#FFFFFF;--ink:#14161A;--ink2:#4A5058;--ink3:#828A94;
-  --rule:#E4E1D8;--rule2:#F1EFE9;
-  --era1:#6E6350;--era2:#1E5F7E;--era3:#6D3F86;--flag:#A2442B;--ok:#3F6B45;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  --mono:"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
-  --fa:"Vazirmatn","Segoe UI",Tahoma,"Iranian Sans","B Nazanin",sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Speaker Companion — Stage 1 Deck · راهنمای ارائه</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #fbfaf7;
+        --surface: #ffffff;
+        --ink: #14161a;
+        --ink2: #4a5058;
+        --ink3: #828a94;
+        --rule: #e4e1d8;
+        --rule2: #f1efe9;
+        --era1: #6e6350;
+        --era2: #1e5f7e;
+        --era3: #6d3f86;
+        --flag: #a2442b;
+        --ok: #3f6b45;
+        --serif:
+          "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        --sans:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        --mono: "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+        --fa:
+          "Vazirmatn", "Segoe UI", Tahoma, "Iranian Sans", "B Nazanin",
+          sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.6;
+      }
 
-/* ---------- header ---------- */
-header{background:var(--surface);border-bottom:1px solid var(--rule);padding:30px 0 0;
-  position:sticky;top:0;z-index:40}
-.wrap{max-width:1500px;margin:0 auto;padding:0 34px}
-.htop{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;padding-bottom:18px}
-h1{font-family:var(--serif);font-size:29px;font-weight:600;letter-spacing:-.015em}
-.h-fa{font-family:var(--fa);direction:rtl;font-size:22px;font-weight:700;color:var(--ink2)}
-.sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-top:5px}
-nav{display:flex;gap:3px;overflow-x:auto;padding-bottom:12px;scrollbar-width:thin}
-nav a{font-family:var(--mono);font-size:10.5px;padding:5px 9px;border:1px solid var(--rule);
-  border-radius:2px;color:var(--ink3);text-decoration:none;white-space:nowrap;transition:.15s}
-nav a:hover{border-color:var(--ink);color:var(--ink)}
-nav a.p1{border-left:2px solid var(--era1)} nav a.p2{border-left:2px solid var(--era2)}
-nav a.p3{border-left:2px solid var(--era3)} nav a.p4{border-left:2px solid var(--flag)}
+      /* ---------- header ---------- */
+      header {
+        background: var(--surface);
+        border-bottom: 1px solid var(--rule);
+        padding: 30px 0 0;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+      .wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 0 34px;
+      }
+      .htop {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 26px;
+        flex-wrap: wrap;
+        padding-bottom: 18px;
+      }
+      h1 {
+        font-family: var(--serif);
+        font-size: 29px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+      }
+      .h-fa {
+        font-family: var(--fa);
+        direction: rtl;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink2);
+      }
+      .sub {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink3);
+        margin-top: 5px;
+      }
+      nav {
+        display: flex;
+        gap: 3px;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        scrollbar-width: thin;
+      }
+      nav a {
+        font-family: var(--mono);
+        font-size: 10.5px;
+        padding: 5px 9px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        color: var(--ink3);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: 0.15s;
+      }
+      nav a:hover {
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+      nav a.p1 {
+        border-left: 2px solid var(--era1);
+      }
+      nav a.p2 {
+        border-left: 2px solid var(--era2);
+      }
+      nav a.p3 {
+        border-left: 2px solid var(--era3);
+      }
+      nav a.p4 {
+        border-left: 2px solid var(--flag);
+      }
 
-/* ---------- intro ---------- */
-.intro{max-width:1500px;margin:26px auto;padding:0 34px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.intro .en p,.intro .fa p{font-size:14.5px;color:var(--ink2)}
-.intro .fa{direction:rtl;text-align:right;font-family:var(--fa)}
-.intro h3{font-family:var(--serif);font-size:18px;margin-bottom:8px}
-.intro .fa h3{font-family:var(--fa);font-weight:700}
+      /* ---------- intro ---------- */
+      .intro {
+        max-width: 1500px;
+        margin: 26px auto;
+        padding: 0 34px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      .intro .en p,
+      .intro .fa p {
+        font-size: 14.5px;
+        color: var(--ink2);
+      }
+      .intro .fa {
+        direction: rtl;
+        text-align: right;
+        font-family: var(--fa);
+      }
+      .intro h3 {
+        font-family: var(--serif);
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .intro .fa h3 {
+        font-family: var(--fa);
+        font-weight: 700;
+      }
 
-/* ---------- slide cards ---------- */
-.card{max-width:1500px;margin:0 auto 22px;padding:0 34px;scroll-margin-top:140px}
-.inner{background:var(--surface);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
-.chead{display:flex;align-items:center;gap:16px;padding:15px 24px;border-bottom:1px solid var(--rule);
-  background:#FDFCFA}
-.cn{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--ink);min-width:34px}
-.ct{font-family:var(--serif);font-size:19px;font-weight:600;flex:1}
-.ct-fa{font-family:var(--fa);direction:rtl;font-size:16px;font-weight:700;color:var(--ink2);flex:1;text-align:right}
-.badge{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
-  padding:3px 9px;border-radius:2px;color:#fff}
+      /* ---------- slide cards ---------- */
+      .card {
+        max-width: 1500px;
+        margin: 0 auto 22px;
+        padding: 0 34px;
+        scroll-margin-top: 140px;
+      }
+      .inner {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .chead {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 15px 24px;
+        border-bottom: 1px solid var(--rule);
+        background: #fdfcfa;
+      }
+      .cn {
+        font-family: var(--mono);
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--ink);
+        min-width: 34px;
+      }
+      .ct {
+        font-family: var(--serif);
+        font-size: 19px;
+        font-weight: 600;
+        flex: 1;
+      }
+      .ct-fa {
+        font-family: var(--fa);
+        direction: rtl;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink2);
+        flex: 1;
+        text-align: right;
+      }
+      .badge {
+        font-family: var(--mono);
+        font-size: 9.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: 2px;
+        color: #fff;
+      }
 
-.body{display:grid;grid-template-columns:1fr 1fr}
-.col{padding:20px 24px 24px}
-.col.en{border-right:1px solid var(--rule2)}
-.col.fa{direction:rtl;text-align:right;font-family:var(--fa);background:#FDFDFB}
-.langtag{font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--ink3);margin-bottom:14px;
-  text-transform:uppercase}
-.col.fa .langtag{font-family:var(--mono);direction:ltr;text-align:right}
+      .body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .col {
+        padding: 20px 24px 24px;
+      }
+      .col.en {
+        border-right: 1px solid var(--rule2);
+      }
+      .col.fa {
+        direction: rtl;
+        text-align: right;
+        font-family: var(--fa);
+        background: #fdfdfb;
+      }
+      .langtag {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        color: var(--ink3);
+        margin-bottom: 14px;
+        text-transform: uppercase;
+      }
+      .col.fa .langtag {
+        font-family: var(--mono);
+        direction: ltr;
+        text-align: right;
+      }
 
-.sec{margin-bottom:15px;padding-bottom:14px;border-bottom:1px dotted var(--rule)}
-.sec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.slab{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  margin-bottom:6px;display:flex;align-items:center;gap:7px}
-.col.fa .slab{font-family:var(--fa);font-size:11px;letter-spacing:0;font-weight:700}
-.slab::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;flex:none}
-.l-comm{color:var(--era2)} .l-script{color:var(--ink)} .l-vis{color:var(--era3)} .l-imp{color:var(--flag)}
-.sec p{font-size:14px;color:var(--ink2)}
-.col.fa .sec p{font-size:14.5px;line-height:1.95}
-.script p{background:#F8F7F3;border-left:3px solid var(--rule);padding:11px 14px;font-size:14px;
-  color:var(--ink);font-style:italic}
-.col.fa .script p{border-left:none;border-right:3px solid var(--rule);font-style:normal}
-.imp p{background:#FCF7F5;border-left:3px solid var(--flag);padding:11px 14px}
-.col.fa .imp p{border-left:none;border-right:3px solid var(--flag)}
-.novis{color:var(--ink3);font-style:italic}
-.col.fa .novis{font-style:normal}
+      .sec {
+        margin-bottom: 15px;
+        padding-bottom: 14px;
+        border-bottom: 1px dotted var(--rule);
+      }
+      .sec:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .slab {
+        font-family: var(--mono);
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .col.fa .slab {
+        font-family: var(--fa);
+        font-size: 11px;
+        letter-spacing: 0;
+        font-weight: 700;
+      }
+      .slab::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: currentColor;
+        flex: none;
+      }
+      .l-comm {
+        color: var(--era2);
+      }
+      .l-script {
+        color: var(--ink);
+      }
+      .l-vis {
+        color: var(--era3);
+      }
+      .l-imp {
+        color: var(--flag);
+      }
+      .sec p {
+        font-size: 14px;
+        color: var(--ink2);
+      }
+      .col.fa .sec p {
+        font-size: 14.5px;
+        line-height: 1.95;
+      }
+      .script p {
+        background: #f8f7f3;
+        border-left: 3px solid var(--rule);
+        padding: 11px 14px;
+        font-size: 14px;
+        color: var(--ink);
+        font-style: italic;
+      }
+      .col.fa .script p {
+        border-left: none;
+        border-right: 3px solid var(--rule);
+        font-style: normal;
+      }
+      .imp p {
+        background: #fcf7f5;
+        border-left: 3px solid var(--flag);
+        padding: 11px 14px;
+      }
+      .col.fa .imp p {
+        border-left: none;
+        border-right: 3px solid var(--flag);
+      }
+      .novis {
+        color: var(--ink3);
+        font-style: italic;
+      }
+      .col.fa .novis {
+        font-style: normal;
+      }
 
-footer{max-width:1500px;margin:40px auto;padding:22px 34px 60px;border-top:1px solid var(--rule);
-  display:grid;grid-template-columns:1fr 1fr;gap:30px}
-footer .fa{direction:rtl;text-align:right;font-family:var(--fa)}
-footer p{font-size:13px;color:var(--ink3)}
-@media(max-width:1080px){.body,.intro,footer{grid-template-columns:1fr}.col.en{border-right:none;border-bottom:1px solid var(--rule2)}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="wrap">
-    <div class="htop">
-      <div>
-        <h1>Speaker Companion — Stage 1 Deck</h1>
-        <div class="sub">Slide-by-slide · numbering matches SLIDE.html · 29 slides</div>
+      footer {
+        max-width: 1500px;
+        margin: 40px auto;
+        padding: 22px 34px 60px;
+        border-top: 1px solid var(--rule);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+      footer .fa {
+        direction: rtl;
+        text-align: right;
+        font-family: var(--fa);
+      }
+      footer p {
+        font-size: 13px;
+        color: var(--ink3);
+      }
+      @media (max-width: 1080px) {
+        .body,
+        .intro,
+        footer {
+          grid-template-columns: 1fr;
+        }
+        .col.en {
+          border-right: none;
+          border-bottom: 1px solid var(--rule2);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="htop">
+          <div>
+            <h1>Speaker Companion — Stage 1 Deck</h1>
+            <div class="sub">
+              Slide-by-slide · numbering matches SLIDE.html · 29 slides
+            </div>
+          </div>
+          <div style="text-align: right">
+            <div class="h-fa">راهنمای ارائه — اسلایدهای مرحله ۱</div>
+            <div class="sub">
+              اسلاید به اسلاید · شماره‌گذاری منطبق بر SLIDE.html
+            </div>
+          </div>
+        </div>
+        <nav id="nav"></nav>
       </div>
-      <div style="text-align:right">
-        <div class="h-fa">راهنمای ارائه — اسلایدهای مرحله ۱</div>
-        <div class="sub">اسلاید به اسلاید · شماره‌گذاری منطبق بر SLIDE.html</div>
+    </header>
+
+    <div class="intro">
+      <div class="en">
+        <h3>How to use this document</h3>
+        <p>
+          Each card below corresponds to one slide in
+          <strong>SLIDE.html</strong> and carries the same number. Four things
+          are given per slide: <strong>what it communicates</strong> (the single
+          job of the slide), <strong>talking points</strong> (a script you can
+          say aloud, roughly 20–45 seconds),
+          <strong>what the visual means</strong> (every shape, colour and line
+          explained), and <strong>how to improve it</strong> (a concrete upgrade
+          if you have time before 11 August).
+        </p>
+        <p style="margin-top: 10px">
+          A warning that applies to the whole deck: the TAs may question you on
+          any slide. Do not present anything here you cannot personally explain.
+          Where a slide declares an unverified item, say so out loud — declared
+          gaps read as rigor, discovered gaps read as carelessness.
+        </p>
+      </div>
+      <div class="fa">
+        <h3>روش استفاده از این سند</h3>
+        <p>
+          هر کارت زیر متناظر با یک اسلاید در <strong>SLIDE.html</strong> است و
+          همان شماره را دارد. برای هر اسلاید چهار بخش آمده است:
+          <strong>پیام اسلاید</strong> (تنها کاری که آن اسلاید انجام می‌دهد)،
+          <strong>نکات گفتاری</strong> (متنی که می‌توانید بلند بخوانید، حدود ۲۰
+          تا ۴۵ ثانیه)، <strong>معنای تصویر</strong> (توضیح هر شکل، رنگ و خط)، و
+          <strong>راه بهبود</strong> (یک ارتقای مشخص اگر تا ۱۱ اوت فرصت داشتید).
+        </p>
+        <p style="margin-top: 10px">
+          هشداری که به کل ارائه مربوط است: دستیاران آموزشی ممکن است دربارهٔ هر
+          اسلایدی از شما سؤال کنند. چیزی را در ارائه نگذارید که خودتان نتوانید
+          توضیح دهید. هرجا اسلاید موردی را «تأییدنشده» اعلام می‌کند، آن را با
+          صدای بلند بگویید؛ شکافِ اعلام‌شده نشانهٔ دقت است و شکافِ کشف‌شده
+          نشانهٔ بی‌دقتی.
+        </p>
       </div>
     </div>
-    <nav id="nav"></nav>
-  </div>
-</header>
 
-<div class="intro">
-  <div class="en">
-    <h3>How to use this document</h3>
-    <p>Each card below corresponds to one slide in <strong>SLIDE.html</strong> and carries the same number.
-    Four things are given per slide: <strong>what it communicates</strong> (the single job of the slide),
-    <strong>talking points</strong> (a script you can say aloud, roughly 20–45 seconds), <strong>what the
-    visual means</strong> (every shape, colour and line explained), and <strong>how to improve it</strong>
-    (a concrete upgrade if you have time before 11 August).</p>
-    <p style="margin-top:10px">A warning that applies to the whole deck: the TAs may question you on any
-    slide. Do not present anything here you cannot personally explain. Where a slide declares an
-    unverified item, say so out loud — declared gaps read as rigor, discovered gaps read as carelessness.</p>
-  </div>
-  <div class="fa">
-    <h3>روش استفاده از این سند</h3>
-    <p>هر کارت زیر متناظر با یک اسلاید در <strong>SLIDE.html</strong> است و همان شماره را دارد. برای هر
-    اسلاید چهار بخش آمده است: <strong>پیام اسلاید</strong> (تنها کاری که آن اسلاید انجام می‌دهد)،
-    <strong>نکات گفتاری</strong> (متنی که می‌توانید بلند بخوانید، حدود ۲۰ تا ۴۵ ثانیه)،
-    <strong>معنای تصویر</strong> (توضیح هر شکل، رنگ و خط)، و <strong>راه بهبود</strong> (یک ارتقای مشخص
-    اگر تا ۱۱ اوت فرصت داشتید).</p>
-    <p style="margin-top:10px">هشداری که به کل ارائه مربوط است: دستیاران آموزشی ممکن است دربارهٔ هر اسلایدی
-    از شما سؤال کنند. چیزی را در ارائه نگذارید که خودتان نتوانید توضیح دهید. هرجا اسلاید موردی را
-    «تأییدنشده» اعلام می‌کند، آن را با صدای بلند بگویید؛ شکافِ اعلام‌شده نشانهٔ دقت است و شکافِ کشف‌شده
-    نشانهٔ بی‌دقتی.</p>
-  </div>
-</div>
+    <main id="cards"></main>
 
-<main id="cards"></main>
+    <footer>
+      <div class="en">
+        <p>
+          <strong>Scope note.</strong> This companion covers Stage 1 only.
+          Comparative PSNR/SSIM tables, repository walkthroughs and deployment
+          discussion belong to Stages 2 and 3 and are deliberately absent.
+        </p>
+        <p style="margin-top: 8px">
+          Every claim traces to one of the eleven Category A PDFs or to
+          Stage_1_Presentation_Guidelines.pdf. Citation counts are Google
+          Scholar figures checked on 9 August 2026.
+        </p>
+      </div>
+      <div class="fa">
+        <p>
+          <strong>یادداشت دامنه.</strong> این راهنما فقط مرحلهٔ ۱ را پوشش
+          می‌دهد. جدول‌های مقایسه‌ای PSNR/SSIM، بررسی مخازن کد و بحث استقرار به
+          مرحله‌های ۲ و ۳ تعلق دارند و عمداً اینجا نیامده‌اند.
+        </p>
+        <p style="margin-top: 8px">
+          هر ادعا به یکی از یازده مقالهٔ دستهٔ A یا به فایل راهنمای مرحلهٔ ۱
+          بازمی‌گردد. اعداد استناد از Google Scholar و بررسی‌شده در ۹ اوت ۲۰۲۶
+          هستند.
+        </p>
+      </div>
+    </footer>
 
-<footer>
-  <div class="en">
-    <p><strong>Scope note.</strong> This companion covers Stage 1 only. Comparative PSNR/SSIM tables,
-    repository walkthroughs and deployment discussion belong to Stages 2 and 3 and are deliberately absent.</p>
-    <p style="margin-top:8px">Every claim traces to one of the eleven Category A PDFs or to
-    Stage_1_Presentation_Guidelines.pdf. Citation counts are Google Scholar figures checked on 9 August 2026.</p>
-  </div>
-  <div class="fa">
-    <p><strong>یادداشت دامنه.</strong> این راهنما فقط مرحلهٔ ۱ را پوشش می‌دهد. جدول‌های مقایسه‌ای PSNR/SSIM،
-    بررسی مخازن کد و بحث استقرار به مرحله‌های ۲ و ۳ تعلق دارند و عمداً اینجا نیامده‌اند.</p>
-    <p style="margin-top:8px">هر ادعا به یکی از یازده مقالهٔ دستهٔ A یا به فایل راهنمای مرحلهٔ ۱ بازمی‌گردد.
-    اعداد استناد از Google Scholar و بررسی‌شده در ۹ اوت ۲۰۲۶ هستند.</p>
-  </div>
-</footer>
+    <script>
+      var PARTS = { 1: "#6E6350", 2: "#1E5F7E", 3: "#6D3F86", 4: "#A2442B" };
+      var S = [
+        {
+          n: 1,
+          p: 0,
+          badge: "Title",
+          bc: "#14161A",
+          t: "Title slide",
+          tf: "اسلاید عنوان",
+          c: `Establishes topic, scope and credibility in one screen: the subject is image denoising, the span is 2007 to 2024, the roster is 14 sources at 78.6% Category A, and the anchor paper is DnCNN. The four metadata columns pre-answer the first four questions a TA would otherwise ask.`,
+          cf: `موضوع، دامنه و اعتبار کار را در یک صفحه تثبیت می‌کند: موضوع نویززدایی تصویر است، بازهٔ زمانی ۲۰۰۷ تا ۲۰۲۴، فهرست منابع ۱۴ مورد با ۷۸٫۶٪ دستهٔ A، و مقالهٔ لنگر DnCNN. چهار ستون فراداده از پیش به چهار پرسش نخست دستیار آموزشی پاسخ می‌دهند.`,
+          s: `Our topic is image denoising, anchored on DnCNN. But the pitch is not the paper — it is the arc. Over seventeen years the image prior moved out of human hands entirely, and denoising is the cleanest place in computer vision to watch that happen. Fourteen sources, eleven of them peer-reviewed papers.`,
+          sf: `موضوع ما نویززدایی تصویر است و مقالهٔ لنگر ما DnCNN است. اما آنچه ارائه می‌کنیم خودِ مقاله نیست، بلکه مسیر تحول است. در طول هفده سال، «پیشینِ تصویر» به‌کلی از دست انسان خارج شد و نویززدایی تمیزترین جایی در بینایی ماشین است که می‌توان این اتفاق را در آن دید. چهارده منبع، که یازده‌تای آن‌ها مقالهٔ داوری‌شده است.`,
+          v: `The grain texture on the right edge is the only decorative element and it is not arbitrary — it renders literal image noise, dissolving left to right into clean paper. That is the deck's thesis stated visually before a single word of content.`,
+          vf: `بافت دانه‌دانه در لبهٔ راست تنها عنصر تزئینی است و بی‌دلیل نیست: نویز واقعی تصویر را نشان می‌دهد که از راست به چپ در کاغذ تمیز حل می‌شود. این همان ادعای اصلی ارائه است که پیش از نخستین کلمهٔ محتوا، به‌صورت تصویری بیان شده.`,
+          i: `Replace the grain panel with a real before/after pair — one noisy crop and its denoised version from any paper in your roster, with the source named underneath. A real result outperforms a synthetic texture, and it gives you something to point at while speaking.`,
+          if: `پنل دانه‌دانه را با یک جفت تصویر واقعی «قبل و بعد» جایگزین کنید: یک برش نویزی و نسخهٔ نویززدایی‌شدهٔ آن از یکی از مقالات فهرست، با ذکر منبع در زیر آن. یک نتیجهٔ واقعی از بافت مصنوعی بهتر عمل می‌کند و هنگام صحبت چیزی برای اشاره‌کردن به شما می‌دهد.`,
+        },
 
-<script>
-var PARTS={1:"#6E6350",2:"#1E5F7E",3:"#6D3F86",4:"#A2442B"};
-var S=[
-{n:1,p:0,badge:"Title",bc:"#14161A",
- t:"Title slide",tf:"اسلاید عنوان",
- c:`Establishes topic, scope and credibility in one screen: the subject is image denoising, the span is 2007 to 2024, the roster is 14 sources at 78.6% Category A, and the anchor paper is DnCNN. The four metadata columns pre-answer the first four questions a TA would otherwise ask.`,
- cf:`موضوع، دامنه و اعتبار کار را در یک صفحه تثبیت می‌کند: موضوع نویززدایی تصویر است، بازهٔ زمانی ۲۰۰۷ تا ۲۰۲۴، فهرست منابع ۱۴ مورد با ۷۸٫۶٪ دستهٔ A، و مقالهٔ لنگر DnCNN. چهار ستون فراداده از پیش به چهار پرسش نخست دستیار آموزشی پاسخ می‌دهند.`,
- s:`Our topic is image denoising, anchored on DnCNN. But the pitch is not the paper — it is the arc. Over seventeen years the image prior moved out of human hands entirely, and denoising is the cleanest place in computer vision to watch that happen. Fourteen sources, eleven of them peer-reviewed papers.`,
- sf:`موضوع ما نویززدایی تصویر است و مقالهٔ لنگر ما DnCNN است. اما آنچه ارائه می‌کنیم خودِ مقاله نیست، بلکه مسیر تحول است. در طول هفده سال، «پیشینِ تصویر» به‌کلی از دست انسان خارج شد و نویززدایی تمیزترین جایی در بینایی ماشین است که می‌توان این اتفاق را در آن دید. چهارده منبع، که یازده‌تای آن‌ها مقالهٔ داوری‌شده است.`,
- v:`The grain texture on the right edge is the only decorative element and it is not arbitrary — it renders literal image noise, dissolving left to right into clean paper. That is the deck's thesis stated visually before a single word of content.`,
- vf:`بافت دانه‌دانه در لبهٔ راست تنها عنصر تزئینی است و بی‌دلیل نیست: نویز واقعی تصویر را نشان می‌دهد که از راست به چپ در کاغذ تمیز حل می‌شود. این همان ادعای اصلی ارائه است که پیش از نخستین کلمهٔ محتوا، به‌صورت تصویری بیان شده.`,
- i:`Replace the grain panel with a real before/after pair — one noisy crop and its denoised version from any paper in your roster, with the source named underneath. A real result outperforms a synthetic texture, and it gives you something to point at while speaking.`,
- if:`پنل دانه‌دانه را با یک جفت تصویر واقعی «قبل و بعد» جایگزین کنید: یک برش نویزی و نسخهٔ نویززدایی‌شدهٔ آن از یکی از مقالات فهرست، با ذکر منبع در زیر آن. یک نتیجهٔ واقعی از بافت مصنوعی بهتر عمل می‌کند و هنگام صحبت چیزی برای اشاره‌کردن به شما می‌دهد.`},
+        {
+          n: 2,
+          p: 0,
+          badge: "Agenda",
+          bc: "#14161A",
+          t: "Agenda — clickable table of contents",
+          tf: "فهرست مطالب — قابل کلیک",
+          c: `Maps the deck onto the five sections the guidelines require, so the TA can see compliance before any content is presented. Every row is a live jump link.`,
+          cf: `ساختار ارائه را بر پنج بخش الزامی راهنما منطبق می‌کند تا دستیار آموزشی پیش از دیدن محتوا، انطباق را ببیند. هر سطر یک پیوند پرش زنده است.`,
+          s: `The deck follows the guidelines section by section. Part one is the problem, part two the timeline, part three the sources and the seventy-thirty split, part four is eleven slides — one per Category A paper. If you want to jump to any paper directly, tell me and I will click through.`,
+          sf: `ساختار ارائه دقیقاً بخش‌به‌بخش از راهنما پیروی می‌کند. بخش یک: صورت مسئله؛ بخش دو: خط زمانی؛ بخش سه: منابع و تقسیم هفتاد-سی؛ بخش چهار: یازده اسلاید، برای هر مقالهٔ دستهٔ A یک اسلاید. اگر می‌خواهید مستقیم به مقاله‌ای بروید بفرمایید تا همان‌جا کلیک کنم.`,
+          v: `The right-hand column marks section numbers from the guidelines — §1 through §5. That column exists to prove coverage, not to look tidy. Hovering a row indents it, confirming it is interactive.`,
+          vf: `ستون سمت راست شماره‌های بخش‌های راهنما را نشان می‌دهد: از §۱ تا §۵. این ستون برای اثبات پوشش کامل است، نه برای زیبایی. با بردن نشانگر روی هر سطر، سطر تورفتگی می‌گیرد و تعامل‌پذیری آن تأیید می‌شود.`,
+          i: `Add a tick or dot beside each guideline section number once you have rehearsed it. Presenting a checklist you have visibly completed is a stronger opening than presenting one you have merely written.`,
+          if: `پس از تمرین هر بخش، کنار شمارهٔ آن بخش یک تیک یا نقطه بگذارید. ارائهٔ فهرستی که به‌وضوح تکمیل شده، شروع قوی‌تری است تا فهرستی که فقط نوشته شده است.`,
+        },
 
-{n:2,p:0,badge:"Agenda",bc:"#14161A",
- t:"Agenda — clickable table of contents",tf:"فهرست مطالب — قابل کلیک",
- c:`Maps the deck onto the five sections the guidelines require, so the TA can see compliance before any content is presented. Every row is a live jump link.`,
- cf:`ساختار ارائه را بر پنج بخش الزامی راهنما منطبق می‌کند تا دستیار آموزشی پیش از دیدن محتوا، انطباق را ببیند. هر سطر یک پیوند پرش زنده است.`,
- s:`The deck follows the guidelines section by section. Part one is the problem, part two the timeline, part three the sources and the seventy-thirty split, part four is eleven slides — one per Category A paper. If you want to jump to any paper directly, tell me and I will click through.`,
- sf:`ساختار ارائه دقیقاً بخش‌به‌بخش از راهنما پیروی می‌کند. بخش یک: صورت مسئله؛ بخش دو: خط زمانی؛ بخش سه: منابع و تقسیم هفتاد-سی؛ بخش چهار: یازده اسلاید، برای هر مقالهٔ دستهٔ A یک اسلاید. اگر می‌خواهید مستقیم به مقاله‌ای بروید بفرمایید تا همان‌جا کلیک کنم.`,
- v:`The right-hand column marks section numbers from the guidelines — §1 through §5. That column exists to prove coverage, not to look tidy. Hovering a row indents it, confirming it is interactive.`,
- vf:`ستون سمت راست شماره‌های بخش‌های راهنما را نشان می‌دهد: از §۱ تا §۵. این ستون برای اثبات پوشش کامل است، نه برای زیبایی. با بردن نشانگر روی هر سطر، سطر تورفتگی می‌گیرد و تعامل‌پذیری آن تأیید می‌شود.`,
- i:`Add a tick or dot beside each guideline section number once you have rehearsed it. Presenting a checklist you have visibly completed is a stronger opening than presenting one you have merely written.`,
- if:`پس از تمرین هر بخش، کنار شمارهٔ آن بخش یک تیک یا نقطه بگذارید. ارائهٔ فهرستی که به‌وضوح تکمیل شده، شروع قوی‌تری است تا فهرستی که فقط نوشته شده است.`},
+        {
+          n: 3,
+          p: 1,
+          badge: "Part I",
+          bc: "#6E6350",
+          t: "Section divider — The problem",
+          tf: "جداکنندهٔ بخش — صورت مسئله",
+          c: `A deliberate pause. It resets attention and states the organising question of the entire review in one line: where does the prior come from?`,
+          cf: `یک مکث عمدی. توجه مخاطب را بازتنظیم می‌کند و پرسش سازمان‌دهندهٔ کل مرور را در یک خط بیان می‌کند: پیشین از کجا می‌آید؟`,
+          s: `Before any papers, one equation. Because that equation has more unknowns than observations, something must be assumed. Everything that follows in this review is an answer to a single question: where does that assumption come from, and who writes it?`,
+          sf: `پیش از هر مقاله‌ای، یک معادله. چون در آن معادله تعداد مجهول‌ها از تعداد مشاهده‌ها بیشتر است، ناچار باید چیزی فرض شود. هر آنچه در ادامهٔ این مرور می‌آید، پاسخی است به یک پرسش واحد: آن فرض از کجا می‌آید و چه کسی آن را می‌نویسد؟`,
+          v: `The coloured bar beneath the heading is not decoration — it is the era colour code. Sepia is the classical era. That same colour reappears on the timeline, in the source table and on paper slides A1 and A2, so colour carries meaning throughout the deck.`,
+          vf: `نوار رنگی زیر عنوان تزئینی نیست؛ کد رنگی دوره‌هاست. رنگ قهوه‌ای-خاکستری نمایندهٔ دورهٔ کلاسیک است. همین رنگ در خط زمانی، در جدول منابع و در اسلایدهای A1 و A2 تکرار می‌شود؛ پس رنگ در سراسر ارائه حامل معناست.`,
+          i: `Dividers are the cheapest place to reclaim time if you overrun. Mark this one as skippable in your rehearsal notes rather than cutting content from a paper slide.`,
+          if: `جداکننده‌ها ارزان‌ترین جا برای جبران وقت هستند اگر از زمان عقب افتادید. در یادداشت‌های تمرین، این اسلاید را «قابل رد شدن» علامت بزنید تا مجبور نشوید از محتوای اسلاید مقالات کم کنید.`,
+        },
 
-{n:3,p:1,badge:"Part I",bc:"#6E6350",
- t:"Section divider — The problem",tf:"جداکنندهٔ بخش — صورت مسئله",
- c:`A deliberate pause. It resets attention and states the organising question of the entire review in one line: where does the prior come from?`,
- cf:`یک مکث عمدی. توجه مخاطب را بازتنظیم می‌کند و پرسش سازمان‌دهندهٔ کل مرور را در یک خط بیان می‌کند: پیشین از کجا می‌آید؟`,
- s:`Before any papers, one equation. Because that equation has more unknowns than observations, something must be assumed. Everything that follows in this review is an answer to a single question: where does that assumption come from, and who writes it?`,
- sf:`پیش از هر مقاله‌ای، یک معادله. چون در آن معادله تعداد مجهول‌ها از تعداد مشاهده‌ها بیشتر است، ناچار باید چیزی فرض شود. هر آنچه در ادامهٔ این مرور می‌آید، پاسخی است به یک پرسش واحد: آن فرض از کجا می‌آید و چه کسی آن را می‌نویسد؟`,
- v:`The coloured bar beneath the heading is not decoration — it is the era colour code. Sepia is the classical era. That same colour reappears on the timeline, in the source table and on paper slides A1 and A2, so colour carries meaning throughout the deck.`,
- vf:`نوار رنگی زیر عنوان تزئینی نیست؛ کد رنگی دوره‌هاست. رنگ قهوه‌ای-خاکستری نمایندهٔ دورهٔ کلاسیک است. همین رنگ در خط زمانی، در جدول منابع و در اسلایدهای A1 و A2 تکرار می‌شود؛ پس رنگ در سراسر ارائه حامل معناست.`,
- i:`Dividers are the cheapest place to reclaim time if you overrun. Mark this one as skippable in your rehearsal notes rather than cutting content from a paper slide.`,
- if:`جداکننده‌ها ارزان‌ترین جا برای جبران وقت هستند اگر از زمان عقب افتادید. در یادداشت‌های تمرین، این اسلاید را «قابل رد شدن» علامت بزنید تا مجبور نشوید از محتوای اسلاید مقالات کم کنید.`},
+        {
+          n: 4,
+          p: 1,
+          badge: "§1",
+          bc: "#6E6350",
+          t: "Topic definition and the core problem",
+          tf: "تعریف موضوع و صورت مسئلهٔ اصلی",
+          c: `Answers the guidelines' first requirement: state the topic, state the overarching goal. It also pre-empts the obvious challenge — why denoising and not something newer — using SCUNet's own 2023 statement that the problem remains unsolved.`,
+          cf: `نخستین الزام راهنما را پاسخ می‌دهد: موضوع را بیان کن، هدف کلان را بیان کن. همچنین به اعتراض بدیهی — چرا نویززدایی و نه موضوعی تازه‌تر — از پیش پاسخ می‌دهد، با استناد به جملهٔ خودِ SCUNet در ۲۰۲۳ که مسئله همچنان حل‌نشده است.`,
+          s: `Denoising recovers a clean image x from a noisy observation y, where y equals x plus v, and v is usually assumed additive white Gaussian noise. That is DnCNN's own opening. We chose this topic because the literature treats it as foundational — SCUNet calls it perhaps the most fundamental restoration problem — and because, in the same paper's words, general-purpose blind denoising for real images remains unsolved.`,
+          sf: `نویززدایی، تصویر تمیز x را از مشاهدهٔ نویزی y بازیابی می‌کند، جایی که y برابر است با x به‌علاوهٔ v، و معمولاً فرض می‌شود v نویز گاوسی سفید جمع‌شونده است. این عیناً جملهٔ آغازین DnCNN است. ما این موضوع را انتخاب کردیم چون ادبیات موضوع آن را بنیادی می‌داند — SCUNet آن را شاید بنیادی‌ترین مسئلهٔ بازسازی تصویر می‌نامد — و چون به گفتهٔ همان مقاله، نویززدایی کور و همه‌منظوره برای تصاویر واقعی همچنان حل‌نشده است.`,
+          v: `The equation sits inside a blue-bordered callout, which is the deck's convention for a neutral quoted fact. Red-bordered callouts mean action needed; green means a requirement satisfied. Learn the three colours before you present — a TA may ask why one box is red.`,
+          vf: `معادله در کادری با حاشیهٔ آبی قرار دارد که در این ارائه قرارداد «واقعیت نقل‌شدهٔ خنثی» است. کادر با حاشیهٔ قرمز یعنی اقدام لازم است و سبز یعنی الزامی برآورده شده. پیش از ارائه این سه رنگ را به خاطر بسپارید؛ ممکن است بپرسند چرا یک کادر قرمز است.`,
+          i: `Add one photograph taken in low light beside the equation. The abstract model lands much harder when the audience has just seen the physical thing it describes. The Night Sight blog in Category B is a legitimate source for such an image.`,
+          if: `کنار معادله یک عکس گرفته‌شده در نور کم اضافه کنید. مدل انتزاعی وقتی بسیار مؤثرتر است که مخاطب همان لحظه پدیدهٔ فیزیکیِ توصیف‌شده را دیده باشد. وبلاگ Night Sight در دستهٔ B منبع معتبری برای چنین تصویری است.`,
+        },
 
-{n:4,p:1,badge:"§1",bc:"#6E6350",
- t:"Topic definition and the core problem",tf:"تعریف موضوع و صورت مسئلهٔ اصلی",
- c:`Answers the guidelines' first requirement: state the topic, state the overarching goal. It also pre-empts the obvious challenge — why denoising and not something newer — using SCUNet's own 2023 statement that the problem remains unsolved.`,
- cf:`نخستین الزام راهنما را پاسخ می‌دهد: موضوع را بیان کن، هدف کلان را بیان کن. همچنین به اعتراض بدیهی — چرا نویززدایی و نه موضوعی تازه‌تر — از پیش پاسخ می‌دهد، با استناد به جملهٔ خودِ SCUNet در ۲۰۲۳ که مسئله همچنان حل‌نشده است.`,
- s:`Denoising recovers a clean image x from a noisy observation y, where y equals x plus v, and v is usually assumed additive white Gaussian noise. That is DnCNN's own opening. We chose this topic because the literature treats it as foundational — SCUNet calls it perhaps the most fundamental restoration problem — and because, in the same paper's words, general-purpose blind denoising for real images remains unsolved.`,
- sf:`نویززدایی، تصویر تمیز x را از مشاهدهٔ نویزی y بازیابی می‌کند، جایی که y برابر است با x به‌علاوهٔ v، و معمولاً فرض می‌شود v نویز گاوسی سفید جمع‌شونده است. این عیناً جملهٔ آغازین DnCNN است. ما این موضوع را انتخاب کردیم چون ادبیات موضوع آن را بنیادی می‌داند — SCUNet آن را شاید بنیادی‌ترین مسئلهٔ بازسازی تصویر می‌نامد — و چون به گفتهٔ همان مقاله، نویززدایی کور و همه‌منظوره برای تصاویر واقعی همچنان حل‌نشده است.`,
- v:`The equation sits inside a blue-bordered callout, which is the deck's convention for a neutral quoted fact. Red-bordered callouts mean action needed; green means a requirement satisfied. Learn the three colours before you present — a TA may ask why one box is red.`,
- vf:`معادله در کادری با حاشیهٔ آبی قرار دارد که در این ارائه قرارداد «واقعیت نقل‌شدهٔ خنثی» است. کادر با حاشیهٔ قرمز یعنی اقدام لازم است و سبز یعنی الزامی برآورده شده. پیش از ارائه این سه رنگ را به خاطر بسپارید؛ ممکن است بپرسند چرا یک کادر قرمز است.`,
- i:`Add one photograph taken in low light beside the equation. The abstract model lands much harder when the audience has just seen the physical thing it describes. The Night Sight blog in Category B is a legitimate source for such an image.`,
- if:`کنار معادله یک عکس گرفته‌شده در نور کم اضافه کنید. مدل انتزاعی وقتی بسیار مؤثرتر است که مخاطب همان لحظه پدیدهٔ فیزیکیِ توصیف‌شده را دیده باشد. وبلاگ Night Sight در دستهٔ B منبع معتبری برای چنین تصویری است.`},
+        {
+          n: 5,
+          p: 1,
+          badge: "§1",
+          bc: "#6E6350",
+          t: "Why denoising is mathematically hard",
+          tf: "چرا نویززدایی از نظر ریاضی دشوار است",
+          c: `Delivers the guidelines' explicit demand for the inherent mathematical and visual challenges. Three challenges, each attributed to a paper on the roster, so the slide doubles as evidence that the papers were actually read.`,
+          cf: `خواستهٔ صریح راهنما دربارهٔ «چالش‌های ذاتی ریاضی و بصری» را برآورده می‌کند. سه چالش که هرکدام به یکی از مقالات فهرست نسبت داده شده‌اند؛ بنابراین اسلاید هم‌زمان گواه آن است که مقالات واقعاً خوانده شده‌اند.`,
+          s: `Three difficulties. First, the problem is ill-posed: one observation, two unknowns per pixel, so infinitely many solutions. Restormer says restoration is ill-posed and therefore requires strong image priors. Second, that prior must be supplied — DnCNN frames this from a Bayesian viewpoint and lists the historical families. Third, smoothing away noise also smooths away detail; BM3D states that tension explicitly in its abstract.`,
+          sf: `سه دشواری. نخست، مسئله بدوضع است: یک مشاهده و دو مجهول برای هر پیکسل، پس بی‌نهایت پاسخ وجود دارد. Restormer می‌گوید بازسازی تصویر بدوضع است و به همین دلیل به پیشین‌های قوی نیاز دارد. دوم، این پیشین باید تأمین شود — DnCNN آن را از دیدگاه بیزی صورت‌بندی می‌کند و خانواده‌های تاریخی آن را برمی‌شمارد. سوم، هموارسازیِ نویز، جزئیات را هم هموار می‌کند؛ BM3D این تنش را صریحاً در چکیدهٔ خود بیان کرده است.`,
+          v: `Three equal cards signal three parallel, independent difficulties — not a sequence. The variational objective in the middle card is the classical solution shape: a hand-designed regulariser Phi, re-solved for every image at test time. Be ready to define lambda and Phi if asked.`,
+          vf: `سه کارت هم‌اندازه نشان می‌دهند که این سه دشواری موازی و مستقل‌اند، نه یک توالی. تابع هدف وردشی در کارت میانی، شکل راه‌حل کلاسیک است: یک تنظیم‌کنندهٔ دست‌ساز Phi که برای هر تصویر در زمان آزمون از نو حل می‌شود. اگر پرسیدند، آمادهٔ تعریف lambda و Phi باشید.`,
+          i: `Add a small visual proof of challenge three: the same crop denoised at two strengths, one under-smoothed and one over-smoothed. Two thumbnails make the tension undeniable in a way a sentence cannot.`,
+          if: `برای چالش سوم یک گواه بصری کوچک اضافه کنید: یک برش یکسان با دو شدت نویززدایی، یکی کم‌هموار و یکی بیش‌ازحد هموار. دو تصویر بندانگشتی این تنش را به‌گونه‌ای انکارناپذیر نشان می‌دهند که یک جمله نمی‌تواند.`,
+        },
 
-{n:5,p:1,badge:"§1",bc:"#6E6350",
- t:"Why denoising is mathematically hard",tf:"چرا نویززدایی از نظر ریاضی دشوار است",
- c:`Delivers the guidelines' explicit demand for the inherent mathematical and visual challenges. Three challenges, each attributed to a paper on the roster, so the slide doubles as evidence that the papers were actually read.`,
- cf:`خواستهٔ صریح راهنما دربارهٔ «چالش‌های ذاتی ریاضی و بصری» را برآورده می‌کند. سه چالش که هرکدام به یکی از مقالات فهرست نسبت داده شده‌اند؛ بنابراین اسلاید هم‌زمان گواه آن است که مقالات واقعاً خوانده شده‌اند.`,
- s:`Three difficulties. First, the problem is ill-posed: one observation, two unknowns per pixel, so infinitely many solutions. Restormer says restoration is ill-posed and therefore requires strong image priors. Second, that prior must be supplied — DnCNN frames this from a Bayesian viewpoint and lists the historical families. Third, smoothing away noise also smooths away detail; BM3D states that tension explicitly in its abstract.`,
- sf:`سه دشواری. نخست، مسئله بدوضع است: یک مشاهده و دو مجهول برای هر پیکسل، پس بی‌نهایت پاسخ وجود دارد. Restormer می‌گوید بازسازی تصویر بدوضع است و به همین دلیل به پیشین‌های قوی نیاز دارد. دوم، این پیشین باید تأمین شود — DnCNN آن را از دیدگاه بیزی صورت‌بندی می‌کند و خانواده‌های تاریخی آن را برمی‌شمارد. سوم، هموارسازیِ نویز، جزئیات را هم هموار می‌کند؛ BM3D این تنش را صریحاً در چکیدهٔ خود بیان کرده است.`,
- v:`Three equal cards signal three parallel, independent difficulties — not a sequence. The variational objective in the middle card is the classical solution shape: a hand-designed regulariser Phi, re-solved for every image at test time. Be ready to define lambda and Phi if asked.`,
- vf:`سه کارت هم‌اندازه نشان می‌دهند که این سه دشواری موازی و مستقل‌اند، نه یک توالی. تابع هدف وردشی در کارت میانی، شکل راه‌حل کلاسیک است: یک تنظیم‌کنندهٔ دست‌ساز Phi که برای هر تصویر در زمان آزمون از نو حل می‌شود. اگر پرسیدند، آمادهٔ تعریف lambda و Phi باشید.`,
- i:`Add a small visual proof of challenge three: the same crop denoised at two strengths, one under-smoothed and one over-smoothed. Two thumbnails make the tension undeniable in a way a sentence cannot.`,
- if:`برای چالش سوم یک گواه بصری کوچک اضافه کنید: یک برش یکسان با دو شدت نویززدایی، یکی کم‌هموار و یکی بیش‌ازحد هموار. دو تصویر بندانگشتی این تنش را به‌گونه‌ای انکارناپذیر نشان می‌دهند که یک جمله نمی‌تواند.`},
+        {
+          n: 6,
+          p: 2,
+          badge: "Part II",
+          bc: "#1E5F7E",
+          t: "Section divider — The evolution",
+          tf: "جداکنندهٔ بخش — سیر تحول",
+          c: `Frames the timeline that follows and makes the methodological claim in advance: each bottleneck is quoted from the paper that broke it, so the narrative is evidenced rather than retrofitted.`,
+          cf: `خط زمانی بعدی را قاب‌بندی می‌کند و ادعای روش‌شناختی را از پیش مطرح می‌سازد: هر گلوگاه از زبان همان مقاله‌ای نقل شده که آن را شکسته است؛ پس روایت مستند است، نه بازسازی‌شده در گذشته‌نگری.`,
+          s: `Four eras, three bottlenecks. The important methodological point: we did not invent these transitions. In every case the paper that solved a bottleneck also stated it. So the story is evidenced from primary sources rather than imposed in hindsight.`,
+          sf: `چهار دوره، سه گلوگاه. نکتهٔ روش‌شناختی مهم این است: ما این گذارها را از خودمان نساخته‌ایم. در هر مورد، مقاله‌ای که گلوگاه را حل کرده، خودش هم آن را بیان کرده است. بنابراین این روایت از منابع دست اول مستند شده، نه اینکه با نگاه به گذشته بر آن‌ها تحمیل شده باشد.`,
+          v: `The bar here is a gradient across all three era colours rather than a single colour, signalling that this section spans the whole chronology instead of sitting in one era.`,
+          vf: `نوار در این اسلاید به‌جای یک رنگ، طیفی از هر سه رنگ دوره‌هاست؛ یعنی این بخش کل گاه‌شماری را دربر می‌گیرد و در یک دوره جای نمی‌گیرد.`,
+          i: `Say the phrase "evidenced, not imposed" out loud here. It is the single sentence most likely to earn credit for research rigor, and it costs three seconds.`,
+          if: `همین‌جا عبارت «مستند، نه تحمیل‌شده» را با صدای بلند بگویید. این تنها جمله‌ای است که بیشترین احتمال را دارد امتیاز «دقت پژوهشی» را برای شما بیاورد و فقط سه ثانیه وقت می‌گیرد.`,
+        },
 
-{n:6,p:2,badge:"Part II",bc:"#1E5F7E",
- t:"Section divider — The evolution",tf:"جداکنندهٔ بخش — سیر تحول",
- c:`Frames the timeline that follows and makes the methodological claim in advance: each bottleneck is quoted from the paper that broke it, so the narrative is evidenced rather than retrofitted.`,
- cf:`خط زمانی بعدی را قاب‌بندی می‌کند و ادعای روش‌شناختی را از پیش مطرح می‌سازد: هر گلوگاه از زبان همان مقاله‌ای نقل شده که آن را شکسته است؛ پس روایت مستند است، نه بازسازی‌شده در گذشته‌نگری.`,
- s:`Four eras, three bottlenecks. The important methodological point: we did not invent these transitions. In every case the paper that solved a bottleneck also stated it. So the story is evidenced from primary sources rather than imposed in hindsight.`,
- sf:`چهار دوره، سه گلوگاه. نکتهٔ روش‌شناختی مهم این است: ما این گذارها را از خودمان نساخته‌ایم. در هر مورد، مقاله‌ای که گلوگاه را حل کرده، خودش هم آن را بیان کرده است. بنابراین این روایت از منابع دست اول مستند شده، نه اینکه با نگاه به گذشته بر آن‌ها تحمیل شده باشد.`,
- v:`The bar here is a gradient across all three era colours rather than a single colour, signalling that this section spans the whole chronology instead of sitting in one era.`,
- vf:`نوار در این اسلاید به‌جای یک رنگ، طیفی از هر سه رنگ دوره‌هاست؛ یعنی این بخش کل گاه‌شماری را دربر می‌گیرد و در یک دوره جای نمی‌گیرد.`,
- i:`Say the phrase "evidenced, not imposed" out loud here. It is the single sentence most likely to earn credit for research rigor, and it costs three seconds.`,
- if:`همین‌جا عبارت «مستند، نه تحمیل‌شده» را با صدای بلند بگویید. این تنها جمله‌ای است که بیشترین احتمال را دارد امتیاز «دقت پژوهشی» را برای شما بیاورد و فقط سه ثانیه وقت می‌گیرد.`},
+        {
+          n: 7,
+          p: 2,
+          badge: "§2 · KEY",
+          bc: "#1E5F7E",
+          t: "The visual evolutionary timeline",
+          tf: "خط زمانی تصویری تحول",
+          c: `The single artifact the guidelines describe most concretely and the one the TAs will scrutinise hardest. It must show Classical DIP to Early Deep Learning to Modern SOTA, and mark why each transition happened. Expect the longest questioning here.`,
+          cf: `مشخص‌ترین خروجی‌ای که راهنما توصیف کرده و همانی که دستیاران آموزشی بیش از همه بررسی خواهند کرد. باید مسیر «پردازش کلاسیک ← یادگیری عمیق اولیه ← پیشرفتهٔ مدرن» را نشان دهد و علت هر گذار را علامت بزند. طولانی‌ترین پرسش‌ها را همین‌جا انتظار داشته باشید.`,
+          s: `Read left to right. Era one, classical: BM3D and WNNM, priors written by hand. Bottleneck one — too slow, and unable to learn. Era two, TNRD: the prior is learned but the structure is still hand-designed. Then DnCNN. And here the line forks, because the field attacked two different limitations at once. Downward is the data branch: Noise2Noise, Noise2Void, ZS-N2N, each needing less data than the last. Upward is the architecture branch: Restormer, NAFNet, SCUNet, MambaIR.`,
+          sf: `از چپ به راست بخوانید. دورهٔ یک، کلاسیک: BM3D و WNNM، پیشین‌هایی که با دست نوشته شده‌اند. گلوگاه یک — بسیار کند، و ناتوان از یادگیری. دورهٔ دو، TNRD: پیشین یاد گرفته می‌شود اما ساختار همچنان دست‌ساز است. سپس DnCNN. و اینجا خط دوشاخه می‌شود، چون این حوزه هم‌زمان به دو محدودیت متفاوت حمله کرد. شاخهٔ پایین، شاخهٔ داده است: Noise2Noise، Noise2Void و ZS-N2N، که هرکدام از قبلی به دادهٔ کمتری نیاز دارند. شاخهٔ بالا، شاخهٔ معماری است: Restormer، NAFNet، SCUNet و MambaIR.`,
+          v: `Horizontal position is chronological. The three tinted bands are the eras. The dashed red circles are bottlenecks, placed in the gaps between bands — the gap itself carries the meaning, since a break in the line is a break in the paradigm. The fork at 2018 is the deck's most important shape: it says the field did not progress single-file, it split. Node size is uniform except DnCNN, which is drawn larger with a white ring because it is the anchor paper.`,
+          vf: `موقعیت افقی، گاه‌شمارانه است. سه نوار رنگی، دوره‌ها هستند. دایره‌های خط‌چین قرمز گلوگاه‌ها هستند و در فاصلهٔ میان نوارها قرار گرفته‌اند — خودِ فاصله حامل معناست، چون گسست در خط یعنی گسست در الگو. دوشاخه‌شدن در سال ۲۰۱۸ مهم‌ترین شکل کل ارائه است: می‌گوید این حوزه تک‌مسیره پیش نرفت، بلکه شکافت. اندازهٔ گره‌ها یکسان است جز DnCNN که بزرگ‌تر و با حلقهٔ سفید رسم شده، چون مقالهٔ لنگر است.`,
+          i: `Two upgrades, in order of value. First, add a small PSNR figure under three or four nodes so the timeline carries performance as well as chronology — but take every number from the paper that reported it and label the benchmark. Second, rehearse tracing the fork with your finger; the fork is the idea a TA is most likely to probe, and pointing while explaining measurably improves recall.`,
+          if: `دو ارتقا، به ترتیب ارزش. نخست، زیر سه یا چهار گره یک عدد PSNR کوچک بگذارید تا خط زمانی علاوه بر گاه‌شماری، کارایی را هم منتقل کند — اما هر عدد را از همان مقاله‌ای بردارید که آن را گزارش کرده و نام محک را ذکر کنید. دوم، تمرین کنید که مسیر دوشاخه را با انگشت دنبال کنید؛ این دوشاخه محتمل‌ترین نقطه برای پرسش است و اشاره‌کردن هنگام توضیح، به‌طور محسوسی یادآوری مخاطب را بهتر می‌کند.`,
+        },
 
-{n:7,p:2,badge:"§2 · KEY",bc:"#1E5F7E",
- t:"The visual evolutionary timeline",tf:"خط زمانی تصویری تحول",
- c:`The single artifact the guidelines describe most concretely and the one the TAs will scrutinise hardest. It must show Classical DIP to Early Deep Learning to Modern SOTA, and mark why each transition happened. Expect the longest questioning here.`,
- cf:`مشخص‌ترین خروجی‌ای که راهنما توصیف کرده و همانی که دستیاران آموزشی بیش از همه بررسی خواهند کرد. باید مسیر «پردازش کلاسیک ← یادگیری عمیق اولیه ← پیشرفتهٔ مدرن» را نشان دهد و علت هر گذار را علامت بزند. طولانی‌ترین پرسش‌ها را همین‌جا انتظار داشته باشید.`,
- s:`Read left to right. Era one, classical: BM3D and WNNM, priors written by hand. Bottleneck one — too slow, and unable to learn. Era two, TNRD: the prior is learned but the structure is still hand-designed. Then DnCNN. And here the line forks, because the field attacked two different limitations at once. Downward is the data branch: Noise2Noise, Noise2Void, ZS-N2N, each needing less data than the last. Upward is the architecture branch: Restormer, NAFNet, SCUNet, MambaIR.`,
- sf:`از چپ به راست بخوانید. دورهٔ یک، کلاسیک: BM3D و WNNM، پیشین‌هایی که با دست نوشته شده‌اند. گلوگاه یک — بسیار کند، و ناتوان از یادگیری. دورهٔ دو، TNRD: پیشین یاد گرفته می‌شود اما ساختار همچنان دست‌ساز است. سپس DnCNN. و اینجا خط دوشاخه می‌شود، چون این حوزه هم‌زمان به دو محدودیت متفاوت حمله کرد. شاخهٔ پایین، شاخهٔ داده است: Noise2Noise، Noise2Void و ZS-N2N، که هرکدام از قبلی به دادهٔ کمتری نیاز دارند. شاخهٔ بالا، شاخهٔ معماری است: Restormer، NAFNet، SCUNet و MambaIR.`,
- v:`Horizontal position is chronological. The three tinted bands are the eras. The dashed red circles are bottlenecks, placed in the gaps between bands — the gap itself carries the meaning, since a break in the line is a break in the paradigm. The fork at 2018 is the deck's most important shape: it says the field did not progress single-file, it split. Node size is uniform except DnCNN, which is drawn larger with a white ring because it is the anchor paper.`,
- vf:`موقعیت افقی، گاه‌شمارانه است. سه نوار رنگی، دوره‌ها هستند. دایره‌های خط‌چین قرمز گلوگاه‌ها هستند و در فاصلهٔ میان نوارها قرار گرفته‌اند — خودِ فاصله حامل معناست، چون گسست در خط یعنی گسست در الگو. دوشاخه‌شدن در سال ۲۰۱۸ مهم‌ترین شکل کل ارائه است: می‌گوید این حوزه تک‌مسیره پیش نرفت، بلکه شکافت. اندازهٔ گره‌ها یکسان است جز DnCNN که بزرگ‌تر و با حلقهٔ سفید رسم شده، چون مقالهٔ لنگر است.`,
- i:`Two upgrades, in order of value. First, add a small PSNR figure under three or four nodes so the timeline carries performance as well as chronology — but take every number from the paper that reported it and label the benchmark. Second, rehearse tracing the fork with your finger; the fork is the idea a TA is most likely to probe, and pointing while explaining measurably improves recall.`,
- if:`دو ارتقا، به ترتیب ارزش. نخست، زیر سه یا چهار گره یک عدد PSNR کوچک بگذارید تا خط زمانی علاوه بر گاه‌شماری، کارایی را هم منتقل کند — اما هر عدد را از همان مقاله‌ای بردارید که آن را گزارش کرده و نام محک را ذکر کنید. دوم، تمرین کنید که مسیر دوشاخه را با انگشت دنبال کنید؛ این دوشاخه محتمل‌ترین نقطه برای پرسش است و اشاره‌کردن هنگام توضیح، به‌طور محسوسی یادآوری مخاطب را بهتر می‌کند.`},
+        {
+          n: 8,
+          p: 2,
+          badge: "§2",
+          bc: "#1E5F7E",
+          t: "The three bottlenecks",
+          tf: "سه گلوگاه",
+          c: `Expands what the timeline can only mark. The guidelines ask you to indicate why the field transitioned between eras; this slide supplies the quoted reasons and names the papers that resolved each one.`,
+          cf: `آنچه را خط زمانی فقط می‌تواند علامت بزند، بسط می‌دهد. راهنما می‌خواهد بگویید چرا حوزه از دوره‌ای به دورهٔ بعد رفت؛ این اسلاید دلایل نقل‌شده را ارائه می‌دهد و مقالاتی را که هر گلوگاه را حل کردند نام می‌برد.`,
+          s: `Bottleneck one: hand-designed priors and per-image optimisation cost. TNRD says the field pursued quality with little consideration of efficiency. Bottleneck two: the clean-data requirement. Noise2Noise says a noise-free photograph requires a long exposure; Noise2Void says in biomedical data clean targets are frequently impossible. Bottleneck three: the limits of convolution. Restormer names both — limited receptive field, and inability to adapt to input content.`,
+          sf: `گلوگاه یک: پیشین‌های دست‌ساز و هزینهٔ بهینه‌سازی برای هر تصویر. TNRD می‌گوید این حوزه کیفیت را دنبال می‌کرد بی‌آنکه به کارایی محاسباتی توجه کند. گلوگاه دو: نیاز به دادهٔ تمیز. Noise2Noise می‌گوید یک عکس بدون نویز نیازمند نوردهی طولانی است؛ Noise2Void می‌گوید در دادهٔ زیست‌پزشکی، هدف تمیز اغلب اصلاً ممکن نیست. گلوگاه سه: محدودیت‌های کانولوشن. Restormer هر دو را نام می‌برد: میدان گیرندگی محدود، و ناتوانی در تطبیق با محتوای ورودی.`,
+          v: `Each card carries a coloured top border matching the era it ended, so a reader can connect a card to a band on the previous slide without being told. The green callout at the bottom compresses the whole arc into one sentence — that sentence is the deck's thesis and worth memorising verbatim.`,
+          vf: `هر کارت یک حاشیهٔ رنگی بالایی دارد که با دوره‌ای که آن گلوگاه به پایان رساند هم‌رنگ است؛ پس خواننده بدون توضیح می‌تواند هر کارت را به نوار متناظرش در اسلاید قبل وصل کند. کادر سبز پایین، کل مسیر را در یک جمله فشرده می‌کند؛ آن جمله ادعای اصلی ارائه است و ارزش دارد که کلمه‌به‌کلمه حفظ شود.`,
+          i: `Memorise the green callout sentence word for word. If you are asked a broad question you cannot answer precisely, that sentence is a truthful, well-sourced answer to almost any framing of "so what is the story here?"`,
+          if: `جملهٔ داخل کادر سبز را کلمه‌به‌کلمه حفظ کنید. اگر پرسش کلی‌ای مطرح شد که پاسخ دقیقش را نمی‌دانید، آن جمله پاسخی صادقانه و مستند است برای تقریباً هر شکلی از پرسش «خب داستان این کار چیست؟»`,
+        },
 
-{n:8,p:2,badge:"§2",bc:"#1E5F7E",
- t:"The three bottlenecks",tf:"سه گلوگاه",
- c:`Expands what the timeline can only mark. The guidelines ask you to indicate why the field transitioned between eras; this slide supplies the quoted reasons and names the papers that resolved each one.`,
- cf:`آنچه را خط زمانی فقط می‌تواند علامت بزند، بسط می‌دهد. راهنما می‌خواهد بگویید چرا حوزه از دوره‌ای به دورهٔ بعد رفت؛ این اسلاید دلایل نقل‌شده را ارائه می‌دهد و مقالاتی را که هر گلوگاه را حل کردند نام می‌برد.`,
- s:`Bottleneck one: hand-designed priors and per-image optimisation cost. TNRD says the field pursued quality with little consideration of efficiency. Bottleneck two: the clean-data requirement. Noise2Noise says a noise-free photograph requires a long exposure; Noise2Void says in biomedical data clean targets are frequently impossible. Bottleneck three: the limits of convolution. Restormer names both — limited receptive field, and inability to adapt to input content.`,
- sf:`گلوگاه یک: پیشین‌های دست‌ساز و هزینهٔ بهینه‌سازی برای هر تصویر. TNRD می‌گوید این حوزه کیفیت را دنبال می‌کرد بی‌آنکه به کارایی محاسباتی توجه کند. گلوگاه دو: نیاز به دادهٔ تمیز. Noise2Noise می‌گوید یک عکس بدون نویز نیازمند نوردهی طولانی است؛ Noise2Void می‌گوید در دادهٔ زیست‌پزشکی، هدف تمیز اغلب اصلاً ممکن نیست. گلوگاه سه: محدودیت‌های کانولوشن. Restormer هر دو را نام می‌برد: میدان گیرندگی محدود، و ناتوانی در تطبیق با محتوای ورودی.`,
- v:`Each card carries a coloured top border matching the era it ended, so a reader can connect a card to a band on the previous slide without being told. The green callout at the bottom compresses the whole arc into one sentence — that sentence is the deck's thesis and worth memorising verbatim.`,
- vf:`هر کارت یک حاشیهٔ رنگی بالایی دارد که با دوره‌ای که آن گلوگاه به پایان رساند هم‌رنگ است؛ پس خواننده بدون توضیح می‌تواند هر کارت را به نوار متناظرش در اسلاید قبل وصل کند. کادر سبز پایین، کل مسیر را در یک جمله فشرده می‌کند؛ آن جمله ادعای اصلی ارائه است و ارزش دارد که کلمه‌به‌کلمه حفظ شود.`,
- i:`Memorise the green callout sentence word for word. If you are asked a broad question you cannot answer precisely, that sentence is a truthful, well-sourced answer to almost any framing of "so what is the story here?"`,
- if:`جملهٔ داخل کادر سبز را کلمه‌به‌کلمه حفظ کنید. اگر پرسش کلی‌ای مطرح شد که پاسخ دقیقش را نمی‌دانید، آن جمله پاسخی صادقانه و مستند است برای تقریباً هر شکلی از پرسش «خب داستان این کار چیست؟»`},
+        {
+          n: 9,
+          p: 3,
+          badge: "Part III",
+          bc: "#6D3F86",
+          t: "Section divider — The sources",
+          tf: "جداکنندهٔ بخش — منابع",
+          c: `Signals the compliance section. It states the quota result up front — 14 sources, 11 Category A, 78.6% — so the TA can confirm compliance before any individual source is discussed.`,
+          cf: `آغاز بخش انطباق را اعلام می‌کند. نتیجهٔ سهمیه را از همان ابتدا بیان می‌کند — چهارده منبع، یازده مورد دستهٔ A، معادل ۷۸٫۶٪ — تا دستیار آموزشی پیش از بحث دربارهٔ تک‌تک منابع، انطباق را تأیید کند.`,
+          s: `Fourteen sources, eleven Category A, seventy-eight point six percent. That clears the seventy percent floor with margin. Every Category A citation count in this section was verified against Google Scholar on the ninth of August.`,
+          sf: `چهارده منبع، یازده مورد دستهٔ A، معادل هفتاد و هشت و شش دهم درصد. این با فاصلهٔ مطمئنی از کف هفتاد درصدی عبور می‌کند. تعداد استناد همهٔ مقالات دستهٔ A در نهم اوت با Google Scholar راستی‌آزمایی شده است.`,
+          v: `No diagram. A typographic divider only. The blue-teal bar marks the deep-learning era colour, chosen because the majority of the roster sits in or after that era.`,
+          vf: `بدون نمودار؛ فقط یک جداکنندهٔ تایپوگرافیک. نوار آبی-فیروزه‌ای رنگ دورهٔ یادگیری عمیق است و انتخاب شده چون اکثریت منابع فهرست در آن دوره یا پس از آن قرار دارند.`,
+          i: `Say the citation figures are Scholar-verified and dated. Numbers without a source and a date are the easiest thing for a TA to challenge, and pre-empting that costs one sentence.`,
+          if: `بگویید که اعداد استناد با Google Scholar راستی‌آزمایی و تاریخ‌گذاری شده‌اند. عدد بدون منبع و تاریخ آسان‌ترین چیزی است که دستیار آموزشی می‌تواند به آن ایراد بگیرد، و پیش‌دستی بر آن فقط یک جمله هزینه دارد.`,
+        },
 
-{n:9,p:3,badge:"Part III",bc:"#6D3F86",
- t:"Section divider — The sources",tf:"جداکنندهٔ بخش — منابع",
- c:`Signals the compliance section. It states the quota result up front — 14 sources, 11 Category A, 78.6% — so the TA can confirm compliance before any individual source is discussed.`,
- cf:`آغاز بخش انطباق را اعلام می‌کند. نتیجهٔ سهمیه را از همان ابتدا بیان می‌کند — چهارده منبع، یازده مورد دستهٔ A، معادل ۷۸٫۶٪ — تا دستیار آموزشی پیش از بحث دربارهٔ تک‌تک منابع، انطباق را تأیید کند.`,
- s:`Fourteen sources, eleven Category A, seventy-eight point six percent. That clears the seventy percent floor with margin. Every Category A citation count in this section was verified against Google Scholar on the ninth of August.`,
- sf:`چهارده منبع، یازده مورد دستهٔ A، معادل هفتاد و هشت و شش دهم درصد. این با فاصلهٔ مطمئنی از کف هفتاد درصدی عبور می‌کند. تعداد استناد همهٔ مقالات دستهٔ A در نهم اوت با Google Scholar راستی‌آزمایی شده است.`,
- v:`No diagram. A typographic divider only. The blue-teal bar marks the deep-learning era colour, chosen because the majority of the roster sits in or after that era.`,
- vf:`بدون نمودار؛ فقط یک جداکنندهٔ تایپوگرافیک. نوار آبی-فیروزه‌ای رنگ دورهٔ یادگیری عمیق است و انتخاب شده چون اکثریت منابع فهرست در آن دوره یا پس از آن قرار دارند.`,
- i:`Say the citation figures are Scholar-verified and dated. Numbers without a source and a date are the easiest thing for a TA to challenge, and pre-empting that costs one sentence.`,
- if:`بگویید که اعداد استناد با Google Scholar راستی‌آزمایی و تاریخ‌گذاری شده‌اند. عدد بدون منبع و تاریخ آسان‌ترین چیزی است که دستیار آموزشی می‌تواند به آن ایراد بگیرد، و پیش‌دستی بر آن فقط یک جمله هزینه دارد.`},
+        {
+          n: 10,
+          p: 3,
+          badge: "§3",
+          bc: "#6D3F86",
+          t: "Master source list — Category A",
+          tf: "فهرست اصلی منابع — دستهٔ A",
+          c: `The evidence table the guidelines demand. Eleven rows with lead author, venue, year, institution and era. It simultaneously proves the recency requirement: six pre-2022 milestones and five from 2022 onward.`,
+          cf: `جدول شواهدی که راهنما خواسته است. یازده سطر شامل نویسندهٔ اصلی، محل انتشار، سال، وابستگی سازمانی و دوره. هم‌زمان الزام تازگی را اثبات می‌کند: شش مقالهٔ شاخص پیش از ۲۰۲۲ و پنج مقاله از ۲۰۲۲ به بعد.`,
+          s: `Eleven Category A papers spanning 2007 to 2024. The guidelines require both older milestones and recent SOTA from 2022 onward; we have six and five respectively, so both halves are satisfied with margin rather than by the minimum.`,
+          sf: `یازده مقالهٔ دستهٔ A از ۲۰۰۷ تا ۲۰۲۴. راهنما هم مقالات شاخص قدیمی را می‌خواهد و هم مقالات پیشرفتهٔ ۲۰۲۲ به بعد؛ ما به‌ترتیب شش و پنج مورد داریم، پس هر دو شرط با فاصلهٔ اطمینان برآورده شده‌اند، نه صرفاً در حد حداقل.`,
+          v: `The rightmost column uses a coloured dot plus an era numeral, tying every row back to the timeline. Note that DnCNN is marked era three while TNRD is era two, even though both are 2017 — the eras are defined by method, not by date, and you should be able to say that if challenged.`,
+          vf: `ستون آخر از یک نقطهٔ رنگی به‌همراه شمارهٔ دوره استفاده می‌کند و هر سطر را به خط زمانی گره می‌زند. توجه کنید که DnCNN دورهٔ سه علامت خورده و TNRD دورهٔ دو، هرچند هر دو مربوط به ۲۰۱۷‌اند — دوره‌ها بر اساس روش تعریف شده‌اند نه تاریخ، و اگر پرسیده شد باید بتوانید همین را بگویید.`,
+          i: `The citation column is populated, so use it as an argument rather than a data dump. The one comparison worth saying aloud: BM3D and DnCNN sit near twelve thousand each, which is why both remain universal baselines seventeen and nine years on.`,
+          if: `ستون استناد پر شده است، پس از آن به‌عنوان استدلال استفاده کنید نه صرفاً نمایش داده. تنها مقایسه‌ای که ارزش گفتن بلند دارد: BM3D و DnCNN هرکدام نزدیک دوازده هزار استناد دارند، و به همین دلیل پس از هفده و نُه سال هنوز خط مبنای همگانی‌اند.`,
+        },
 
-{n:10,p:3,badge:"§3",bc:"#6D3F86",
- t:"Master source list — Category A",tf:"فهرست اصلی منابع — دستهٔ A",
- c:`The evidence table the guidelines demand. Eleven rows with lead author, venue, year, institution and era. It simultaneously proves the recency requirement: six pre-2022 milestones and five from 2022 onward.`,
- cf:`جدول شواهدی که راهنما خواسته است. یازده سطر شامل نویسندهٔ اصلی، محل انتشار، سال، وابستگی سازمانی و دوره. هم‌زمان الزام تازگی را اثبات می‌کند: شش مقالهٔ شاخص پیش از ۲۰۲۲ و پنج مقاله از ۲۰۲۲ به بعد.`,
- s:`Eleven Category A papers spanning 2007 to 2024. The guidelines require both older milestones and recent SOTA from 2022 onward; we have six and five respectively, so both halves are satisfied with margin rather than by the minimum.`,
- sf:`یازده مقالهٔ دستهٔ A از ۲۰۰۷ تا ۲۰۲۴. راهنما هم مقالات شاخص قدیمی را می‌خواهد و هم مقالات پیشرفتهٔ ۲۰۲۲ به بعد؛ ما به‌ترتیب شش و پنج مورد داریم، پس هر دو شرط با فاصلهٔ اطمینان برآورده شده‌اند، نه صرفاً در حد حداقل.`,
- v:`The rightmost column uses a coloured dot plus an era numeral, tying every row back to the timeline. Note that DnCNN is marked era three while TNRD is era two, even though both are 2017 — the eras are defined by method, not by date, and you should be able to say that if challenged.`,
- vf:`ستون آخر از یک نقطهٔ رنگی به‌همراه شمارهٔ دوره استفاده می‌کند و هر سطر را به خط زمانی گره می‌زند. توجه کنید که DnCNN دورهٔ سه علامت خورده و TNRD دورهٔ دو، هرچند هر دو مربوط به ۲۰۱۷‌اند — دوره‌ها بر اساس روش تعریف شده‌اند نه تاریخ، و اگر پرسیده شد باید بتوانید همین را بگویید.`,
- i:`The citation column is populated, so use it as an argument rather than a data dump. The one comparison worth saying aloud: BM3D and DnCNN sit near twelve thousand each, which is why both remain universal baselines seventeen and nine years on.`,
- if:`ستون استناد پر شده است، پس از آن به‌عنوان استدلال استفاده کنید نه صرفاً نمایش داده. تنها مقایسه‌ای که ارزش گفتن بلند دارد: BM3D و DnCNN هرکدام نزدیک دوازده هزار استناد دارند، و به همین دلیل پس از هفده و نُه سال هنوز خط مبنای همگانی‌اند.`},
+        {
+          n: 11,
+          p: 3,
+          badge: "§3",
+          bc: "#6D3F86",
+          t: "Category B and the 70/30 arithmetic",
+          tf: "دستهٔ B و محاسبهٔ ۷۰/۳۰",
+          c: `Closes the quota requirement with explicit arithmetic rather than a claim, and justifies the choice of fourteen sources rather than the minimum ten.`,
+          cf: `الزام سهمیه را با محاسبهٔ صریح می‌بندد، نه با ادعا، و دلیل انتخاب چهارده منبع به‌جای حداقلِ ده مورد را توضیح می‌دهد.`,
+          s: `Three Category B sources, twenty-one point four percent, under the thirty percent ceiling. All three map to types named verbatim in the guidelines, so eligibility is not a judgement call. We chose fourteen rather than ten deliberately: at ten the split is seven-three with no slack. At fourteen we could lose a paper to a venue challenge and still sit above both floors.`,
+          sf: `سه منبع دستهٔ B، معادل بیست و یک و چهار دهم درصد، زیر سقف سی درصدی. هر سه دقیقاً با نوع‌هایی که در متن راهنما نام برده شده منطبق‌اند، پس واجد شرایط بودنشان محل قضاوت نیست. ما آگاهانه چهارده منبع انتخاب کردیم نه ده تا: در حالت ده‌تایی نسبت هفت به سه است و هیچ حاشیهٔ اطمینانی ندارد. با چهارده منبع، حتی اگر یک مقاله به‌دلیل محل انتشار حذف شود، همچنان بالای هر دو کف باقی می‌مانیم.`,
+          v: `The right-hand table has a status column with green ticks — the deck's convention for a satisfied requirement. The left-hand callout explains why category eligibility is objective here: each type is named in the guidelines text itself.`,
+          vf: `جدول سمت راست یک ستون وضعیت با تیک سبز دارد؛ قرارداد این ارائه برای «الزام برآورده‌شده». کادر سمت چپ توضیح می‌دهد چرا واجد شرایط بودنِ دسته‌بندی در اینجا عینی است: هر سه نوع در خودِ متن راهنما نام برده شده‌اند.`,
+          i: `Expect the question "why not more Category B?" Prepare the one-line answer now: Category B is capped at thirty percent, so adding auxiliary sources without adding papers would push us toward the ceiling for no gain in rigor.`,
+          if: `انتظار این پرسش را داشته باشید: «چرا منابع دستهٔ B بیشتر نیست؟» پاسخ یک‌خطی را از حالا آماده کنید: سقف دستهٔ B سی درصد است، پس افزودن منابع کمکی بدون افزودن مقاله ما را بدون هیچ سودی در دقت پژوهشی به سقف نزدیک می‌کند.`,
+        },
 
-{n:11,p:3,badge:"§3",bc:"#6D3F86",
- t:"Category B and the 70/30 arithmetic",tf:"دستهٔ B و محاسبهٔ ۷۰/۳۰",
- c:`Closes the quota requirement with explicit arithmetic rather than a claim, and justifies the choice of fourteen sources rather than the minimum ten.`,
- cf:`الزام سهمیه را با محاسبهٔ صریح می‌بندد، نه با ادعا، و دلیل انتخاب چهارده منبع به‌جای حداقلِ ده مورد را توضیح می‌دهد.`,
- s:`Three Category B sources, twenty-one point four percent, under the thirty percent ceiling. All three map to types named verbatim in the guidelines, so eligibility is not a judgement call. We chose fourteen rather than ten deliberately: at ten the split is seven-three with no slack. At fourteen we could lose a paper to a venue challenge and still sit above both floors.`,
- sf:`سه منبع دستهٔ B، معادل بیست و یک و چهار دهم درصد، زیر سقف سی درصدی. هر سه دقیقاً با نوع‌هایی که در متن راهنما نام برده شده منطبق‌اند، پس واجد شرایط بودنشان محل قضاوت نیست. ما آگاهانه چهارده منبع انتخاب کردیم نه ده تا: در حالت ده‌تایی نسبت هفت به سه است و هیچ حاشیهٔ اطمینانی ندارد. با چهارده منبع، حتی اگر یک مقاله به‌دلیل محل انتشار حذف شود، همچنان بالای هر دو کف باقی می‌مانیم.`,
- v:`The right-hand table has a status column with green ticks — the deck's convention for a satisfied requirement. The left-hand callout explains why category eligibility is objective here: each type is named in the guidelines text itself.`,
- vf:`جدول سمت راست یک ستون وضعیت با تیک سبز دارد؛ قرارداد این ارائه برای «الزام برآورده‌شده». کادر سمت چپ توضیح می‌دهد چرا واجد شرایط بودنِ دسته‌بندی در اینجا عینی است: هر سه نوع در خودِ متن راهنما نام برده شده‌اند.`,
- i:`Expect the question "why not more Category B?" Prepare the one-line answer now: Category B is capped at thirty percent, so adding auxiliary sources without adding papers would push us toward the ceiling for no gain in rigor.`,
- if:`انتظار این پرسش را داشته باشید: «چرا منابع دستهٔ B بیشتر نیست؟» پاسخ یک‌خطی را از حالا آماده کنید: سقف دستهٔ B سی درصد است، پس افزودن منابع کمکی بدون افزودن مقاله ما را بدون هیچ سودی در دقت پژوهشی به سقف نزدیک می‌کند.`},
+        {
+          n: 12,
+          p: 3,
+          badge: "§5",
+          bc: "#6D3F86",
+          t: "Category B justification",
+          tf: "توجیه منابع دستهٔ B",
+          c: `Answers guidelines section five directly: what each auxiliary source is, and how it bridges academic theory to the Stage 2 codebase analysis. Each card states the bridge explicitly rather than implying it.`,
+          cf: `مستقیماً به بخش پنج راهنما پاسخ می‌دهد: هر منبع کمکی چیست و چگونه شکاف میان نظریهٔ آکادمیک و تحلیل کد در مرحلهٔ ۲ را پر می‌کند. هر کارت این پل را صریحاً بیان می‌کند، نه به‌طور ضمنی.`,
+          s: `Each auxiliary source has a specific job in Stage 2. CS231n gives us the receptive-field arithmetic that DnCNN reports but does not derive — that is what makes repository code legible. The Night Sight blog is our only source describing denoising as a shipped product, which anchors Stage 2 deployment reality. Gonzalez and Woods gives the noise-model mathematics, and SCUNet's synthetic degradation pipeline is essentially that textbook list, industrialised.`,
+          sf: `هر منبع کمکی وظیفهٔ مشخصی در مرحلهٔ ۲ دارد. CS231n محاسبات میدان گیرندگی را در اختیار ما می‌گذارد؛ همان چیزی که DnCNN گزارش می‌کند اما استخراج نمی‌کند — و همین است که کد مخزن را خوانا می‌کند. وبلاگ Night Sight تنها منبعی است که نویززدایی را به‌عنوان یک محصول عرضه‌شده توصیف می‌کند و واقعیت استقرار در مرحلهٔ ۲ را تثبیت می‌کند. کتاب Gonzalez و Woods ریاضیات مدل‌های نویز را می‌دهد، و خط لولهٔ تخریب مصنوعی در SCUNet در اصل همان فهرست کتاب درسی است که صنعتی شده.`,
+          v: `Three parallel cards, each with a B-number tag in the deep-learning colour. Note the shared internal structure — what it supplies, then bridge to Stage 2 — which makes them scannable as a set rather than read as three separate blocks.`,
+          vf: `سه کارت موازی که هرکدام برچسب شمارهٔ B با رنگ دورهٔ یادگیری عمیق دارند. به ساختار درونی مشترک آن‌ها توجه کنید — «چه چیزی فراهم می‌کند» و سپس «پل به مرحلهٔ ۲» — که باعث می‌شود به‌صورت یک مجموعه قابل مرور باشند، نه سه بلوک جدا.`,
+          i: `Have the Gonzalez and Woods edition on your shelf in mind before presenting — if asked which edition, answer with the number rather than hesitating. Everything else on this slide is already specific; the edition is the one detail that lives outside the deck.`,
+          if: `پیش از ارائه، ویرایش کتاب Gonzalez و Woods موجود نزد خودتان را به خاطر بسپارید؛ اگر پرسیدند کدام ویرایش، شمارهٔ آن را بگویید نه اینکه مکث کنید. بقیهٔ محتوای این اسلاید از پیش دقیق است؛ ویرایش تنها جزئیاتی است که بیرون از ارائه قرار دارد.`,
+        },
 
-{n:12,p:3,badge:"§5",bc:"#6D3F86",
- t:"Category B justification",tf:"توجیه منابع دستهٔ B",
- c:`Answers guidelines section five directly: what each auxiliary source is, and how it bridges academic theory to the Stage 2 codebase analysis. Each card states the bridge explicitly rather than implying it.`,
- cf:`مستقیماً به بخش پنج راهنما پاسخ می‌دهد: هر منبع کمکی چیست و چگونه شکاف میان نظریهٔ آکادمیک و تحلیل کد در مرحلهٔ ۲ را پر می‌کند. هر کارت این پل را صریحاً بیان می‌کند، نه به‌طور ضمنی.`,
- s:`Each auxiliary source has a specific job in Stage 2. CS231n gives us the receptive-field arithmetic that DnCNN reports but does not derive — that is what makes repository code legible. The Night Sight blog is our only source describing denoising as a shipped product, which anchors Stage 2 deployment reality. Gonzalez and Woods gives the noise-model mathematics, and SCUNet's synthetic degradation pipeline is essentially that textbook list, industrialised.`,
- sf:`هر منبع کمکی وظیفهٔ مشخصی در مرحلهٔ ۲ دارد. CS231n محاسبات میدان گیرندگی را در اختیار ما می‌گذارد؛ همان چیزی که DnCNN گزارش می‌کند اما استخراج نمی‌کند — و همین است که کد مخزن را خوانا می‌کند. وبلاگ Night Sight تنها منبعی است که نویززدایی را به‌عنوان یک محصول عرضه‌شده توصیف می‌کند و واقعیت استقرار در مرحلهٔ ۲ را تثبیت می‌کند. کتاب Gonzalez و Woods ریاضیات مدل‌های نویز را می‌دهد، و خط لولهٔ تخریب مصنوعی در SCUNet در اصل همان فهرست کتاب درسی است که صنعتی شده.`,
- v:`Three parallel cards, each with a B-number tag in the deep-learning colour. Note the shared internal structure — what it supplies, then bridge to Stage 2 — which makes them scannable as a set rather than read as three separate blocks.`,
- vf:`سه کارت موازی که هرکدام برچسب شمارهٔ B با رنگ دورهٔ یادگیری عمیق دارند. به ساختار درونی مشترک آن‌ها توجه کنید — «چه چیزی فراهم می‌کند» و سپس «پل به مرحلهٔ ۲» — که باعث می‌شود به‌صورت یک مجموعه قابل مرور باشند، نه سه بلوک جدا.`,
- i:`Have the Gonzalez and Woods edition on your shelf in mind before presenting — if asked which edition, answer with the number rather than hesitating. Everything else on this slide is already specific; the edition is the one detail that lives outside the deck.`,
- if:`پیش از ارائه، ویرایش کتاب Gonzalez و Woods موجود نزد خودتان را به خاطر بسپارید؛ اگر پرسیدند کدام ویرایش، شمارهٔ آن را بگویید نه اینکه مکث کنید. بقیهٔ محتوای این اسلاید از پیش دقیق است؛ ویرایش تنها جزئیاتی است که بیرون از ارائه قرار دارد.`},
+        {
+          n: 13,
+          p: 3,
+          badge: "Part IV",
+          bc: "#6D3F86",
+          t: "Section divider — Paper by paper",
+          tf: "جداکنندهٔ بخش — مقاله به مقاله",
+          c: `Sets expectations for the eleven-slide block that follows, and names the three things each paper slide will cover so the audience knows the pattern before the first instance.`,
+          cf: `انتظارات را برای بلوک یازده‌اسلایدی بعدی تنظیم می‌کند و سه موردی را که هر اسلاید مقاله پوشش می‌دهد نام می‌برد تا مخاطب پیش از نمونهٔ اول، الگو را بشناسد.`,
+          s: `Eleven slides now, one per Category A paper, in the order the field produced them. Each covers the same three things the guidelines ask for: metadata and credibility, technical specifications, and evolutionary context — how this paper relates to the others.`,
+          sf: `اکنون یازده اسلاید، برای هر مقالهٔ دستهٔ A یکی، به همان ترتیبی که این حوزه آن‌ها را تولید کرده است. هر اسلاید همان سه موردی را پوشش می‌دهد که راهنما خواسته است: فراداده و اعتبار، مشخصات فنی، و بستر تحول — یعنی نسبت این مقاله با بقیه.`,
+          v: `No diagram. The violet bar is the modern-SOTA colour, chosen because the majority of the eleven slides that follow are 2018 or later.`,
+          vf: `بدون نمودار. نوار بنفش رنگ دورهٔ پیشرفتهٔ مدرن است و انتخاب شده چون اکثر یازده اسلاید بعدی مربوط به ۲۰۱۸ یا پس از آن هستند.`,
+          i: `Decide now who presents which papers if you are a group, and write the names on this slide in your rehearsal copy. Handover moments are where group presentations lose time.`,
+          if: `اگر گروهی ارائه می‌دهید، همین حالا مشخص کنید هر نفر کدام مقالات را ارائه می‌کند و نام‌ها را روی نسخهٔ تمرینی این اسلاید بنویسید. لحظه‌های تحویل بین اعضا همان‌جایی است که ارائه‌های گروهی وقت از دست می‌دهند.`,
+        },
 
-{n:13,p:3,badge:"Part IV",bc:"#6D3F86",
- t:"Section divider — Paper by paper",tf:"جداکنندهٔ بخش — مقاله به مقاله",
- c:`Sets expectations for the eleven-slide block that follows, and names the three things each paper slide will cover so the audience knows the pattern before the first instance.`,
- cf:`انتظارات را برای بلوک یازده‌اسلایدی بعدی تنظیم می‌کند و سه موردی را که هر اسلاید مقاله پوشش می‌دهد نام می‌برد تا مخاطب پیش از نمونهٔ اول، الگو را بشناسد.`,
- s:`Eleven slides now, one per Category A paper, in the order the field produced them. Each covers the same three things the guidelines ask for: metadata and credibility, technical specifications, and evolutionary context — how this paper relates to the others.`,
- sf:`اکنون یازده اسلاید، برای هر مقالهٔ دستهٔ A یکی، به همان ترتیبی که این حوزه آن‌ها را تولید کرده است. هر اسلاید همان سه موردی را پوشش می‌دهد که راهنما خواسته است: فراداده و اعتبار، مشخصات فنی، و بستر تحول — یعنی نسبت این مقاله با بقیه.`,
- v:`No diagram. The violet bar is the modern-SOTA colour, chosen because the majority of the eleven slides that follow are 2018 or later.`,
- vf:`بدون نمودار. نوار بنفش رنگ دورهٔ پیشرفتهٔ مدرن است و انتخاب شده چون اکثر یازده اسلاید بعدی مربوط به ۲۰۱۸ یا پس از آن هستند.`,
- i:`Decide now who presents which papers if you are a group, and write the names on this slide in your rehearsal copy. Handover moments are where group presentations lose time.`,
- if:`اگر گروهی ارائه می‌دهید، همین حالا مشخص کنید هر نفر کدام مقالات را ارائه می‌کند و نام‌ها را روی نسخهٔ تمرینی این اسلاید بنویسید. لحظه‌های تحویل بین اعضا همان‌جایی است که ارائه‌های گروهی وقت از دست می‌دهند.`},
+        {
+          n: 14,
+          p: 3,
+          badge: "A1 · 2007",
+          bc: "#6E6350",
+          t: "BM3D",
+          tf: "BM3D — فیلترگذاری مشارکتی در حوزهٔ تبدیل",
+          c: `Establishes the classical baseline and, more importantly, establishes what the entire deep-learning story is reacting against. Its algorithm is the clearest exposition of a hand-designed prior in the roster.`,
+          cf: `خط مبنای کلاسیک را تثبیت می‌کند و مهم‌تر آنکه نشان می‌دهد کل داستان یادگیری عمیق در واکنش به چه چیزی شکل گرفته است. الگوریتم آن روشن‌ترین تشریح یک پیشین دست‌ساز در کل فهرست است.`,
+          s: `BM3D, IEEE Transactions on Image Processing, 2007, from Tampere University of Technology. It is not a network at all — it is a four-stage algorithm. Group similar patches by block matching, filter them collaboratively in a 3-D transform domain, invert, then aggregate the overlapping estimates. Then run the whole thing a second time with a Wiener filter using the first pass as an oracle. It has no training set because nothing is trained. That is the point: the prior is entirely hand-written.`,
+          sf: `مقالهٔ BM3D، در نشریهٔ IEEE Transactions on Image Processing سال ۲۰۰۷، از دانشگاه صنعتی تامپره. اصلاً یک شبکه نیست — یک الگوریتم چهارمرحله‌ای است. وصله‌های مشابه را با تطبیق بلوکی گروه‌بندی می‌کند، آن‌ها را به‌صورت مشارکتی در یک حوزهٔ تبدیل سه‌بعدی فیلتر می‌کند، تبدیل معکوس می‌گیرد و سپس تخمین‌های هم‌پوشان را تجمیع می‌کند. بعد کل فرایند را بار دوم با فیلتر وینر اجرا می‌کند و از خروجی مرحلهٔ اول به‌عنوان مرجع استفاده می‌کند. هیچ مجموعهٔ آموزشی ندارد چون چیزی آموزش داده نمی‌شود. و نکته دقیقاً همین است: پیشین کاملاً با دست نوشته شده.`,
+          v: `No diagram — this is a two-column metadata layout used identically across all eleven paper slides. Every field is populated, including the citation count, which is a Google Scholar figure carrying the date it was checked.`,
+          vf: `بدون نمودار — این یک چیدمان فرادادهٔ دوستونی است که در هر یازده اسلاید مقاله یکسان به کار رفته. همهٔ فیلدها پر شده‌اند، از جمله تعداد استناد که عددی از Google Scholar به‌همراه تاریخ بررسی است.`,
+          i: `Add the four-stage pipeline as a small horizontal diagram — group, filter, invert, aggregate. BM3D is the most algorithmically explicit paper you have, and a four-box strip would let you show that rather than assert it.`,
+          if: `خط لولهٔ چهارمرحله‌ای را به‌صورت یک نمودار افقی کوچک اضافه کنید: گروه‌بندی، فیلتر، تبدیل معکوس، تجمیع. BM3D صریح‌ترین مقالهٔ الگوریتمی فهرست شماست و یک نوار چهارخانه‌ای به شما اجازه می‌دهد این را نشان دهید، نه اینکه فقط ادعا کنید.`,
+        },
 
-{n:14,p:3,badge:"A1 · 2007",bc:"#6E6350",
- t:"BM3D",tf:"BM3D — فیلترگذاری مشارکتی در حوزهٔ تبدیل",
- c:`Establishes the classical baseline and, more importantly, establishes what the entire deep-learning story is reacting against. Its algorithm is the clearest exposition of a hand-designed prior in the roster.`,
- cf:`خط مبنای کلاسیک را تثبیت می‌کند و مهم‌تر آنکه نشان می‌دهد کل داستان یادگیری عمیق در واکنش به چه چیزی شکل گرفته است. الگوریتم آن روشن‌ترین تشریح یک پیشین دست‌ساز در کل فهرست است.`,
- s:`BM3D, IEEE Transactions on Image Processing, 2007, from Tampere University of Technology. It is not a network at all — it is a four-stage algorithm. Group similar patches by block matching, filter them collaboratively in a 3-D transform domain, invert, then aggregate the overlapping estimates. Then run the whole thing a second time with a Wiener filter using the first pass as an oracle. It has no training set because nothing is trained. That is the point: the prior is entirely hand-written.`,
- sf:`مقالهٔ BM3D، در نشریهٔ IEEE Transactions on Image Processing سال ۲۰۰۷، از دانشگاه صنعتی تامپره. اصلاً یک شبکه نیست — یک الگوریتم چهارمرحله‌ای است. وصله‌های مشابه را با تطبیق بلوکی گروه‌بندی می‌کند، آن‌ها را به‌صورت مشارکتی در یک حوزهٔ تبدیل سه‌بعدی فیلتر می‌کند، تبدیل معکوس می‌گیرد و سپس تخمین‌های هم‌پوشان را تجمیع می‌کند. بعد کل فرایند را بار دوم با فیلتر وینر اجرا می‌کند و از خروجی مرحلهٔ اول به‌عنوان مرجع استفاده می‌کند. هیچ مجموعهٔ آموزشی ندارد چون چیزی آموزش داده نمی‌شود. و نکته دقیقاً همین است: پیشین کاملاً با دست نوشته شده.`,
- v:`No diagram — this is a two-column metadata layout used identically across all eleven paper slides. Every field is populated, including the citation count, which is a Google Scholar figure carrying the date it was checked.`,
- vf:`بدون نمودار — این یک چیدمان فرادادهٔ دوستونی است که در هر یازده اسلاید مقاله یکسان به کار رفته. همهٔ فیلدها پر شده‌اند، از جمله تعداد استناد که عددی از Google Scholar به‌همراه تاریخ بررسی است.`,
- i:`Add the four-stage pipeline as a small horizontal diagram — group, filter, invert, aggregate. BM3D is the most algorithmically explicit paper you have, and a four-box strip would let you show that rather than assert it.`,
- if:`خط لولهٔ چهارمرحله‌ای را به‌صورت یک نمودار افقی کوچک اضافه کنید: گروه‌بندی، فیلتر، تبدیل معکوس، تجمیع. BM3D صریح‌ترین مقالهٔ الگوریتمی فهرست شماست و یک نوار چهارخانه‌ای به شما اجازه می‌دهد این را نشان دهید، نه اینکه فقط ادعا کنید.`},
+        {
+          n: 15,
+          p: 3,
+          badge: "A2 · 2014",
+          bc: "#6E6350",
+          t: "WNNM",
+          tf: "WNNM — کمینه‌سازی نُرم هسته‌ای وزن‌دار",
+          c: `Shows that the classical era's real content was the non-local self-similarity prior, not any particular machinery — because WNNM reaches the same prior by a completely different mathematical route and beats BM3D.`,
+          cf: `نشان می‌دهد محتوای واقعی دورهٔ کلاسیک، پیشینِ خودتشابهی غیرمحلی بوده، نه یک ابزار ریاضی خاص — چون WNNM از مسیری کاملاً متفاوت به همان پیشین می‌رسد و از BM3D بهتر عمل می‌کند.`,
+          s: `WNNM, CVPR 2014, from Hong Kong Polytechnic, Harbin and Xidian. Standard nuclear norm minimisation weights every singular value equally to keep the objective convex. The authors argue that this is exactly wrong for denoising, where singular values carry distinct physical meaning, so they assign different weights. Same prior as BM3D — non-local self-similarity — reached through low-rank matrix approximation instead of transform sparsity. And it outperforms BM3D.`,
+          sf: `مقالهٔ WNNM، در CVPR ۲۰۱۴، از دانشگاه پلی‌تکنیک هنگ‌کنگ، هاربین و شیدیان. کمینه‌سازی استاندارد نُرم هسته‌ای به همهٔ مقادیر تکین وزن یکسان می‌دهد تا تابع هدف محدب بماند. نویسندگان استدلال می‌کنند این دقیقاً برای نویززدایی نادرست است، چون مقادیر تکین معنای فیزیکی متمایزی دارند، پس به آن‌ها وزن‌های متفاوت می‌دهند. همان پیشینِ BM3D — خودتشابهی غیرمحلی — اما از راه تقریب ماتریس کم‌رتبه به‌جای تُنُکی در حوزهٔ تبدیل. و از BM3D بهتر عمل می‌کند.`,
+          v: `The weighted nuclear norm equation is set in the deck's serif italic, the convention used for every formula. Sigma-i are the singular values and w-i the per-value weights; be ready to say that plainly if asked, because a one-line formula invites a question.`,
+          vf: `معادلهٔ نُرم هسته‌ای وزن‌دار با قلم سریف ایتالیک ارائه نوشته شده؛ قراردادی که برای همهٔ فرمول‌ها به کار رفته است. سیگما-i مقادیر تکین‌اند و w-i وزن هر مقدار؛ اگر پرسیدند آمادهٔ بیان سادهٔ این باشید، چون یک فرمول تک‌خطی دعوت به پرسش است.`,
+          i: `Note the venue verification story out loud: this PDF does not print its own venue, so CVPR 2014 and the page range were confirmed against proceedings records. Saying that demonstrates you checked rather than assumed.`,
+          if: `داستان تأیید محل انتشار را با صدای بلند بگویید: این فایل PDF محل انتشار خودش را چاپ نکرده، پس CVPR ۲۰۱۴ و بازهٔ صفحات از روی سوابق مجموعه‌مقالات تأیید شده است. گفتن این نکته نشان می‌دهد بررسی کرده‌اید، نه اینکه فرض گرفته باشید.`,
+        },
 
-{n:15,p:3,badge:"A2 · 2014",bc:"#6E6350",
- t:"WNNM",tf:"WNNM — کمینه‌سازی نُرم هسته‌ای وزن‌دار",
- c:`Shows that the classical era's real content was the non-local self-similarity prior, not any particular machinery — because WNNM reaches the same prior by a completely different mathematical route and beats BM3D.`,
- cf:`نشان می‌دهد محتوای واقعی دورهٔ کلاسیک، پیشینِ خودتشابهی غیرمحلی بوده، نه یک ابزار ریاضی خاص — چون WNNM از مسیری کاملاً متفاوت به همان پیشین می‌رسد و از BM3D بهتر عمل می‌کند.`,
- s:`WNNM, CVPR 2014, from Hong Kong Polytechnic, Harbin and Xidian. Standard nuclear norm minimisation weights every singular value equally to keep the objective convex. The authors argue that this is exactly wrong for denoising, where singular values carry distinct physical meaning, so they assign different weights. Same prior as BM3D — non-local self-similarity — reached through low-rank matrix approximation instead of transform sparsity. And it outperforms BM3D.`,
- sf:`مقالهٔ WNNM، در CVPR ۲۰۱۴، از دانشگاه پلی‌تکنیک هنگ‌کنگ، هاربین و شیدیان. کمینه‌سازی استاندارد نُرم هسته‌ای به همهٔ مقادیر تکین وزن یکسان می‌دهد تا تابع هدف محدب بماند. نویسندگان استدلال می‌کنند این دقیقاً برای نویززدایی نادرست است، چون مقادیر تکین معنای فیزیکی متمایزی دارند، پس به آن‌ها وزن‌های متفاوت می‌دهند. همان پیشینِ BM3D — خودتشابهی غیرمحلی — اما از راه تقریب ماتریس کم‌رتبه به‌جای تُنُکی در حوزهٔ تبدیل. و از BM3D بهتر عمل می‌کند.`,
- v:`The weighted nuclear norm equation is set in the deck's serif italic, the convention used for every formula. Sigma-i are the singular values and w-i the per-value weights; be ready to say that plainly if asked, because a one-line formula invites a question.`,
- vf:`معادلهٔ نُرم هسته‌ای وزن‌دار با قلم سریف ایتالیک ارائه نوشته شده؛ قراردادی که برای همهٔ فرمول‌ها به کار رفته است. سیگما-i مقادیر تکین‌اند و w-i وزن هر مقدار؛ اگر پرسیدند آمادهٔ بیان سادهٔ این باشید، چون یک فرمول تک‌خطی دعوت به پرسش است.`,
- i:`Note the venue verification story out loud: this PDF does not print its own venue, so CVPR 2014 and the page range were confirmed against proceedings records. Saying that demonstrates you checked rather than assumed.`,
- if:`داستان تأیید محل انتشار را با صدای بلند بگویید: این فایل PDF محل انتشار خودش را چاپ نکرده، پس CVPR ۲۰۱۴ و بازهٔ صفحات از روی سوابق مجموعه‌مقالات تأیید شده است. گفتن این نکته نشان می‌دهد بررسی کرده‌اید، نه اینکه فرض گرفته باشید.`},
+        {
+          n: 16,
+          p: 3,
+          badge: "A3 · 2017",
+          bc: "#1E5F7E",
+          t: "TNRD — the bridge paper",
+          tf: "TNRD — مقالهٔ پل",
+          c: `The single most narratively important paper after the anchor. It is the moment the prior becomes learned while the structure stays hand-designed — which is precisely what makes DnCNN thinkable.`,
+          cf: `از نظر روایت، مهم‌ترین مقاله پس از مقالهٔ لنگر. لحظه‌ای است که پیشین آموخته می‌شود در حالی که ساختار همچنان دست‌ساز باقی می‌ماند — و دقیقاً همین است که DnCNN را قابل تصور می‌کند.`,
+          s: `TNRD, IEEE TPAMI, Chen and Pock at Graz University of Technology. It keeps the mathematical scaffolding of nonlinear diffusion but learns everything inside it — all the parameters, both the linear filters and the influence functions, simultaneously from training data. Few diffusion steps, GPU friendly, extremely fast at inference. This is the hinge of the whole review: the first paper where the prior is learned but the structure is still hand-designed. DnCNN then throws away the scaffolding and keeps only the learning.`,
+          sf: `مقالهٔ TNRD، در نشریهٔ IEEE TPAMI، از Chen و Pock در دانشگاه صنعتی گراتس. داربست ریاضی انتشار غیرخطی را حفظ می‌کند اما هر آنچه درون آن است را یاد می‌گیرد — همهٔ پارامترها، هم فیلترهای خطی و هم توابع تأثیر، به‌طور هم‌زمان از دادهٔ آموزشی. تعداد کمی گام انتشار، سازگار با پردازندهٔ گرافیکی، و بسیار سریع در استنتاج. این مقاله لولای کل مرور ماست: نخستین مقاله‌ای که در آن پیشین آموخته می‌شود اما ساختار همچنان دست‌ساز است. سپس DnCNN داربست را دور می‌ریزد و فقط یادگیری را نگه می‌دارد.`,
+          v: `Under Venue there is a small grey note about the 2016 versus 2017 discrepancy. Do not delete it — the PDF header says 2016 because that is acceptance, and TPAMI 39(6) is 2017 because that is the issue. Both are true, and being able to explain that is worth more than a clean-looking slide.`,
+          vf: `زیر بخش محل انتشار، یادداشت خاکستری کوچکی دربارهٔ اختلاف ۲۰۱۶ و ۲۰۱۷ آمده است. آن را حذف نکنید — سربرگ فایل PDF می‌گوید ۲۰۱۶ چون تاریخ پذیرش است، و شمارهٔ ۳۹(۶) از TPAMI برای ۲۰۱۷ است چون تاریخ انتشار شماره است. هر دو درست‌اند، و توانایی توضیح این نکته ارزشش از یک اسلاید ظاهراً تمیز بیشتر است.`,
+          i: `Say the phrase "this is the bridge" while this slide is up. TNRD is the paper most likely to be dismissed as filler by someone skimming your list, and one sentence of framing prevents that entirely.`,
+          if: `هنگام نمایش این اسلاید عبارت «این مقاله همان پل است» را بگویید. TNRD محتمل‌ترین مقاله‌ای است که در یک نگاه سطحی به فهرست شما ممکن است پرکننده به‌نظر برسد، و یک جملهٔ قاب‌بندی کاملاً جلوی این را می‌گیرد.`,
+        },
 
-{n:16,p:3,badge:"A3 · 2017",bc:"#1E5F7E",
- t:"TNRD — the bridge paper",tf:"TNRD — مقالهٔ پل",
- c:`The single most narratively important paper after the anchor. It is the moment the prior becomes learned while the structure stays hand-designed — which is precisely what makes DnCNN thinkable.`,
- cf:`از نظر روایت، مهم‌ترین مقاله پس از مقالهٔ لنگر. لحظه‌ای است که پیشین آموخته می‌شود در حالی که ساختار همچنان دست‌ساز باقی می‌ماند — و دقیقاً همین است که DnCNN را قابل تصور می‌کند.`,
- s:`TNRD, IEEE TPAMI, Chen and Pock at Graz University of Technology. It keeps the mathematical scaffolding of nonlinear diffusion but learns everything inside it — all the parameters, both the linear filters and the influence functions, simultaneously from training data. Few diffusion steps, GPU friendly, extremely fast at inference. This is the hinge of the whole review: the first paper where the prior is learned but the structure is still hand-designed. DnCNN then throws away the scaffolding and keeps only the learning.`,
- sf:`مقالهٔ TNRD، در نشریهٔ IEEE TPAMI، از Chen و Pock در دانشگاه صنعتی گراتس. داربست ریاضی انتشار غیرخطی را حفظ می‌کند اما هر آنچه درون آن است را یاد می‌گیرد — همهٔ پارامترها، هم فیلترهای خطی و هم توابع تأثیر، به‌طور هم‌زمان از دادهٔ آموزشی. تعداد کمی گام انتشار، سازگار با پردازندهٔ گرافیکی، و بسیار سریع در استنتاج. این مقاله لولای کل مرور ماست: نخستین مقاله‌ای که در آن پیشین آموخته می‌شود اما ساختار همچنان دست‌ساز است. سپس DnCNN داربست را دور می‌ریزد و فقط یادگیری را نگه می‌دارد.`,
- v:`Under Venue there is a small grey note about the 2016 versus 2017 discrepancy. Do not delete it — the PDF header says 2016 because that is acceptance, and TPAMI 39(6) is 2017 because that is the issue. Both are true, and being able to explain that is worth more than a clean-looking slide.`,
- vf:`زیر بخش محل انتشار، یادداشت خاکستری کوچکی دربارهٔ اختلاف ۲۰۱۶ و ۲۰۱۷ آمده است. آن را حذف نکنید — سربرگ فایل PDF می‌گوید ۲۰۱۶ چون تاریخ پذیرش است، و شمارهٔ ۳۹(۶) از TPAMI برای ۲۰۱۷ است چون تاریخ انتشار شماره است. هر دو درست‌اند، و توانایی توضیح این نکته ارزشش از یک اسلاید ظاهراً تمیز بیشتر است.`,
- i:`Say the phrase "this is the bridge" while this slide is up. TNRD is the paper most likely to be dismissed as filler by someone skimming your list, and one sentence of framing prevents that entirely.`,
- if:`هنگام نمایش این اسلاید عبارت «این مقاله همان پل است» را بگویید. TNRD محتمل‌ترین مقاله‌ای است که در یک نگاه سطحی به فهرست شما ممکن است پرکننده به‌نظر برسد، و یک جملهٔ قاب‌بندی کاملاً جلوی این را می‌گیرد.`},
+        {
+          n: 17,
+          p: 3,
+          badge: "A4 · ANCHOR",
+          bc: "#1E5F7E",
+          t: "DnCNN — the anchor paper",
+          tf: "DnCNN — مقالهٔ لنگر",
+          c: `The centre of the project. Expect the deepest questioning of the entire defence on this slide, including questions from your earlier DnCNN work. At 11,674 citations it is one of the two most-cited papers in the roster.`,
+          cf: `مرکز کل پروژه. عمیق‌ترین پرسش‌های جلسهٔ دفاع را روی این اسلاید انتظار داشته باشید، از جمله پرسش‌هایی دربارهٔ کار قبلی‌تان روی DnCNN. با نزدیک به دوازده هزار استناد، یکی از دو مقالهٔ پراستناد فهرست است.`,
+          s: `DnCNN, IEEE Transactions on Image Processing, 2017, Harbin Institute of Technology with Hong Kong PolyU, Graz and Xi'an Jiaotong. Two ideas: residual learning and batch normalisation. Instead of predicting the clean image, predict the noise, so x-hat equals y minus R of y. Depth seventeen, receptive field thirty-five by thirty-five. Two consequences matter. It handles blind denoising with one model where earlier methods trained one per noise level. And because residual learning removes the latent clean image in the hidden layers, one network also does super-resolution and JPEG deblocking. Generality arrives as a side effect of the training scheme.`,
+          sf: `مقالهٔ DnCNN، در IEEE Transactions on Image Processing سال ۲۰۱۷، از دانشگاه صنعتی هاربین به‌همراه پلی‌تکنیک هنگ‌کنگ، گراتس و شیان جیائوتونگ. دو ایده: یادگیری پسماند و نرمال‌سازی دسته‌ای. به‌جای پیش‌بینی تصویر تمیز، نویز را پیش‌بینی می‌کند، پس x برابر است با y منهای R از y. عمق هفده لایه، میدان گیرندگی سی‌وپنج در سی‌وپنج. دو پیامد مهم است. با یک مدل، نویززدایی کور انجام می‌دهد در حالی که روش‌های پیشین برای هر سطح نویز یک مدل جدا آموزش می‌دادند. و چون یادگیری پسماند تصویر تمیز نهفته را در لایه‌های پنهان حذف می‌کند، یک شبکه هم‌زمان اَبَرتفکیک‌پذیری و رفع بلوکی‌شدگی JPEG را هم انجام می‌دهد. تعمیم‌پذیری به‌عنوان اثر جانبی روش آموزش پدید می‌آید.`,
+          v: `The eyebrow line at the top is marked ANCHOR PAPER in the deep-learning colour, the only paper slide with that treatment. The citation field reads 11,674 from Google Scholar, with the date checked. The date matters: an undated citation figure is worthless because the number moves continuously.`,
+          vf: `خط بالای اسلاید با عبارت ANCHOR PAPER و رنگ دورهٔ یادگیری عمیق مشخص شده؛ تنها اسلاید مقاله‌ای که این نشانه را دارد. کادر استناد عدد ۱۱٬۶۷۴ از Google Scholar را به‌همراه تاریخ بررسی نشان می‌دهد. تاریخ اهمیت دارد: یک عدد استناد بدون تاریخ بی‌ارزش است چون این عدد پیوسته تغییر می‌کند.`,
+          i: `Prepare for one question specifically: why DnCNN fails on images with strong repeating structure. The honest answer is that it has no explicit non-local self-similarity prior, unlike BM3D and WNNM. Being able to state a weakness of your own anchor paper is the strongest possible signal of understanding.`,
+          if: `به‌طور خاص برای یک پرسش آماده شوید: چرا DnCNN روی تصاویری با ساختارهای تکرارشوندهٔ قوی ضعیف عمل می‌کند. پاسخ صادقانه این است که برخلاف BM3D و WNNM، هیچ پیشینِ صریحِ خودتشابهی غیرمحلی ندارد. توانایی بیان ضعف مقالهٔ لنگر خودتان، قوی‌ترین نشانهٔ ممکن از درک عمیق است.`,
+        },
 
-{n:17,p:3,badge:"A4 · ANCHOR",bc:"#1E5F7E",
- t:"DnCNN — the anchor paper",tf:"DnCNN — مقالهٔ لنگر",
- c:`The centre of the project. Expect the deepest questioning of the entire defence on this slide, including questions from your earlier DnCNN work. At 11,674 citations it is one of the two most-cited papers in the roster.`,
- cf:`مرکز کل پروژه. عمیق‌ترین پرسش‌های جلسهٔ دفاع را روی این اسلاید انتظار داشته باشید، از جمله پرسش‌هایی دربارهٔ کار قبلی‌تان روی DnCNN. با نزدیک به دوازده هزار استناد، یکی از دو مقالهٔ پراستناد فهرست است.`,
- s:`DnCNN, IEEE Transactions on Image Processing, 2017, Harbin Institute of Technology with Hong Kong PolyU, Graz and Xi'an Jiaotong. Two ideas: residual learning and batch normalisation. Instead of predicting the clean image, predict the noise, so x-hat equals y minus R of y. Depth seventeen, receptive field thirty-five by thirty-five. Two consequences matter. It handles blind denoising with one model where earlier methods trained one per noise level. And because residual learning removes the latent clean image in the hidden layers, one network also does super-resolution and JPEG deblocking. Generality arrives as a side effect of the training scheme.`,
- sf:`مقالهٔ DnCNN، در IEEE Transactions on Image Processing سال ۲۰۱۷، از دانشگاه صنعتی هاربین به‌همراه پلی‌تکنیک هنگ‌کنگ، گراتس و شیان جیائوتونگ. دو ایده: یادگیری پسماند و نرمال‌سازی دسته‌ای. به‌جای پیش‌بینی تصویر تمیز، نویز را پیش‌بینی می‌کند، پس x برابر است با y منهای R از y. عمق هفده لایه، میدان گیرندگی سی‌وپنج در سی‌وپنج. دو پیامد مهم است. با یک مدل، نویززدایی کور انجام می‌دهد در حالی که روش‌های پیشین برای هر سطح نویز یک مدل جدا آموزش می‌دادند. و چون یادگیری پسماند تصویر تمیز نهفته را در لایه‌های پنهان حذف می‌کند، یک شبکه هم‌زمان اَبَرتفکیک‌پذیری و رفع بلوکی‌شدگی JPEG را هم انجام می‌دهد. تعمیم‌پذیری به‌عنوان اثر جانبی روش آموزش پدید می‌آید.`,
- v:`The eyebrow line at the top is marked ANCHOR PAPER in the deep-learning colour, the only paper slide with that treatment. The citation field reads 11,674 from Google Scholar, with the date checked. The date matters: an undated citation figure is worthless because the number moves continuously.`,
- vf:`خط بالای اسلاید با عبارت ANCHOR PAPER و رنگ دورهٔ یادگیری عمیق مشخص شده؛ تنها اسلاید مقاله‌ای که این نشانه را دارد. کادر استناد عدد ۱۱٬۶۷۴ از Google Scholar را به‌همراه تاریخ بررسی نشان می‌دهد. تاریخ اهمیت دارد: یک عدد استناد بدون تاریخ بی‌ارزش است چون این عدد پیوسته تغییر می‌کند.`,
- i:`Prepare for one question specifically: why DnCNN fails on images with strong repeating structure. The honest answer is that it has no explicit non-local self-similarity prior, unlike BM3D and WNNM. Being able to state a weakness of your own anchor paper is the strongest possible signal of understanding.`,
- if:`به‌طور خاص برای یک پرسش آماده شوید: چرا DnCNN روی تصاویری با ساختارهای تکرارشوندهٔ قوی ضعیف عمل می‌کند. پاسخ صادقانه این است که برخلاف BM3D و WNNM، هیچ پیشینِ صریحِ خودتشابهی غیرمحلی ندارد. توانایی بیان ضعف مقالهٔ لنگر خودتان، قوی‌ترین نشانهٔ ممکن از درک عمیق است.`},
+        {
+          n: 18,
+          p: 3,
+          badge: "A5 · 2018",
+          bc: "#6D3F86",
+          t: "Noise2Noise",
+          tf: "Noise2Noise — یادگیری بدون دادهٔ تمیز",
+          c: `Opens the data branch. Its importance is that the loss function does not change at all — only the target does, which is a conceptually startling result worth pausing on.`,
+          cf: `شاخهٔ داده را باز می‌کند. اهمیتش در این است که تابع زیان اصلاً تغییر نمی‌کند — فقط هدف تغییر می‌کند، و این نتیجه‌ای مفهوماً شگفت‌انگیز است که ارزش مکث دارد.`,
+          s: `Noise2Noise, ICML 2018, NVIDIA with Aalto and MIT CSAIL. The claim: you can learn to restore images by looking only at corrupted examples, sometimes matching or exceeding training on clean data, with no explicit prior and no likelihood model of the corruption. Look at the equation — it is ordinary empirical risk minimisation, unchanged. The only difference is that the target y is itself a noisy observation. It still needs pairs, and that is the requirement Noise2Void removes next.`,
+          sf: `مقالهٔ Noise2Noise، در ICML ۲۰۱۸، از NVIDIA به‌همراه دانشگاه آلتو و MIT CSAIL. ادعا این است: می‌توان بازسازی تصویر را تنها با نگاه‌کردن به نمونه‌های خراب یاد گرفت، گاهی هم‌سطح یا بهتر از آموزش با دادهٔ تمیز، بدون هیچ پیشینِ صریح و بدون مدل درست‌نمایی برای خرابی. به معادله نگاه کنید — همان کمینه‌سازی ریسک تجربی معمولی است، بدون تغییر. تنها تفاوت این است که هدف y خودش یک مشاهدهٔ نویزی است. این روش هنوز به جفت تصویر نیاز دارد، و همین الزامی است که Noise2Void در گام بعد حذفش می‌کند.`,
+          v: `The equation is the whole argument. Point at it and say the loss is unchanged — the surprise is entirely in what you feed it as a target. Everything else on this slide supports that one observation.`,
+          vf: `معادله، تمام استدلال است. به آن اشاره کنید و بگویید تابع زیان تغییر نکرده — شگفتی کاملاً در چیزی است که به‌عنوان هدف به آن می‌دهید. هر چیز دیگری در این اسلاید در خدمت همین یک مشاهده است.`,
+          i: `Add one line naming the intuition: because the noise is zero-mean and independent, a network minimising a mean-squared loss against noisy targets converges toward the same solution as against clean ones. Only add this if you can defend it — but if you can, it is the single most impressive thing you can say on this slide.`,
+          if: `یک خط اضافه کنید و شهود پشت آن را نام ببرید: چون نویز میانگین صفر و مستقل است، شبکه‌ای که زیان میانگین مربعات را نسبت به هدف‌های نویزی کمینه می‌کند، به همان جوابی همگرا می‌شود که با هدف‌های تمیز می‌رسید. این را فقط در صورتی اضافه کنید که بتوانید از آن دفاع کنید — اما اگر بتوانید، تأثیرگذارترین چیزی است که می‌توانید روی این اسلاید بگویید.`,
+        },
 
-{n:18,p:3,badge:"A5 · 2018",bc:"#6D3F86",
- t:"Noise2Noise",tf:"Noise2Noise — یادگیری بدون دادهٔ تمیز",
- c:`Opens the data branch. Its importance is that the loss function does not change at all — only the target does, which is a conceptually startling result worth pausing on.`,
- cf:`شاخهٔ داده را باز می‌کند. اهمیتش در این است که تابع زیان اصلاً تغییر نمی‌کند — فقط هدف تغییر می‌کند، و این نتیجه‌ای مفهوماً شگفت‌انگیز است که ارزش مکث دارد.`,
- s:`Noise2Noise, ICML 2018, NVIDIA with Aalto and MIT CSAIL. The claim: you can learn to restore images by looking only at corrupted examples, sometimes matching or exceeding training on clean data, with no explicit prior and no likelihood model of the corruption. Look at the equation — it is ordinary empirical risk minimisation, unchanged. The only difference is that the target y is itself a noisy observation. It still needs pairs, and that is the requirement Noise2Void removes next.`,
- sf:`مقالهٔ Noise2Noise، در ICML ۲۰۱۸، از NVIDIA به‌همراه دانشگاه آلتو و MIT CSAIL. ادعا این است: می‌توان بازسازی تصویر را تنها با نگاه‌کردن به نمونه‌های خراب یاد گرفت، گاهی هم‌سطح یا بهتر از آموزش با دادهٔ تمیز، بدون هیچ پیشینِ صریح و بدون مدل درست‌نمایی برای خرابی. به معادله نگاه کنید — همان کمینه‌سازی ریسک تجربی معمولی است، بدون تغییر. تنها تفاوت این است که هدف y خودش یک مشاهدهٔ نویزی است. این روش هنوز به جفت تصویر نیاز دارد، و همین الزامی است که Noise2Void در گام بعد حذفش می‌کند.`,
- v:`The equation is the whole argument. Point at it and say the loss is unchanged — the surprise is entirely in what you feed it as a target. Everything else on this slide supports that one observation.`,
- vf:`معادله، تمام استدلال است. به آن اشاره کنید و بگویید تابع زیان تغییر نکرده — شگفتی کاملاً در چیزی است که به‌عنوان هدف به آن می‌دهید. هر چیز دیگری در این اسلاید در خدمت همین یک مشاهده است.`,
- i:`Add one line naming the intuition: because the noise is zero-mean and independent, a network minimising a mean-squared loss against noisy targets converges toward the same solution as against clean ones. Only add this if you can defend it — but if you can, it is the single most impressive thing you can say on this slide.`,
- if:`یک خط اضافه کنید و شهود پشت آن را نام ببرید: چون نویز میانگین صفر و مستقل است، شبکه‌ای که زیان میانگین مربعات را نسبت به هدف‌های نویزی کمینه می‌کند، به همان جوابی همگرا می‌شود که با هدف‌های تمیز می‌رسید. این را فقط در صورتی اضافه کنید که بتوانید از آن دفاع کنید — اما اگر بتوانید، تأثیرگذارترین چیزی است که می‌توانید روی این اسلاید بگویید.`},
+        {
+          n: 19,
+          p: 3,
+          badge: "A6 · 2019",
+          bc: "#6D3F86",
+          t: "Noise2Void",
+          tf: "Noise2Void — یادگیری از یک تصویر نویزی",
+          c: `Second step of the data branch, and the paper whose own abstract explicitly names Noise2Noise as what it extends — which is what lets you claim the chain is evidenced rather than constructed by you.`,
+          cf: `گام دوم شاخهٔ داده، و مقاله‌ای که چکیدهٔ خودش صریحاً Noise2Noise را به‌عنوان چیزی که آن را گسترش می‌دهد نام می‌برد — و همین به شما اجازه می‌دهد ادعا کنید این زنجیره مستند است نه ساختهٔ شما.`,
+          s: `Noise2Void, CVPR 2019, from MPI-CBG in Dresden. It removes the pair. The mechanism is a blind-spot network: the receptive field is constructed to exclude the centre pixel, so the network physically cannot solve the task by copying its input and must predict each pixel from context. Note that the paper is candid about the cost — it says performance drops, though in moderation, because N2V has strictly less information than methods with pairs or clean targets.`,
+          sf: `مقالهٔ Noise2Void، در CVPR ۲۰۱۹، از مؤسسهٔ MPI-CBG در درسدن. نیاز به جفت تصویر را حذف می‌کند. سازوکار آن شبکهٔ نقطه‌کور است: میدان گیرندگی طوری ساخته می‌شود که پیکسل مرکزی را دربر نگیرد، پس شبکه به‌لحاظ فیزیکی نمی‌تواند مسئله را با کپی‌کردن ورودی حل کند و باید هر پیکسل را از روی بافتار پیش‌بینی کند. توجه کنید که مقاله دربارهٔ هزینهٔ این کار صادق است — می‌گوید کارایی افت می‌کند، هرچند به‌طور معتدل، چون N2V به‌طور قطعی اطلاعات کمتری نسبت به روش‌های دارای جفت یا هدف تمیز دارد.`,
+          v: `No diagram. The blind-spot idea is the one concept on this slide that genuinely needs a picture and does not have one — see the improvement note.`,
+          vf: `بدون نمودار. ایدهٔ نقطه‌کور تنها مفهومی در این اسلاید است که واقعاً به تصویر نیاز دارد و آن را ندارد — یادداشت بهبود را ببینید.`,
+          i: `This is the single best place in the deck to add a diagram. Draw a small pixel grid with the centre cell struck out and the surrounding cells shaded — that one image explains blind-spot networks faster than any sentence. Noise2Void is also one of only two papers with a verified explainer video, so link it in your notes.`,
+          if: `این بهترین جای کل ارائه برای افزودن یک نمودار است. یک شبکهٔ پیکسلی کوچک بکشید که خانهٔ مرکزی آن خط خورده و خانه‌های اطراف سایه‌دار باشند — همان یک تصویر، شبکهٔ نقطه‌کور را سریع‌تر از هر جمله‌ای توضیح می‌دهد. ضمناً Noise2Void یکی از تنها دو مقاله‌ای است که ویدئوی توضیحی تأییدشده دارد، پس آن را در یادداشت‌هایتان پیوند بزنید.`,
+        },
 
-{n:19,p:3,badge:"A6 · 2019",bc:"#6D3F86",
- t:"Noise2Void",tf:"Noise2Void — یادگیری از یک تصویر نویزی",
- c:`Second step of the data branch, and the paper whose own abstract explicitly names Noise2Noise as what it extends — which is what lets you claim the chain is evidenced rather than constructed by you.`,
- cf:`گام دوم شاخهٔ داده، و مقاله‌ای که چکیدهٔ خودش صریحاً Noise2Noise را به‌عنوان چیزی که آن را گسترش می‌دهد نام می‌برد — و همین به شما اجازه می‌دهد ادعا کنید این زنجیره مستند است نه ساختهٔ شما.`,
- s:`Noise2Void, CVPR 2019, from MPI-CBG in Dresden. It removes the pair. The mechanism is a blind-spot network: the receptive field is constructed to exclude the centre pixel, so the network physically cannot solve the task by copying its input and must predict each pixel from context. Note that the paper is candid about the cost — it says performance drops, though in moderation, because N2V has strictly less information than methods with pairs or clean targets.`,
- sf:`مقالهٔ Noise2Void، در CVPR ۲۰۱۹، از مؤسسهٔ MPI-CBG در درسدن. نیاز به جفت تصویر را حذف می‌کند. سازوکار آن شبکهٔ نقطه‌کور است: میدان گیرندگی طوری ساخته می‌شود که پیکسل مرکزی را دربر نگیرد، پس شبکه به‌لحاظ فیزیکی نمی‌تواند مسئله را با کپی‌کردن ورودی حل کند و باید هر پیکسل را از روی بافتار پیش‌بینی کند. توجه کنید که مقاله دربارهٔ هزینهٔ این کار صادق است — می‌گوید کارایی افت می‌کند، هرچند به‌طور معتدل، چون N2V به‌طور قطعی اطلاعات کمتری نسبت به روش‌های دارای جفت یا هدف تمیز دارد.`,
- v:`No diagram. The blind-spot idea is the one concept on this slide that genuinely needs a picture and does not have one — see the improvement note.`,
- vf:`بدون نمودار. ایدهٔ نقطه‌کور تنها مفهومی در این اسلاید است که واقعاً به تصویر نیاز دارد و آن را ندارد — یادداشت بهبود را ببینید.`,
- i:`This is the single best place in the deck to add a diagram. Draw a small pixel grid with the centre cell struck out and the surrounding cells shaded — that one image explains blind-spot networks faster than any sentence. Noise2Void is also one of only two papers with a verified explainer video, so link it in your notes.`,
- if:`این بهترین جای کل ارائه برای افزودن یک نمودار است. یک شبکهٔ پیکسلی کوچک بکشید که خانهٔ مرکزی آن خط خورده و خانه‌های اطراف سایه‌دار باشند — همان یک تصویر، شبکهٔ نقطه‌کور را سریع‌تر از هر جمله‌ای توضیح می‌دهد. ضمناً Noise2Void یکی از تنها دو مقاله‌ای است که ویدئوی توضیحی تأییدشده دارد، پس آن را در یادداشت‌هایتان پیوند بزنید.`},
+        {
+          n: 20,
+          p: 3,
+          badge: "A7 · 2022",
+          bc: "#6D3F86",
+          t: "Restormer",
+          tf: "Restormer — ترنسفورمر کارآمد",
+          c: `The Transformer endpoint the guidelines explicitly ask the timeline to reach. It is also your strongest source overall: named venue, official conference video, and an explicit training pipeline.`,
+          cf: `نقطهٔ پایانی ترنسفورمری که راهنما صریحاً خواسته خط زمانی به آن برسد. همچنین قوی‌ترین منبع کلی شماست: محل انتشارِ نام‌برده‌شده، ویدئوی رسمی کنفرانس، و خط لولهٔ آموزشی صریح.`,
+          s: `Restormer, CVPR 2022, from Inception Institute of AI with MBZUAI, Monash, UC Merced, Yonsei and Google Research. The problem is that Transformer complexity grows quadratically with resolution, so it is infeasible for large images. Their answer is not to shrink the input but to redesign the blocks. MDTA aggregates local and non-local pixel interactions efficiently. GDFN gates the feed-forward path so only informative features propagate. Critically, it does not split the image into local windows, so distant context survives.`,
+          sf: `مقالهٔ Restormer، در CVPR ۲۰۲۲، از مؤسسهٔ Inception به‌همراه MBZUAI، موناش، دانشگاه کالیفرنیا مرسد، یونسی و Google Research. مسئله این است که پیچیدگی ترنسفورمر با تفکیک‌پذیری به‌صورت درجه‌دو رشد می‌کند، پس برای تصاویر بزرگ عملی نیست. پاسخ آن‌ها کوچک‌کردن ورودی نیست، بلکه بازطراحی بلوک‌هاست. ماژول MDTA برهم‌کنش‌های محلی و غیرمحلی پیکسل‌ها را به‌شکل کارآمد تجمیع می‌کند. ماژول GDFN مسیر پیش‌خور را دروازه‌بندی می‌کند تا فقط ویژگی‌های آگاهی‌بخش عبور کنند. مهم‌تر آنکه تصویر را به پنجره‌های محلی تقسیم نمی‌کند، پس بافتار دوردست حفظ می‌شود.`,
+          v: `Note the Datasets row: trained only on SIDD and tested directly on DND. That is a generalisation claim, not just a benchmark list, and it is worth calling out because it addresses the distribution-shift concern ZS-N2N raises two slides later.`,
+          vf: `به سطر مجموعه‌داده‌ها توجه کنید: فقط روی SIDD آموزش دیده و مستقیماً روی DND آزمایش شده است. این یک ادعای تعمیم‌پذیری است، نه صرفاً فهرست محک‌ها، و ارزش دارد به آن اشاره کنید چون به همان نگرانی تغییر توزیع پاسخ می‌دهد که ZS-N2N دو اسلاید بعد مطرح می‌کند.`,
+          i: `Restormer has an official conference video — the only fully verified one in your roster besides Noise2Void. Watch it before the defence. If you can only prepare one paper deeply beyond the anchor, make it this one.`,
+          if: `مقالهٔ Restormer ویدئوی رسمی کنفرانس دارد — تنها ویدئوی کاملاً تأییدشده در فهرست شما به‌جز Noise2Void. پیش از جلسهٔ دفاع آن را ببینید. اگر فقط می‌توانید یک مقاله را علاوه بر مقالهٔ لنگر عمیق آماده کنید، همین را انتخاب کنید.`,
+        },
 
-{n:20,p:3,badge:"A7 · 2022",bc:"#6D3F86",
- t:"Restormer",tf:"Restormer — ترنسفورمر کارآمد",
- c:`The Transformer endpoint the guidelines explicitly ask the timeline to reach. It is also your strongest source overall: named venue, official conference video, and an explicit training pipeline.`,
- cf:`نقطهٔ پایانی ترنسفورمری که راهنما صریحاً خواسته خط زمانی به آن برسد. همچنین قوی‌ترین منبع کلی شماست: محل انتشارِ نام‌برده‌شده، ویدئوی رسمی کنفرانس، و خط لولهٔ آموزشی صریح.`,
- s:`Restormer, CVPR 2022, from Inception Institute of AI with MBZUAI, Monash, UC Merced, Yonsei and Google Research. The problem is that Transformer complexity grows quadratically with resolution, so it is infeasible for large images. Their answer is not to shrink the input but to redesign the blocks. MDTA aggregates local and non-local pixel interactions efficiently. GDFN gates the feed-forward path so only informative features propagate. Critically, it does not split the image into local windows, so distant context survives.`,
- sf:`مقالهٔ Restormer، در CVPR ۲۰۲۲، از مؤسسهٔ Inception به‌همراه MBZUAI، موناش، دانشگاه کالیفرنیا مرسد، یونسی و Google Research. مسئله این است که پیچیدگی ترنسفورمر با تفکیک‌پذیری به‌صورت درجه‌دو رشد می‌کند، پس برای تصاویر بزرگ عملی نیست. پاسخ آن‌ها کوچک‌کردن ورودی نیست، بلکه بازطراحی بلوک‌هاست. ماژول MDTA برهم‌کنش‌های محلی و غیرمحلی پیکسل‌ها را به‌شکل کارآمد تجمیع می‌کند. ماژول GDFN مسیر پیش‌خور را دروازه‌بندی می‌کند تا فقط ویژگی‌های آگاهی‌بخش عبور کنند. مهم‌تر آنکه تصویر را به پنجره‌های محلی تقسیم نمی‌کند، پس بافتار دوردست حفظ می‌شود.`,
- v:`Note the Datasets row: trained only on SIDD and tested directly on DND. That is a generalisation claim, not just a benchmark list, and it is worth calling out because it addresses the distribution-shift concern ZS-N2N raises two slides later.`,
- vf:`به سطر مجموعه‌داده‌ها توجه کنید: فقط روی SIDD آموزش دیده و مستقیماً روی DND آزمایش شده است. این یک ادعای تعمیم‌پذیری است، نه صرفاً فهرست محک‌ها، و ارزش دارد به آن اشاره کنید چون به همان نگرانی تغییر توزیع پاسخ می‌دهد که ZS-N2N دو اسلاید بعد مطرح می‌کند.`,
- i:`Restormer has an official conference video — the only fully verified one in your roster besides Noise2Void. Watch it before the defence. If you can only prepare one paper deeply beyond the anchor, make it this one.`,
- if:`مقالهٔ Restormer ویدئوی رسمی کنفرانس دارد — تنها ویدئوی کاملاً تأییدشده در فهرست شما به‌جز Noise2Void. پیش از جلسهٔ دفاع آن را ببینید. اگر فقط می‌توانید یک مقاله را علاوه بر مقالهٔ لنگر عمیق آماده کنید، همین را انتخاب کنید.`},
+        {
+          n: 21,
+          p: 3,
+          badge: "A8 · 2022",
+          bc: "#6D3F86",
+          t: "NAFNet — the dissenting voice",
+          tf: "NAFNet — صدای مخالف",
+          c: `Prevents the deck from becoming a naive progress story. It argues that much of the added complexity is unnecessary, and supports the claim with hard numbers — which is exactly the critical stance the guidelines reward.`,
+          cf: `نمی‌گذارد ارائه به یک روایت سادهٔ «هرچه جدیدتر بهتر» تبدیل شود. استدلال می‌کند که بخش زیادی از پیچیدگی افزوده‌شده غیرضروری است و ادعایش را با اعداد دقیق پشتیبانی می‌کند — و این دقیقاً همان نگاه انتقادی است که راهنما به آن امتیاز می‌دهد.`,
+          s: `NAFNet, ECCV 2022, from MEGVII. It takes the opposite position to Restormer. It observes that system complexity is rising in a way that hinders comparison, splits that complexity into inter-block and intra-block, and then simplifies aggressively — arguing nonlinear activations are not necessary at all and can be replaced by multiplication or removed. The numbers: 40.30 dB on SIDD, beating previous state of the art by 0.28 dB with less than half the compute. 33.69 dB on GoPro with 8.4 percent of the previous cost.`,
+          sf: `مقالهٔ NAFNet، در ECCV ۲۰۲۲، از شرکت MEGVII. موضعی معکوس Restormer دارد. مشاهده می‌کند که پیچیدگی سامانه‌ها طوری در حال افزایش است که مقایسه را دشوار می‌کند، آن پیچیدگی را به درون‌بلوکی و بین‌بلوکی تقسیم می‌کند و سپس با شدت آن را ساده می‌کند — با این استدلال که توابع فعال‌سازی غیرخطی اصلاً ضروری نیستند و می‌توان آن‌ها را با ضرب جایگزین کرد یا حذف نمود. اعداد: چهل و سی صدم دسی‌بل روی SIDD، بیست و هشت صدم دسی‌بل بهتر از بهترین روش پیشین با کمتر از نصف محاسبات. و سی‌وسه و شصت‌ونه صدم دسی‌بل روی GoPro با هشت و چهار دهم درصد هزینهٔ قبلی.`,
+          v: `This is the only paper slide with a dedicated Reported results block rather than a Value block. That is deliberate: NAFNet's argument is quantitative, so the numbers earn the space that framing would otherwise occupy.`,
+          vf: `این تنها اسلاید مقاله‌ای است که به‌جای بخش «ارزش»، بخش اختصاصی «نتایج گزارش‌شده» دارد. این عمدی است: استدلال NAFNet کمّی است، پس اعداد جای فضایی را می‌گیرند که در حالت عادی به قاب‌بندی اختصاص می‌یافت.`,
+          i: `Say explicitly: "we included this because it disagrees with the previous slide." Presenting a genuine methodological dispute is far stronger than presenting consensus, and it directly answers the guidelines' warning against merely summarising papers.`,
+          if: `صریحاً بگویید: «این مقاله را گنجانده‌ایم چون با اسلاید قبلی مخالف است.» ارائهٔ یک اختلاف روش‌شناختی واقعی بسیار قوی‌تر از ارائهٔ اجماع است و مستقیماً به هشدار راهنما دربارهٔ «صرفاً خلاصه‌کردن مقالات» پاسخ می‌دهد.`,
+        },
 
-{n:21,p:3,badge:"A8 · 2022",bc:"#6D3F86",
- t:"NAFNet — the dissenting voice",tf:"NAFNet — صدای مخالف",
- c:`Prevents the deck from becoming a naive progress story. It argues that much of the added complexity is unnecessary, and supports the claim with hard numbers — which is exactly the critical stance the guidelines reward.`,
- cf:`نمی‌گذارد ارائه به یک روایت سادهٔ «هرچه جدیدتر بهتر» تبدیل شود. استدلال می‌کند که بخش زیادی از پیچیدگی افزوده‌شده غیرضروری است و ادعایش را با اعداد دقیق پشتیبانی می‌کند — و این دقیقاً همان نگاه انتقادی است که راهنما به آن امتیاز می‌دهد.`,
- s:`NAFNet, ECCV 2022, from MEGVII. It takes the opposite position to Restormer. It observes that system complexity is rising in a way that hinders comparison, splits that complexity into inter-block and intra-block, and then simplifies aggressively — arguing nonlinear activations are not necessary at all and can be replaced by multiplication or removed. The numbers: 40.30 dB on SIDD, beating previous state of the art by 0.28 dB with less than half the compute. 33.69 dB on GoPro with 8.4 percent of the previous cost.`,
- sf:`مقالهٔ NAFNet، در ECCV ۲۰۲۲، از شرکت MEGVII. موضعی معکوس Restormer دارد. مشاهده می‌کند که پیچیدگی سامانه‌ها طوری در حال افزایش است که مقایسه را دشوار می‌کند، آن پیچیدگی را به درون‌بلوکی و بین‌بلوکی تقسیم می‌کند و سپس با شدت آن را ساده می‌کند — با این استدلال که توابع فعال‌سازی غیرخطی اصلاً ضروری نیستند و می‌توان آن‌ها را با ضرب جایگزین کرد یا حذف نمود. اعداد: چهل و سی صدم دسی‌بل روی SIDD، بیست و هشت صدم دسی‌بل بهتر از بهترین روش پیشین با کمتر از نصف محاسبات. و سی‌وسه و شصت‌ونه صدم دسی‌بل روی GoPro با هشت و چهار دهم درصد هزینهٔ قبلی.`,
- v:`This is the only paper slide with a dedicated Reported results block rather than a Value block. That is deliberate: NAFNet's argument is quantitative, so the numbers earn the space that framing would otherwise occupy.`,
- vf:`این تنها اسلاید مقاله‌ای است که به‌جای بخش «ارزش»، بخش اختصاصی «نتایج گزارش‌شده» دارد. این عمدی است: استدلال NAFNet کمّی است، پس اعداد جای فضایی را می‌گیرند که در حالت عادی به قاب‌بندی اختصاص می‌یافت.`,
- i:`Say explicitly: "we included this because it disagrees with the previous slide." Presenting a genuine methodological dispute is far stronger than presenting consensus, and it directly answers the guidelines' warning against merely summarising papers.`,
- if:`صریحاً بگویید: «این مقاله را گنجانده‌ایم چون با اسلاید قبلی مخالف است.» ارائهٔ یک اختلاف روش‌شناختی واقعی بسیار قوی‌تر از ارائهٔ اجماع است و مستقیماً به هشدار راهنما دربارهٔ «صرفاً خلاصه‌کردن مقالات» پاسخ می‌دهد.`},
+        {
+          n: 22,
+          p: 3,
+          badge: "A9 · 2023",
+          bc: "#6D3F86",
+          t: "Zero-Shot Noise2Noise",
+          tf: "Zero-Shot Noise2Noise — بدون هیچ داده",
+          c: `The terminus of the data branch and the most reproducible source in the roster. It also carries a real citation figure, which gives you a natural opportunity to explain why a low count is not a weakness.`,
+          cf: `نقطهٔ پایانی شاخهٔ داده و بازتولیدپذیرترین منبع فهرست. همچنین یک عدد استناد واقعی دارد که فرصتی طبیعی به شما می‌دهد تا توضیح دهید چرا عدد پایین لزوماً ضعف نیست.`,
+          s: `ZS-N2N, CVPR 2023, TU Munich and Rice. A two-layer network, trained per image, with no training data and no knowledge of the noise distribution. Its only assumption is pixel-wise independence. Note the citation count is two hundred and sixty-six — modest next to BM3D, but that reflects the paper being three years old, not weakness. And note it names Noise2Noise as its motivation, which means the chain from DnCNN through N2N and N2V to here is stated by the papers themselves.`,
+          sf: `مقالهٔ ZS-N2N، در CVPR ۲۰۲۳، از دانشگاه فنی مونیخ و دانشگاه رایس. یک شبکهٔ دولایه که برای هر تصویر جداگانه آموزش می‌بیند، بدون هیچ دادهٔ آموزشی و بدون شناخت توزیع نویز. تنها فرض آن استقلال پیکسل‌به‌پیکسل است. توجه کنید عدد استناد دویست و شصت و شش است — در کنار BM3D کم به‌نظر می‌رسد، اما این بازتاب سه‌ساله‌بودن مقاله است، نه ضعف آن. و توجه کنید که این مقاله Noise2Noise را به‌عنوان انگیزهٔ خود نام می‌برد، یعنی زنجیرهٔ DnCNN تا N2N و N2V و تا اینجا را خودِ مقالات بیان کرده‌اند.`,
+          v: `The citation field is filled but low relative to the older papers, and the grey note beside it explains why. That note exists so nobody reads 266 as a mark against the paper; recency and citation count are confounded, and saying so is a sign of bibliometric literacy.`,
+          vf: `کادر استناد پر شده اما نسبت به مقالات قدیمی‌تر کوچک است، و یادداشت خاکستری کنارش دلیلش را توضیح می‌دهد. آن یادداشت هست تا کسی عدد ۲۶۶ را نقطه‌ضعف مقاله نخواند؛ تازگی انتشار و تعداد استناد در هم تنیده‌اند و گفتن این نکته نشانهٔ سواد کتاب‌سنجی است.`,
+          i: `The paper points to a runnable Colab notebook. Open it once before the defence, even briefly. Being able to say "we ran it" carries disproportionate weight, and it prepares you directly for Stage 2.`,
+          if: `این مقاله به یک دفترچهٔ اجرایی Colab اشاره می‌کند. پیش از جلسهٔ دفاع حتی برای مدت کوتاه آن را باز کنید. اینکه بتوانید بگویید «ما آن را اجرا کردیم» وزن نامتناسبی دارد و شما را مستقیماً برای مرحلهٔ ۲ آماده می‌کند.`,
+        },
 
-{n:22,p:3,badge:"A9 · 2023",bc:"#6D3F86",
- t:"Zero-Shot Noise2Noise",tf:"Zero-Shot Noise2Noise — بدون هیچ داده",
- c:`The terminus of the data branch and the most reproducible source in the roster. It also carries a real citation figure, which gives you a natural opportunity to explain why a low count is not a weakness.`,
- cf:`نقطهٔ پایانی شاخهٔ داده و بازتولیدپذیرترین منبع فهرست. همچنین یک عدد استناد واقعی دارد که فرصتی طبیعی به شما می‌دهد تا توضیح دهید چرا عدد پایین لزوماً ضعف نیست.`,
- s:`ZS-N2N, CVPR 2023, TU Munich and Rice. A two-layer network, trained per image, with no training data and no knowledge of the noise distribution. Its only assumption is pixel-wise independence. Note the citation count is two hundred and sixty-six — modest next to BM3D, but that reflects the paper being three years old, not weakness. And note it names Noise2Noise as its motivation, which means the chain from DnCNN through N2N and N2V to here is stated by the papers themselves.`,
- sf:`مقالهٔ ZS-N2N، در CVPR ۲۰۲۳، از دانشگاه فنی مونیخ و دانشگاه رایس. یک شبکهٔ دولایه که برای هر تصویر جداگانه آموزش می‌بیند، بدون هیچ دادهٔ آموزشی و بدون شناخت توزیع نویز. تنها فرض آن استقلال پیکسل‌به‌پیکسل است. توجه کنید عدد استناد دویست و شصت و شش است — در کنار BM3D کم به‌نظر می‌رسد، اما این بازتاب سه‌ساله‌بودن مقاله است، نه ضعف آن. و توجه کنید که این مقاله Noise2Noise را به‌عنوان انگیزهٔ خود نام می‌برد، یعنی زنجیرهٔ DnCNN تا N2N و N2V و تا اینجا را خودِ مقالات بیان کرده‌اند.`,
- v:`The citation field is filled but low relative to the older papers, and the grey note beside it explains why. That note exists so nobody reads 266 as a mark against the paper; recency and citation count are confounded, and saying so is a sign of bibliometric literacy.`,
- vf:`کادر استناد پر شده اما نسبت به مقالات قدیمی‌تر کوچک است، و یادداشت خاکستری کنارش دلیلش را توضیح می‌دهد. آن یادداشت هست تا کسی عدد ۲۶۶ را نقطه‌ضعف مقاله نخواند؛ تازگی انتشار و تعداد استناد در هم تنیده‌اند و گفتن این نکته نشانهٔ سواد کتاب‌سنجی است.`,
- i:`The paper points to a runnable Colab notebook. Open it once before the defence, even briefly. Being able to say "we ran it" carries disproportionate weight, and it prepares you directly for Stage 2.`,
- if:`این مقاله به یک دفترچهٔ اجرایی Colab اشاره می‌کند. پیش از جلسهٔ دفاع حتی برای مدت کوتاه آن را باز کنید. اینکه بتوانید بگویید «ما آن را اجرا کردیم» وزن نامتناسبی دارد و شما را مستقیماً برای مرحلهٔ ۲ آماده می‌کند.`},
+        {
+          n: 23,
+          p: 3,
+          badge: "A10 · 2023",
+          bc: "#6D3F86",
+          t: "SCUNet",
+          tf: "SCUNet — ترکیب swin و کانولوشن",
+          c: `The synthesis paper. It fuses both branches architecturally and is the only source attacking the noise model itself — the very assumption in DnCNN's opening equation.`,
+          cf: `مقالهٔ ترکیب‌کننده. هر دو شاخه را از نظر معماری در هم می‌آمیزد و تنها منبعی است که به خودِ مدل نویز حمله می‌کند — همان فرضی که در معادلهٔ آغازین DnCNN آمده است.`,
+          s: `SCUNet, from ETH Zürich with Würzburg and KU Leuven. Two contributions. Architecturally, a swin-conv block fusing the local modelling of a residual convolution with the non-local modelling of a swin transformer block, inside a UNet. But the second contribution matters more for us: a practical degradation model covering Gaussian, Poisson, speckle, JPEG and processed camera sensor noise, plus resizing, with random shuffle and double degradation strategies. This is the only paper in our list that treats the noise assumption itself as the thing to fix — which closes the arc DnCNN opened.`,
+          sf: `مقالهٔ SCUNet، از دانشگاه ETH زوریخ به‌همراه ورتسبورگ و KU Leuven. دو دستاورد دارد. از نظر معماری، یک بلوک swin-conv که مدل‌سازی محلیِ کانولوشن پسماند را با مدل‌سازی غیرمحلیِ بلوک swin transformer در دل یک UNet ترکیب می‌کند. اما دستاورد دوم برای ما مهم‌تر است: یک مدل تخریب عملی که نویز گاوسی، پواسون، اسپکل، فشرده‌سازی JPEG و نویز پردازش‌شدهٔ حسگر دوربین را به‌همراه تغییر اندازه پوشش می‌دهد، با راهبردهای بُر زدن تصادفی و تخریب دوگانه. این تنها مقاله در فهرست ماست که خودِ فرض نویز را چیزی می‌داند که باید اصلاح شود — و همین، مسیری را که DnCNN گشود می‌بندد.`,
+          v: `No diagram. The two contributions are split into separate blocks rather than merged, because the data-synthesis half is the one Stage 2 will actually build on and it would otherwise be buried inside the architecture description.`,
+          vf: `بدون نمودار. دو دستاورد مقاله در دو بلوک جدا آمده‌اند نه یکجا، چون نیمهٔ مربوط به ساخت دادهٔ مصنوعی همان چیزی است که مرحلهٔ ۲ واقعاً بر آن بنا می‌شود و در غیر این صورت درون توضیح معماری گم می‌شد.`,
+          i: `Use SCUNet as your bridge sentence into Stage 2. Its degradation pipeline is specified in enough detail to be re-implemented, which makes it the most natural Stage 2 candidate in the roster. Saying that here shows the stages are planned, not improvised.`,
+          if: `از SCUNet به‌عنوان جملهٔ پل خود به مرحلهٔ ۲ استفاده کنید. خط لولهٔ تخریب آن با جزئیات کافی مشخص شده که بتوان دوباره پیاده‌سازی‌اش کرد، و همین آن را طبیعی‌ترین گزینهٔ مرحلهٔ ۲ در فهرست شما می‌کند. گفتن این نکته در اینجا نشان می‌دهد مراحل برنامه‌ریزی‌شده‌اند، نه بداهه.`,
+        },
 
-{n:23,p:3,badge:"A10 · 2023",bc:"#6D3F86",
- t:"SCUNet",tf:"SCUNet — ترکیب swin و کانولوشن",
- c:`The synthesis paper. It fuses both branches architecturally and is the only source attacking the noise model itself — the very assumption in DnCNN's opening equation.`,
- cf:`مقالهٔ ترکیب‌کننده. هر دو شاخه را از نظر معماری در هم می‌آمیزد و تنها منبعی است که به خودِ مدل نویز حمله می‌کند — همان فرضی که در معادلهٔ آغازین DnCNN آمده است.`,
- s:`SCUNet, from ETH Zürich with Würzburg and KU Leuven. Two contributions. Architecturally, a swin-conv block fusing the local modelling of a residual convolution with the non-local modelling of a swin transformer block, inside a UNet. But the second contribution matters more for us: a practical degradation model covering Gaussian, Poisson, speckle, JPEG and processed camera sensor noise, plus resizing, with random shuffle and double degradation strategies. This is the only paper in our list that treats the noise assumption itself as the thing to fix — which closes the arc DnCNN opened.`,
- sf:`مقالهٔ SCUNet، از دانشگاه ETH زوریخ به‌همراه ورتسبورگ و KU Leuven. دو دستاورد دارد. از نظر معماری، یک بلوک swin-conv که مدل‌سازی محلیِ کانولوشن پسماند را با مدل‌سازی غیرمحلیِ بلوک swin transformer در دل یک UNet ترکیب می‌کند. اما دستاورد دوم برای ما مهم‌تر است: یک مدل تخریب عملی که نویز گاوسی، پواسون، اسپکل، فشرده‌سازی JPEG و نویز پردازش‌شدهٔ حسگر دوربین را به‌همراه تغییر اندازه پوشش می‌دهد، با راهبردهای بُر زدن تصادفی و تخریب دوگانه. این تنها مقاله در فهرست ماست که خودِ فرض نویز را چیزی می‌داند که باید اصلاح شود — و همین، مسیری را که DnCNN گشود می‌بندد.`,
- v:`No diagram. The two contributions are split into separate blocks rather than merged, because the data-synthesis half is the one Stage 2 will actually build on and it would otherwise be buried inside the architecture description.`,
- vf:`بدون نمودار. دو دستاورد مقاله در دو بلوک جدا آمده‌اند نه یکجا، چون نیمهٔ مربوط به ساخت دادهٔ مصنوعی همان چیزی است که مرحلهٔ ۲ واقعاً بر آن بنا می‌شود و در غیر این صورت درون توضیح معماری گم می‌شد.`,
- i:`Use SCUNet as your bridge sentence into Stage 2. Its degradation pipeline is specified in enough detail to be re-implemented, which makes it the most natural Stage 2 candidate in the roster. Saying that here shows the stages are planned, not improvised.`,
- if:`از SCUNet به‌عنوان جملهٔ پل خود به مرحلهٔ ۲ استفاده کنید. خط لولهٔ تخریب آن با جزئیات کافی مشخص شده که بتوان دوباره پیاده‌سازی‌اش کرد، و همین آن را طبیعی‌ترین گزینهٔ مرحلهٔ ۲ در فهرست شما می‌کند. گفتن این نکته در اینجا نشان می‌دهد مراحل برنامه‌ریزی‌شده‌اند، نه بداهه.`},
+        {
+          n: 24,
+          p: 3,
+          badge: "A11 · 2024",
+          bc: "#6D3F86",
+          t: "MambaIR",
+          tf: "MambaIR — مدل فضای حالت",
+          c: `The newest source, proving your literature sweep reached genuinely current work. It also completes the argument that bottleneck three has three live answers rather than one winner.`,
+          cf: `تازه‌ترین منبع، که ثابت می‌کند جست‌وجوی ادبیات شما واقعاً به کارهای روز رسیده است. همچنین این استدلال را کامل می‌کند که گلوگاه سوم سه پاسخ زنده دارد، نه یک برنده.`,
+          s: `MambaIR, ECCV 2024, from Tsinghua Shenzhen with Shenzhen University, ByteDance and Peng Cheng Lab. It applies the selective structured state space model — Mamba — which gives long-range dependency modelling at linear rather than quadratic complexity. It identifies two problems standard Mamba has in low-level vision, local pixel forgetting and channel redundancy, and adds local enhancement and channel attention to fix them. It reports beating SwinIR by up to 0.45 dB on super-resolution at similar cost but with a global receptive field.`,
+          sf: `مقالهٔ MambaIR، در ECCV ۲۰۲۴، از دانشکدهٔ تحصیلات تکمیلی بین‌المللی شنژن دانشگاه چینگهوا به‌همراه دانشگاه شنژن، ByteDance و آزمایشگاه Peng Cheng. از مدل فضای حالتِ ساختاریافتهٔ انتخابی — یعنی Mamba — استفاده می‌کند که مدل‌سازی وابستگی‌های دوربرد را با پیچیدگی خطی به‌جای درجه‌دو ممکن می‌سازد. دو مشکل Mamba استاندارد در بینایی سطح پایین را شناسایی می‌کند، یعنی فراموشی پیکسل محلی و افزونگی کانالی، و برای رفع آن‌ها تقویت محلی و توجه کانالی می‌افزاید. گزارش می‌دهد که تا چهل و پنج صدم دسی‌بل از SwinIR در اَبَرتفکیک‌پذیری بهتر است، با هزینهٔ مشابه اما با میدان گیرندگی سراسری.`,
+          v: `No diagram — and that is a defensible choice here. State space mathematics does not compress into a slide-sized figure honestly, and a decorative diagram you cannot explain is worse than no diagram. Do not add one unless a group member can defend SSMs.`,
+          vf: `بدون نمودار — و این انتخاب در اینجا قابل دفاع است. ریاضیات فضای حالت به‌شکل صادقانه در یک شکل هم‌اندازهٔ اسلاید فشرده نمی‌شود، و نموداری تزئینی که نتوانید توضیحش دهید بدتر از نبودِ نمودار است. مگر آنکه یکی از اعضای گروه بتواند از مدل‌های فضای حالت دفاع کند، نموداری اضافه نکنید.`,
+          i: `Rehearse a deflection you can give honestly: "MambaIR is our recency and future-directions source; we can explain what problem it solves and why linear complexity matters, but we are not claiming mastery of state space mathematics at this stage." That is a truthful, professional boundary and it is far better than bluffing.`,
+          if: `یک پاسخ صادقانه برای طفره‌رفتن آماده کنید: «MambaIR منبع ما برای تازگی و جهت‌های آینده است؛ می‌توانیم توضیح دهیم چه مسئله‌ای را حل می‌کند و چرا پیچیدگی خطی مهم است، اما در این مرحله ادعای تسلط بر ریاضیات فضای حالت نداریم.» این یک مرزگذاری صادقانه و حرفه‌ای است و بسیار بهتر از بلوف‌زدن.`,
+        },
 
-{n:24,p:3,badge:"A11 · 2024",bc:"#6D3F86",
- t:"MambaIR",tf:"MambaIR — مدل فضای حالت",
- c:`The newest source, proving your literature sweep reached genuinely current work. It also completes the argument that bottleneck three has three live answers rather than one winner.`,
- cf:`تازه‌ترین منبع، که ثابت می‌کند جست‌وجوی ادبیات شما واقعاً به کارهای روز رسیده است. همچنین این استدلال را کامل می‌کند که گلوگاه سوم سه پاسخ زنده دارد، نه یک برنده.`,
- s:`MambaIR, ECCV 2024, from Tsinghua Shenzhen with Shenzhen University, ByteDance and Peng Cheng Lab. It applies the selective structured state space model — Mamba — which gives long-range dependency modelling at linear rather than quadratic complexity. It identifies two problems standard Mamba has in low-level vision, local pixel forgetting and channel redundancy, and adds local enhancement and channel attention to fix them. It reports beating SwinIR by up to 0.45 dB on super-resolution at similar cost but with a global receptive field.`,
- sf:`مقالهٔ MambaIR، در ECCV ۲۰۲۴، از دانشکدهٔ تحصیلات تکمیلی بین‌المللی شنژن دانشگاه چینگهوا به‌همراه دانشگاه شنژن، ByteDance و آزمایشگاه Peng Cheng. از مدل فضای حالتِ ساختاریافتهٔ انتخابی — یعنی Mamba — استفاده می‌کند که مدل‌سازی وابستگی‌های دوربرد را با پیچیدگی خطی به‌جای درجه‌دو ممکن می‌سازد. دو مشکل Mamba استاندارد در بینایی سطح پایین را شناسایی می‌کند، یعنی فراموشی پیکسل محلی و افزونگی کانالی، و برای رفع آن‌ها تقویت محلی و توجه کانالی می‌افزاید. گزارش می‌دهد که تا چهل و پنج صدم دسی‌بل از SwinIR در اَبَرتفکیک‌پذیری بهتر است، با هزینهٔ مشابه اما با میدان گیرندگی سراسری.`,
- v:`No diagram — and that is a defensible choice here. State space mathematics does not compress into a slide-sized figure honestly, and a decorative diagram you cannot explain is worse than no diagram. Do not add one unless a group member can defend SSMs.`,
- vf:`بدون نمودار — و این انتخاب در اینجا قابل دفاع است. ریاضیات فضای حالت به‌شکل صادقانه در یک شکل هم‌اندازهٔ اسلاید فشرده نمی‌شود، و نموداری تزئینی که نتوانید توضیحش دهید بدتر از نبودِ نمودار است. مگر آنکه یکی از اعضای گروه بتواند از مدل‌های فضای حالت دفاع کند، نموداری اضافه نکنید.`,
- i:`Rehearse a deflection you can give honestly: "MambaIR is our recency and future-directions source; we can explain what problem it solves and why linear complexity matters, but we are not claiming mastery of state space mathematics at this stage." That is a truthful, professional boundary and it is far better than bluffing.`,
- if:`یک پاسخ صادقانه برای طفره‌رفتن آماده کنید: «MambaIR منبع ما برای تازگی و جهت‌های آینده است؛ می‌توانیم توضیح دهیم چه مسئله‌ای را حل می‌کند و چرا پیچیدگی خطی مهم است، اما در این مرحله ادعای تسلط بر ریاضیات فضای حالت نداریم.» این یک مرزگذاری صادقانه و حرفه‌ای است و بسیار بهتر از بلوف‌زدن.`},
+        {
+          n: 25,
+          p: 3,
+          badge: "§4C",
+          bc: "#6D3F86",
+          t: "How the papers connect",
+          tf: "چگونگی ارتباط مقالات با یکدیگر",
+          c: `Directly answers the guidelines' most emphasised requirement — connect the dots, do not summarise in isolation. This is the slide that proves the roster is a narrative rather than a bibliography.`,
+          cf: `مستقیماً به تأکیدشده‌ترین الزام راهنما پاسخ می‌دهد: نقاط را به هم وصل کن، مقالات را جدا از هم خلاصه نکن. این اسلاید ثابت می‌کند فهرست منابع شما یک روایت است، نه یک کتاب‌شناسی.`,
+          s: `One map of the whole roster. BM3D and WNNM both feed TNRD, because TNRD reacts to their cost. TNRD feeds DnCNN, which drops the scaffolding. From DnCNN the graph splits: down into the data branch, up into the architecture branch. And SCUNet at the bottom right receives arrows from both, because it fuses them and then attacks the noise model itself. Every arrow here is stated by one of the papers.`,
+          sf: `یک نقشه از کل فهرست منابع. هم BM3D و هم WNNM به TNRD می‌رسند، چون TNRD واکنشی به هزینهٔ آن‌هاست. TNRD به DnCNN می‌رسد که داربست را کنار می‌گذارد. از DnCNN گراف دو شاخه می‌شود: پایین به شاخهٔ داده و بالا به شاخهٔ معماری. و SCUNet در پایین سمت راست از هر دو فلش دریافت می‌کند، چون آن‌ها را در هم می‌آمیزد و سپس به خودِ مدل نویز حمله می‌کند. هر فلش در این نقشه توسط یکی از مقالات بیان شده است.`,
+          v: `Solid arrows mean "builds on"; the dashed arrow between Restormer and NAFNet means "disputes" — a disagreement, not a dependency. That single dashed line is the most sophisticated claim in the deck, so make sure you point at it and name it.`,
+          vf: `فلش‌های پیوسته یعنی «بر پایهٔ آن ساخته شده»؛ فلش خط‌چین میان Restormer و NAFNet یعنی «مخالفت» — یک اختلاف نظر، نه یک وابستگی. همان یک خط خط‌چین پیچیده‌ترین ادعای کل ارائه است، پس حتماً به آن اشاره کنید و نامش را ببرید.`,
+          i: `Rehearse this slide more than any other except the timeline. If a TA asks one open question about your research direction, this diagram is the best possible answer — you can trace it with a finger and cover eleven papers in forty seconds.`,
+          if: `این اسلاید را بیش از هر اسلاید دیگری به‌جز خط زمانی تمرین کنید. اگر دستیار آموزشی یک پرسش باز دربارهٔ جهت پژوهشی شما بپرسد، این نمودار بهترین پاسخ ممکن است — می‌توانید آن را با انگشت دنبال کنید و در چهل ثانیه یازده مقاله را پوشش دهید.`,
+        },
 
-{n:25,p:3,badge:"§4C",bc:"#6D3F86",
- t:"How the papers connect",tf:"چگونگی ارتباط مقالات با یکدیگر",
- c:`Directly answers the guidelines' most emphasised requirement — connect the dots, do not summarise in isolation. This is the slide that proves the roster is a narrative rather than a bibliography.`,
- cf:`مستقیماً به تأکیدشده‌ترین الزام راهنما پاسخ می‌دهد: نقاط را به هم وصل کن، مقالات را جدا از هم خلاصه نکن. این اسلاید ثابت می‌کند فهرست منابع شما یک روایت است، نه یک کتاب‌شناسی.`,
- s:`One map of the whole roster. BM3D and WNNM both feed TNRD, because TNRD reacts to their cost. TNRD feeds DnCNN, which drops the scaffolding. From DnCNN the graph splits: down into the data branch, up into the architecture branch. And SCUNet at the bottom right receives arrows from both, because it fuses them and then attacks the noise model itself. Every arrow here is stated by one of the papers.`,
- sf:`یک نقشه از کل فهرست منابع. هم BM3D و هم WNNM به TNRD می‌رسند، چون TNRD واکنشی به هزینهٔ آن‌هاست. TNRD به DnCNN می‌رسد که داربست را کنار می‌گذارد. از DnCNN گراف دو شاخه می‌شود: پایین به شاخهٔ داده و بالا به شاخهٔ معماری. و SCUNet در پایین سمت راست از هر دو فلش دریافت می‌کند، چون آن‌ها را در هم می‌آمیزد و سپس به خودِ مدل نویز حمله می‌کند. هر فلش در این نقشه توسط یکی از مقالات بیان شده است.`,
- v:`Solid arrows mean "builds on"; the dashed arrow between Restormer and NAFNet means "disputes" — a disagreement, not a dependency. That single dashed line is the most sophisticated claim in the deck, so make sure you point at it and name it.`,
- vf:`فلش‌های پیوسته یعنی «بر پایهٔ آن ساخته شده»؛ فلش خط‌چین میان Restormer و NAFNet یعنی «مخالفت» — یک اختلاف نظر، نه یک وابستگی. همان یک خط خط‌چین پیچیده‌ترین ادعای کل ارائه است، پس حتماً به آن اشاره کنید و نامش را ببرید.`,
- i:`Rehearse this slide more than any other except the timeline. If a TA asks one open question about your research direction, this diagram is the best possible answer — you can trace it with a finger and cover eleven papers in forty seconds.`,
- if:`این اسلاید را بیش از هر اسلاید دیگری به‌جز خط زمانی تمرین کنید. اگر دستیار آموزشی یک پرسش باز دربارهٔ جهت پژوهشی شما بپرسد، این نمودار بهترین پاسخ ممکن است — می‌توانید آن را با انگشت دنبال کنید و در چهل ثانیه یازده مقاله را پوشش دهید.`},
+        {
+          n: 26,
+          p: 4,
+          badge: "The ask",
+          bc: "#14161A",
+          t: "The direction we propose",
+          tf: "جهتی که پیشنهاد می‌کنیم",
+          c: `The approval request itself. The guidelines say Stage 1 is where the TAs approve your research direction, so this slide must state that direction as one defensible claim rather than a summary.`,
+          cf: `خودِ درخواست تأیید. راهنما می‌گوید مرحلهٔ ۱ جایی است که دستیاران آموزشی جهت پژوهشی شما را تأیید می‌کنند، پس این اسلاید باید آن جهت را به‌صورت یک ادعای قابل دفاع بیان کند، نه به‌صورت خلاصه.`,
+          s: `What we are asking you to approve. Image denoising is the cleanest available case study in how computer vision replaced hand-designed priors with learned ones. Four eras, three bottlenecks — manual prior design, the clean-data requirement, and the receptive-field limits of convolution. Each bottleneck was named by the paper that broke it, so the arc is evidenced rather than imposed. And because the field currently holds three competing answers to the third bottleneck, the story ends in a genuine open question, not a winner.`,
+          sf: `آنچه از شما می‌خواهیم تأیید کنید. نویززدایی تصویر تمیزترین مطالعهٔ موردی موجود است از اینکه بینایی ماشین چگونه پیشین‌های دست‌ساز را با پیشین‌های آموخته‌شده جایگزین کرد. چهار دوره، سه گلوگاه — طراحی دستی پیشین، نیاز به دادهٔ تمیز، و محدودیت میدان گیرندگی در کانولوشن. هر گلوگاه توسط همان مقاله‌ای نام برده شده که آن را شکسته است، پس این مسیر مستند است نه تحمیلی. و چون این حوزه در حال حاضر سه پاسخ رقیب برای گلوگاه سوم دارد، داستان به یک پرسش باز واقعی ختم می‌شود، نه به یک برنده.`,
+          v: `A divider layout with no data — full-width text on purpose. This is the one slide where you should stop pointing at things and simply make the argument.`,
+          vf: `چیدمانی از نوع جداکننده و بدون داده — متنی تمام‌عرض و به‌عمد. این تنها اسلایدی است که باید در آن دست از اشاره‌کردن به اجزا بردارید و صرفاً استدلال را بیان کنید.`,
+          i: `Deliver this from memory with the slide behind you rather than reading it. It is roughly forty-five seconds of speech and it is the last substantive thing the TAs hear before questions begin — which makes it the part most worth rehearsing verbatim.`,
+          if: `این بخش را از حفظ و با اسلاید در پشت سرتان ارائه دهید، نه از روی متن. حدود چهل و پنج ثانیه صحبت است و آخرین مطلب محتوایی است که دستیاران آموزشی پیش از شروع پرسش‌ها می‌شنوند — و همین آن را ارزشمندترین بخش برای تمرین کلمه‌به‌کلمه می‌کند.`,
+        },
 
-{n:26,p:4,badge:"The ask",bc:"#14161A",
- t:"The direction we propose",tf:"جهتی که پیشنهاد می‌کنیم",
- c:`The approval request itself. The guidelines say Stage 1 is where the TAs approve your research direction, so this slide must state that direction as one defensible claim rather than a summary.`,
- cf:`خودِ درخواست تأیید. راهنما می‌گوید مرحلهٔ ۱ جایی است که دستیاران آموزشی جهت پژوهشی شما را تأیید می‌کنند، پس این اسلاید باید آن جهت را به‌صورت یک ادعای قابل دفاع بیان کند، نه به‌صورت خلاصه.`,
- s:`What we are asking you to approve. Image denoising is the cleanest available case study in how computer vision replaced hand-designed priors with learned ones. Four eras, three bottlenecks — manual prior design, the clean-data requirement, and the receptive-field limits of convolution. Each bottleneck was named by the paper that broke it, so the arc is evidenced rather than imposed. And because the field currently holds three competing answers to the third bottleneck, the story ends in a genuine open question, not a winner.`,
- sf:`آنچه از شما می‌خواهیم تأیید کنید. نویززدایی تصویر تمیزترین مطالعهٔ موردی موجود است از اینکه بینایی ماشین چگونه پیشین‌های دست‌ساز را با پیشین‌های آموخته‌شده جایگزین کرد. چهار دوره، سه گلوگاه — طراحی دستی پیشین، نیاز به دادهٔ تمیز، و محدودیت میدان گیرندگی در کانولوشن. هر گلوگاه توسط همان مقاله‌ای نام برده شده که آن را شکسته است، پس این مسیر مستند است نه تحمیلی. و چون این حوزه در حال حاضر سه پاسخ رقیب برای گلوگاه سوم دارد، داستان به یک پرسش باز واقعی ختم می‌شود، نه به یک برنده.`,
- v:`A divider layout with no data — full-width text on purpose. This is the one slide where you should stop pointing at things and simply make the argument.`,
- vf:`چیدمانی از نوع جداکننده و بدون داده — متنی تمام‌عرض و به‌عمد. این تنها اسلایدی است که باید در آن دست از اشاره‌کردن به اجزا بردارید و صرفاً استدلال را بیان کنید.`,
- i:`Deliver this from memory with the slide behind you rather than reading it. It is roughly forty-five seconds of speech and it is the last substantive thing the TAs hear before questions begin — which makes it the part most worth rehearsing verbatim.`,
- if:`این بخش را از حفظ و با اسلاید در پشت سرتان ارائه دهید، نه از روی متن. حدود چهل و پنج ثانیه صحبت است و آخرین مطلب محتوایی است که دستیاران آموزشی پیش از شروع پرسش‌ها می‌شنوند — و همین آن را ارزشمندترین بخش برای تمرین کلمه‌به‌کلمه می‌کند.`},
+        {
+          n: 27,
+          p: 4,
+          badge: "References",
+          bc: "#14161A",
+          t: "References",
+          tf: "فهرست منابع",
+          c: `The formal bibliography, split A and B, plus a short note explaining which venues came from the PDFs themselves and which were confirmed externally.`,
+          cf: `کتاب‌شناسی رسمی، تفکیک‌شده به دستهٔ A و B، به‌همراه یادداشتی کوتاه که توضیح می‌دهد کدام محل‌های انتشار از خودِ فایل‌های PDF آمده‌اند و کدام‌ها از بیرون تأیید شده‌اند.`,
+          s: `Full reference list, eleven Category A and three Category B. One note worth making: venues for BM3D, TNRD, Noise2Noise and SCUNet are printed in the source PDFs themselves. The other seven are preprint versions that do not carry their venue, so those were confirmed against publisher, CVF Open Access or institutional proceedings records.`,
+          sf: `فهرست کامل منابع، یازده مورد دستهٔ A و سه مورد دستهٔ B. یک نکته ارزش گفتن دارد: محل انتشار برای BM3D، TNRD، Noise2Noise و SCUNet در خودِ فایل‌های منبع چاپ شده است. هفت مورد دیگر نسخهٔ پیش‌چاپ‌اند و محل انتشارشان را ندارند، پس آن‌ها در برابر سوابق ناشر، مخزن CVF Open Access یا سوابق مجموعه‌مقالات دانشگاهی تأیید شدند.`,
+          v: `The line beginning "Note:" on the right is deliberately plain rather than boxed, so you can point straight at it. It is the quiet proof that you did not simply copy citations from another paper's reference list — the most common shortcut in literature reviews, and the easiest to detect.`,
+          vf: `سطری که با «Note:» آغاز می‌شود عمداً بدون کادر آمده تا بتوانید مستقیم به آن اشاره کنید. این گواه بی‌سروصدای آن است که شما ارجاعات را صرفاً از فهرست منابع مقالهٔ دیگری کپی نکرده‌اید؛ رایج‌ترین میان‌بُر در مرورهای ادبیات و آسان‌ترین مورد برای تشخیص.`,
+          i: `The final slide is what stays on screen throughout the question period, so treat it as a working surface rather than an endpoint. Keep a finger ready on the Note line — "which of these did you verify yourself?" is a likely question and the answer is already written there.`,
+          if: `اسلاید پایانی در تمام مدت پرسش و پاسخ روی صفحه می‌ماند، پس آن را یک سطح کاری بدانید نه نقطهٔ پایان. انگشتتان را نزدیک سطر Note نگه دارید؛ پرسش «کدام‌یک را خودتان راستی‌آزمایی کردید؟» محتمل است و پاسخش همان‌جا نوشته شده.`,
+        },
+      ];
 
-{n:27,p:4,badge:"References",bc:"#14161A",
- t:"References",tf:"فهرست منابع",
- c:`The formal bibliography, split A and B, plus a short note explaining which venues came from the PDFs themselves and which were confirmed externally.`,
- cf:`کتاب‌شناسی رسمی، تفکیک‌شده به دستهٔ A و B، به‌همراه یادداشتی کوتاه که توضیح می‌دهد کدام محل‌های انتشار از خودِ فایل‌های PDF آمده‌اند و کدام‌ها از بیرون تأیید شده‌اند.`,
- s:`Full reference list, eleven Category A and three Category B. One note worth making: venues for BM3D, TNRD, Noise2Noise and SCUNet are printed in the source PDFs themselves. The other seven are preprint versions that do not carry their venue, so those were confirmed against publisher, CVF Open Access or institutional proceedings records.`,
- sf:`فهرست کامل منابع، یازده مورد دستهٔ A و سه مورد دستهٔ B. یک نکته ارزش گفتن دارد: محل انتشار برای BM3D، TNRD، Noise2Noise و SCUNet در خودِ فایل‌های منبع چاپ شده است. هفت مورد دیگر نسخهٔ پیش‌چاپ‌اند و محل انتشارشان را ندارند، پس آن‌ها در برابر سوابق ناشر، مخزن CVF Open Access یا سوابق مجموعه‌مقالات دانشگاهی تأیید شدند.`,
- v:`The line beginning "Note:" on the right is deliberately plain rather than boxed, so you can point straight at it. It is the quiet proof that you did not simply copy citations from another paper's reference list — the most common shortcut in literature reviews, and the easiest to detect.`,
- vf:`سطری که با «Note:» آغاز می‌شود عمداً بدون کادر آمده تا بتوانید مستقیم به آن اشاره کنید. این گواه بی‌سروصدای آن است که شما ارجاعات را صرفاً از فهرست منابع مقالهٔ دیگری کپی نکرده‌اید؛ رایج‌ترین میان‌بُر در مرورهای ادبیات و آسان‌ترین مورد برای تشخیص.`,
- i:`The final slide is what stays on screen throughout the question period, so treat it as a working surface rather than an endpoint. Keep a finger ready on the Note line — "which of these did you verify yourself?" is a likely question and the answer is already written there.`,
- if:`اسلاید پایانی در تمام مدت پرسش و پاسخ روی صفحه می‌ماند، پس آن را یک سطح کاری بدانید نه نقطهٔ پایان. انگشتتان را نزدیک سطر Note نگه دارید؛ پرسش «کدام‌یک را خودتان راستی‌آزمایی کردید؟» محتمل است و پاسخش همان‌جا نوشته شده.`}
-];
+      var nav = document.getElementById("nav"),
+        cards = document.getElementById("cards");
+      function pad(n) {
+        return n < 10 ? "0" + n : "" + n;
+      }
+      S.forEach(function (o) {
+        var a = document.createElement("a");
+        a.href = "#s" + o.n;
+        a.textContent = pad(o.n);
+        if (o.p) a.className = "p" + o.p;
+        a.title = o.t;
+        nav.appendChild(a);
 
-var nav=document.getElementById('nav'),cards=document.getElementById('cards');
-function pad(n){return n<10?'0'+n:''+n}
-S.forEach(function(o){
-  var a=document.createElement('a');
-  a.href='#s'+o.n; a.textContent=pad(o.n);
-  if(o.p) a.className='p'+o.p;
-  a.title=o.t; nav.appendChild(a);
-
-  var sec=document.createElement('section');
-  sec.className='card'; sec.id='s'+o.n;
-  sec.innerHTML=
-   '<div class="inner">'+
-    '<div class="chead">'+
-      '<div class="cn">'+pad(o.n)+'</div>'+
-      '<div class="ct">'+o.t+'</div>'+
-      '<div class="badge" style="background:'+o.bc+'">'+o.badge+'</div>'+
-      '<div class="ct-fa">'+o.tf+'</div>'+
-    '</div>'+
-    '<div class="body">'+
-      '<div class="col en" lang="en">'+
-        '<div class="langtag">English</div>'+
-        '<div class="sec"><div class="slab l-comm">What this slide communicates</div><p>'+o.c+'</p></div>'+
-        '<div class="sec script"><div class="slab l-script">Talking points — say this</div><p>'+o.s+'</p></div>'+
-        '<div class="sec"><div class="slab l-vis">What the visual means</div><p>'+o.v+'</p></div>'+
-        '<div class="sec imp"><div class="slab l-imp">How to improve this slide</div><p>'+o.i+'</p></div>'+
-      '</div>'+
-      '<div class="col fa" lang="fa" dir="rtl">'+
-        '<div class="langtag">فارسی</div>'+
-        '<div class="sec"><div class="slab l-comm">پیام این اسلاید</div><p>'+o.cf+'</p></div>'+
-        '<div class="sec script"><div class="slab l-script">نکات گفتاری — این را بگویید</div><p>'+o.sf+'</p></div>'+
-        '<div class="sec"><div class="slab l-vis">معنای تصویر</div><p>'+o.vf+'</p></div>'+
-        '<div class="sec imp"><div class="slab l-imp">راه بهبود این اسلاید</div><p>'+o.if+'</p></div>'+
-      '</div>'+
-    '</div>'+
-   '</div>';
-  cards.appendChild(sec);
-});
-</script>
-</body>
+        var sec = document.createElement("section");
+        sec.className = "card";
+        sec.id = "s" + o.n;
+        sec.innerHTML =
+          '<div class="inner">' +
+          '<div class="chead">' +
+          '<div class="cn">' +
+          pad(o.n) +
+          "</div>" +
+          '<div class="ct">' +
+          o.t +
+          "</div>" +
+          '<div class="badge" style="background:' +
+          o.bc +
+          '">' +
+          o.badge +
+          "</div>" +
+          '<div class="ct-fa">' +
+          o.tf +
+          "</div>" +
+          "</div>" +
+          '<div class="body">' +
+          '<div class="col en" lang="en">' +
+          '<div class="langtag">English</div>' +
+          '<div class="sec"><div class="slab l-comm">What this slide communicates</div><p>' +
+          o.c +
+          "</p></div>" +
+          '<div class="sec script"><div class="slab l-script">Talking points — say this</div><p>' +
+          o.s +
+          "</p></div>" +
+          '<div class="sec"><div class="slab l-vis">What the visual means</div><p>' +
+          o.v +
+          "</p></div>" +
+          '<div class="sec imp"><div class="slab l-imp">How to improve this slide</div><p>' +
+          o.i +
+          "</p></div>" +
+          "</div>" +
+          '<div class="col fa" lang="fa" dir="rtl">' +
+          '<div class="langtag">فارسی</div>' +
+          '<div class="sec"><div class="slab l-comm">پیام این اسلاید</div><p>' +
+          o.cf +
+          "</p></div>" +
+          '<div class="sec script"><div class="slab l-script">نکات گفتاری — این را بگویید</div><p>' +
+          o.sf +
+          "</p></div>" +
+          '<div class="sec"><div class="slab l-vis">معنای تصویر</div><p>' +
+          o.vf +
+          "</p></div>" +
+          '<div class="sec imp"><div class="slab l-imp">راه بهبود این اسلاید</div><p>' +
+          o.if +
+          "</p></div>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+        cards.appendChild(sec);
+      });
+    </script>
+  </body>
 </html>
