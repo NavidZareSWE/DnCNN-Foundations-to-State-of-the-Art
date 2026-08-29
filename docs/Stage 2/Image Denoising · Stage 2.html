@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage 2 — From Papers to Running Code · Image Denoising</title>
+<style>
+:root{
+  --ink:#080C12; --panel:#0F151E; --rule:#22303F;
+  --tx:#E9EFF7; --tx2:#A7B6C9; --tx3:#6B7D93;
+  --kw:#A78BFA; --str:#E5B769; --fn:#5FD3D0; --err:#F2748C; --ok:#7FD18B;
+  --mono:ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--ink);color:var(--tx);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+
+#bar{position:fixed;top:0;left:0;height:3px;background:var(--fn);width:0;z-index:60;transition:width .3s}
+#hud{position:fixed;bottom:20px;right:26px;z-index:60;font-family:var(--mono);font-size:17px;
+  color:var(--tx3);letter-spacing:.1em;display:flex;gap:16px;align-items:center}
+#hud b{color:var(--tx);font-weight:500}
+#hud button{background:none;border:1px solid var(--rule);color:var(--tx3);border-radius:5px;
+  font-family:var(--mono);font-size:17px;padding:4px 12px;cursor:pointer}
+#hud button:hover{color:var(--fn);border-color:var(--fn)}
+#hud button:focus-visible{outline:2px solid var(--fn);outline-offset:2px}
+
+.slide{position:absolute;inset:0;display:none;padding:46px 62px 74px 96px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.slide.on{display:block;animation:in .3s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.slide.on{animation:none}#bar{transition:none}}
+
+.gut{position:absolute;left:0;top:0;bottom:0;width:44px;border-right:1px solid var(--rule);
+  background:linear-gradient(180deg,rgba(95,211,208,.06),transparent 45%)}
+.gut span{position:absolute;bottom:26px;left:50%;transform:translateX(-50%) rotate(180deg);
+  writing-mode:vertical-rl;font-family:var(--mono);font-size:13px;letter-spacing:.2em;
+  color:var(--tx3);text-transform:uppercase;white-space:nowrap}
+
+.eyebrow{font-family:var(--mono);font-size:16px;letter-spacing:.24em;color:var(--fn);
+  text-transform:uppercase;margin-bottom:16px}
+.eyebrow i{font-style:normal;color:var(--tx3)}
+h1{font-size:clamp(44px,5.4vw,72px);font-weight:650;letter-spacing:-.025em;line-height:1.05;margin-bottom:18px}
+h2{font-size:clamp(32px,3.9vw,48px);font-weight:600;letter-spacing:-.02em;line-height:1.12;margin-bottom:16px}
+p{color:var(--tx2);font-size:22px;line-height:1.5;max-width:60ch;margin-bottom:14px}
+p strong,li strong,td strong{color:var(--tx);font-weight:600}
+.lede{font-size:27px;color:var(--tx);line-height:1.4;max-width:46ch}
+ul{margin:0 0 14px 24px}
+li{color:var(--tx2);font-size:21px;line-height:1.5;margin-bottom:10px;max-width:60ch}
+.m{font-family:var(--mono);font-size:.9em;color:var(--str)}
+
+pre{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:18px 22px;
+  overflow-x:auto;margin:6px 0;font-family:var(--mono);font-size:19px;line-height:1.55;color:#CFDCEC}
+pre.sm{font-size:16.5px}
+pre .c{color:var(--tx3);font-style:italic}
+pre .k{color:var(--kw)} pre .s{color:var(--str)} pre .f{color:var(--fn)} pre .n{color:var(--err)}
+.fileref{font-family:var(--mono);font-size:15px;color:var(--tx3);letter-spacing:.03em;margin:0 0 16px;display:block}
+.fileref b{color:var(--fn);font-weight:500}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:20px 22px}
+.card .t{font-family:var(--mono);font-size:14.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--fn);margin-bottom:11px}
+.card.v .t{color:var(--kw)} .card.a .t{color:var(--str)} .card.e .t{color:var(--err)}
+.card p{font-size:20px;margin-bottom:0;max-width:none;line-height:1.45}
+.card pre{margin:0;background:#080C12}
+
+table{border-collapse:collapse;width:100%;margin:10px 0 14px;font-size:19px}
+th{font-family:var(--mono);font-size:14.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tx3);text-align:left;font-weight:500;padding:11px 13px;border-bottom:1px solid var(--rule)}
+td{padding:11px 13px;border-bottom:1px solid rgba(34,48,63,.55);color:var(--tx2);vertical-align:top}
+td:first-child{color:var(--tx);font-weight:500}
+td.n,th.n{text-align:right}
+td.n{font-family:var(--mono)}
+tr.hi td{background:rgba(95,211,208,.06)}
+tr.bad td{color:var(--err)}
+
+.note{border-left:3px solid var(--str);padding:4px 0 4px 18px;margin:16px 0}
+.note p{margin:0;font-size:21px;color:var(--tx2)}
+
+.div-s{display:flex;flex-direction:column;justify-content:center;min-height:80%}
+.foot{position:fixed;bottom:22px;left:96px;font-family:var(--mono);font-size:14px;
+  letter-spacing:.14em;color:var(--tx3);text-transform:uppercase;z-index:55}
+.arrow{color:var(--fn);font-family:var(--mono)}
+
+@media (max-width:900px){
+  .g2,.g3{grid-template-columns:1fr}
+  .slide{padding:34px 22px 76px 64px}
+  .foot{left:64px}
+  pre{font-size:15px} pre.sm{font-size:13.5px}
+  p,li{font-size:19px} table{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="foot">Stage 2 · From papers to running code</div>
+<div id="hud">
+  <button id="prev" aria-label="Previous slide">&#8592;</button>
+  <span><b id="cur">1</b> / <span id="tot">18</span></span>
+  <button id="next" aria-label="Next slide">&#8594;</button>
+</div>
+
+<!-- 01 -->
+<section class="slide on" data-gut="stage 1 &rarr; stage 2">
+  <div class="div-s">
+    <div class="eyebrow">Image Denoising <i>&middot;</i> Stage 2</div>
+    <h1>From papers<br>to running code.</h1>
+    <p class="lede" style="margin-top:10px">Stage 1 traced how the <em>idea</em> of a prior moved out of human hands.
+      Stage 2 follows the same journey through the source files &mdash; and finds it written there, line by line.</p>
+    <p style="margin-top:26px;font-size:20px;color:var(--tx3)">Seven repositories cloned at pinned commits, read,
+      and executed. Every claim on every slide points at a file and a line.</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="slide" data-gut="one question, four answers">
+  <div class="eyebrow">02 <i>/</i> The through-line</div>
+  <h2>We asked every codebase the same question</h2>
+  <p class="lede" style="margin:6px 0 22px">&ldquo;Open the file. Where is the prior?&rdquo;</p>
+  <table>
+    <thead><tr><th>Era</th><th>Open the file, and you find&hellip;</th><th>What ships to a user</th></tr></thead>
+    <tbody>
+      <tr><td>Classical DIP</td><td>A <strong>while-loop</strong> and a hand-tuned <span class="m">weight</span></td><td>An algorithm</td></tr>
+      <tr><td>Deep CNN &middot; 2017</td><td>A <strong>list comprehension</strong> of conv layers</td><td>A <span class="m">.pth</span> file</td></tr>
+      <tr class="hi"><td>Data branch &middot; 2018&ndash;25</td><td>The <strong>supervision</strong> &mdash; the network stops changing</td><td>A <span class="m">.pth</span>, plus 50 steps per image</td></tr>
+      <tr class="hi"><td>Architecture branch &middot; 2022&ndash;24</td><td>A new <strong>operator</strong> replacing the 3&times;3 conv</td><td>A <span class="m">.pth</span> and a YAML</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><p>That table is the plan for the next twelve minutes. We walk it top to bottom, in code.</p></div>
+</section>
+
+<!-- 03 -->
+<section class="slide" data-gut="_denoise.py:405">
+  <div class="eyebrow">03 <i>/</i> Classical DIP &middot; the prior is a line you write yourself</div>
+  <h2>Total variation, as actually implemented</h2>
+<pre><span class="k">while</span> i &lt; max_num_iter:          <span class="c"># default 200 &mdash; per image</span>
+    d   = -p.sum(<span class="n">0</span>)              <span class="c"># divergence of the dual field</span>
+    out = image + d
+    E   = (d**<span class="n">2</span>).sum()            <span class="c"># fidelity term</span>
+    E  += weight * norm.sum()   <span class="c"># &larr; the prior. Hand-written.</span>
+    p  -= tau * g
+    p  /= norm</pre>
+  <span class="fileref"><b>scikit-image 0.26.0</b> &middot; skimage/restoration/_denoise.py line 405 &mdash; Rudin&ndash;Osher&ndash;Fatemi</span>
+  <div class="g3">
+    <div class="card e"><div class="t">No training</div><p>No dataset, no optimiser, no weights. The algorithm <em>is</em> the model.</p></div>
+    <div class="card a"><div class="t">One knob, set by a human</div><p><span class="m">weight</span> trades smoothing against fidelity. You tune it &mdash; per image, per noise level.</p></div>
+    <div class="card"><div class="t">Nothing is reused</div><p>200 iterations run again, from scratch, for the next image. Forever.</p></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="slide" data-gut="why it broke">
+  <div class="eyebrow">04 <i>/</i> Why the field left this behind</div>
+  <h2>Two costs, both visible from the code</h2>
+  <div class="g2">
+    <div>
+      <div class="card e" style="margin-bottom:18px"><div class="t">Cost 1 &mdash; test time is compute time</div>
+        <p>Every image restarts an optimisation. Reported at 512&times;512 in the DnCNN paper, Table IV:</p></div>
+      <table style="margin-top:0">
+        <tbody>
+          <tr><td>BM3D</td><td class="n">2.85 s</td></tr>
+          <tr><td>WNNM</td><td class="n">773 s</td></tr>
+          <tr class="hi"><td>DnCNN-B, GPU</td><td class="n">0.060 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card v"><div class="t">Cost 2 &mdash; there is no artefact</div>
+      <p>A decade of BM3D research produced no downloadable object. You cannot install a tuned prior, fine-tune it,
+        or hand it to a colleague.</p>
+      <p style="margin-top:14px"><strong>The deep era's real contribution to engineering is not accuracy.
+        It is that the prior became a file.</strong></p></div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="slide" data-gut="network_dncnn.py:20">
+  <div class="eyebrow">05 <i>/</i> 2017 &middot; DnCNN &mdash; the loop becomes a list comprehension</div>
+  <h2>Same shape, different substance</h2>
+<pre>m_head = B.conv(in_nc, nc, mode=<span class="s">'C'</span>+act_mode[<span class="n">-1</span>])
+m_body = [B.conv(nc, nc, mode=<span class="s">'C'</span>+act_mode) <span class="k">for</span> _ <span class="k">in</span> range(nb<span class="n">-2</span>)]
+m_tail = B.conv(nc, out_nc, mode=<span class="s">'C'</span>)
+self.model = B.sequential(m_head, *m_body, m_tail)
+
+<span class="k">def</span> <span class="f">forward</span>(self, x):
+    n = self.model(x)
+    <span class="k">return</span> x - n          <span class="c"># predict the noise, then subtract it</span></pre>
+  <span class="fileref"><b>cszn/KAIR</b> &middot; models/network_dncnn.py line 20 &middot; <span class="m">nb=17..20</span>, <span class="m">nc=64</span>, mode <span class="m">'BR'</span> = BatchNorm + ReLU</span>
+  <p>The classical <span class="m">while</span> loop iterated <em>in time</em>. DnCNN unrolls the same idea
+    <em>in depth</em> &mdash; 20 stacked layers, run once.</p>
+  <div class="note"><p><span class="m">return x - n</span> is residual learning: the paper's central trick, in one line.
+    The prior is now the 0.67 M numbers inside <span class="m">self.model</span>.</p></div>
+</section>
+
+<!-- 06 -->
+<section class="slide" data-gut="dataset_dncnn.py __getitem__">
+  <div class="eyebrow">06 <i>/</i> 2017 &middot; where the training pairs come from</div>
+  <h2>The noise is manufactured, on the fly, per sample</h2>
+<pre>patch_H = img_H[rnd_h:rnd_h+ps, rnd_w:rnd_w+ps, :]      <span class="c"># random crop</span>
+patch_H = util.<span class="f">augment_img</span>(patch_H, mode=random.randint(<span class="n">0</span>,<span class="n">7</span>))  <span class="c"># flip / rot</span>
+img_L   = img_H.clone()
+noise   = torch.<span class="f">randn</span>(img_L.size()).mul_(self.sigma/<span class="n">255.0</span>)
+img_L.add_(noise)</pre>
+  <span class="fileref"><b>cszn/KAIR</b> &middot; data/dataset_dncnn.py &middot; <span class="m">__getitem__</span></span>
+  <div class="g2">
+    <div class="card"><div class="t">What this buys</div>
+      <p>Infinite training pairs from a folder of clean photographs. No paired capture rig, no registration.
+        It is why deep denoising took off before deep deblurring did.</p></div>
+    <div class="card e"><div class="t">What it costs &mdash; remember this line</div>
+      <p><span class="m">img_H</span> must exist. The whole pipeline rests on <strong>owning a clean image</strong>.
+        That assumption is the next bottleneck, and it sits right here in <span class="m">__getitem__</span>.</p></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="slide" data-gut="2018 &middot; the fork">
+  <div class="div-s">
+    <div class="eyebrow">07 <i>/</i> The fork</div>
+    <h2 style="font-size:clamp(30px,3.6vw,44px)">By 2018 the code showed two limits, and two communities went after them separately</h2>
+    <div class="g2" style="margin-top:24px">
+      <div class="card a"><div class="t">Limit in <span class="m">dataset_dncnn.py</span></div>
+        <p style="margin-bottom:12px"><span class="m">img_H</span> &mdash; you need clean data.</p>
+        <p><strong>The data branch.</strong> Changes the <em>supervision</em> &mdash; what goes in,
+          what it is scored against.<br>
+          <span class="arrow">&rarr;</span> Noise2Noise &middot; Noise2Void &middot; ZS-N2N &middot; P2N</p></div>
+      <div class="card v"><div class="t">Limit in <span class="m">network_dncnn.py</span></div>
+        <p style="margin-bottom:12px"><span class="m">B.conv(nc, nc)</span> &mdash; a 3&times;3 kernel sees 3&times;3 pixels.</p>
+        <p><strong>The architecture branch.</strong> Changes the <em>operator</em> &mdash; what computes
+          in between.<br>
+          <span class="arrow">&rarr;</span> Restormer &middot; NAFNet &middot; SCUNet &middot; MambaIR</p></div>
+    </div>
+    <p style="margin-top:24px;font-size:21px">Both branches are alive in 2026. Neither has absorbed the other.</p>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="slide" data-gut="noise2noise/train.py:105">
+  <div class="eyebrow">08 <i>/</i> Data branch, 2018 &middot; Noise2Noise</div>
+  <h2>The entire paper is one <span class="m" style="font-size:.75em">if</span> statement</h2>
+<pre><span class="k">if</span> noise2noise:
+    meansq_error = tf.reduce_mean(tf.square(<span class="f">noisy_target</span> - denoised))
+<span class="k">else</span>:
+    meansq_error = tf.reduce_mean(tf.square(<span class="n">clean_target</span> - denoised))</pre>
+  <span class="fileref"><b>NVlabs/noise2noise</b> &middot; train.py line 105 &middot; commit <span class="m">7355519</span></span>
+  <p>Same network, same optimiser, same loader. The target swaps from a clean image to <em>a second noisy
+    photograph of the same scene</em> &mdash; and it still converges, because the noise has zero mean and an
+    L2 loss regresses to the mean.</p>
+  <div class="note"><p><strong>An engineering detail worth noticing:</strong> this repo is
+    <span class="m">import tensorflow as tf</span>, pinned to <span class="m">scipy==1.1.0</span>,
+    <span class="m">Pillow==5.2.0</span>. It is the last major denoiser in our study that is not PyTorch.
+    In everything that follows, the framework question has exactly one answer.</p></div>
+</section>
+
+<!-- 09 -->
+<section class="slide" data-gut="the network never changed">
+  <div class="eyebrow">09 <i>/</i> Data branch, 2025 &middot; the finding of this stage</div>
+  <h2>Seven years, two frameworks, identical widths</h2>
+  <div class="g2">
+    <div class="card a"><div class="t">2018 &middot; TensorFlow &middot; noise2noise/network.py</div>
+<pre class="sm">conv_lr(<span class="s">'enc_conv0..6'</span>, n, <span class="n">48</span>)
+conv_lr(<span class="s">'dec_conv5..2'</span>, n, <span class="n">96</span>)
+conv_lr(<span class="s">'dec_conv1a'</span>,   n, <span class="n">64</span>)
+conv_lr(<span class="s">'dec_conv1b'</span>,   n, <span class="n">32</span>)
+conv   (<span class="s">'dec_conv1'</span>,    n,  <span class="n">3</span>)</pre></div>
+    <div class="card v"><div class="t">2025 &middot; PyTorch &middot; P2N-plus/network.py</div>
+<pre class="sm"><span class="k">class</span> <span class="f">UNet_n2n_un</span>(nn.Module):
+  en_block1..5 &rarr; <span class="n">48</span>
+  de_block1..4 &rarr; <span class="n">96</span>
+  de_block5    &rarr; <span class="n">64</span> &rarr; <span class="n">32</span>
+               &rarr; Conv2d(<span class="n">32</span>, out, <span class="n">3</span>)</pre></div>
+  </div>
+  <p style="margin-top:18px">A CVPR 2025 paper ships the 2018 Noise2Noise U-Net unchanged. The class name is not
+    a coincidence &mdash; it is a citation.</p>
+  <div class="note"><p><strong>So the data branch never was an architecture story.</strong> Everything that changed
+    between 2018 and 2025 lives in one function &mdash; <span class="m">noise_estimation_loss</span> &mdash; and that
+    function does more than score outputs: it builds the inputs too. Only opening both files shows it.</p></div>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-gut="P2N-plus/test.py:121">
+  <div class="eyebrow">10 <i>/</i> Data branch, 2025 &middot; what <em>did</em> change</div>
+  <h2>P2N: renoise the estimate, then demand agreement</h2>
+<pre>output = self.model(noisy)
+noise  = noisy - output                             <span class="c"># estimated noise</span>
+
+output_p = self.model(output + noise   * sigma_p)   <span class="c"># y&#8314; = x&#770; + &alpha;&middot;n&#770;</span>
+noise_n  = self.<span class="f">noise_generate</span>(noise)              <span class="c"># return noise * (-1)</span>
+output_n = self.model(output + noise_n * sigma_n)   <span class="c"># y&#8315; = x&#770; &minus; &alpha;&middot;n&#770;</span>
+
+<span class="k">return</span> self.criterion(output_p, output_n)          <span class="c"># make them agree</span></pre>
+  <span class="fileref"><b>Li-Tong-621/P2N-plus</b> &middot; test.py line 121, branch <span class="m">'RDC+DSC'</span> &mdash; commented &ldquo;CVPR version&rdquo;</span>
+  <p><strong>Positive to negative</strong> is literally <span class="m">noise * (-1)</span> &mdash; one line, at test.py:109.
+    The paper names the two halves: building <em>y</em>&#8314; and <em>y</em>&#8315; is <strong>renoised data
+    construction (RDC)</strong>; training them to agree is <strong>denoised consistency supervision (DCS)</strong>.
+    Those are the abbreviations on the next slide.</p>
+  <div class="note"><p>Noise2Void must <em>mask</em> pixels; ZS-N2N must <em>downsample</em>. Both discard information.
+    Renoising keeps every pixel &mdash; that is the &ldquo;information-lossy barrier&rdquo; of the title.</p></div>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-gut="close the branch, hand off">
+  <div class="eyebrow">11 <i>/</i> Data branch &middot; closing</div>
+  <h2>The network never moved. The target did.</h2>
+  <p>Every advance on this branch is a different answer to one question: if you have no clean image, what do you
+    train against?</p>
+  <div class="g3" style="grid-template-columns:repeat(4,1fr);gap:16px">
+    <div class="card"><div class="t">2018 &middot; Noise2Noise</div>
+      <p>A second noisy shot of the same scene.<br>
+        <span style="color:var(--tx3)">Cost: you need two.</span></p></div>
+    <div class="card"><div class="t">2019 &middot; Noise2Void</div>
+      <p>The pixel it was not allowed to see.<br>
+        <span style="color:var(--tx3)">Cost: pixels thrown away.</span></p></div>
+    <div class="card"><div class="t">2023 &middot; ZS-N2N</div>
+      <p>The other half of a downsampled pair.<br>
+        <span style="color:var(--tx3)">Cost: half the resolution.</span></p></div>
+    <div class="card v"><div class="t">2025 &middot; P2N</div>
+      <p>Its own output, renoised the other way.<br>
+        <span style="color:var(--tx3)">Cost: none &mdash; every pixel kept.</span></p></div>
+  </div>
+  <p style="margin-top:22px">Four papers, one network. <span class="m">UNet_n2n_un</span> &mdash; 48, 96, 64, 32 &mdash;
+    unchanged since 2018.</p>
+  <div class="note"><p><strong>The other branch made the opposite bet:</strong> keep the supervision, rebuild the
+    network. That is slides 12 to 14.</p></div>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-gut="restormer_arch.py:111">
+  <div class="eyebrow">12 <i>/</i> Architecture branch, 2022 &middot; Restormer</div>
+  <h2>Attention, transposed so that it scales</h2>
+<pre>q = rearrange(q, <span class="s">'b (head c) h w -&gt; b head c (h w)'</span>, head=num_heads)
+k = rearrange(k, <span class="s">'b (head c) h w -&gt; b head c (h w)'</span>, head=num_heads)
+
+attn = (q @ k.transpose(<span class="n">-2</span>, <span class="n">-1</span>)) * self.temperature
+attn = attn.softmax(dim=<span class="n">-1</span>)</pre>
+  <span class="fileref"><b>swz30/Restormer</b> &middot; basicsr/models/archs/restormer_arch.py line 111</span>
+  <p>Channels go second-to-last, pixels go last. So the product is <strong>C/k &times; C/k</strong> &mdash; a channel
+    covariance &mdash; not HW &times; HW. Cost falls from <span class="m">O(H&sup2;W&sup2;C)</span> to
+    <span class="m">O(HWC&sup2;/k)</span>: linear in pixels.</p>
+  <div class="note"><p>This is the direct answer to DnCNN's 3&times;3 limit. A pixel can now influence any other
+    pixel, at a price you can afford on a full-resolution photograph.</p></div>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-gut="NAFNet_arch.py:22">
+  <div class="eyebrow">13 <i>/</i> Architecture branch, 2022 &middot; NAFNet</div>
+  <h2>The rebuttal: delete the activation function</h2>
+<pre><span class="k">class</span> <span class="f">SimpleGate</span>(nn.Module):
+    <span class="k">def</span> <span class="f">forward</span>(self, x):
+        x1, x2 = x.chunk(<span class="n">2</span>, dim=<span class="n">1</span>)
+        <span class="k">return</span> x1 * x2</pre>
+  <span class="fileref"><b>megvii-research/NAFNet</b> &middot; NAFNet_arch.py line 22 &mdash; that is the entire class</span>
+  <p>Wherever a network would apply ReLU, GELU or Softmax, NAFNet splits the tensor and multiplies the halves.
+    Its claim: the gains credited to attention were mostly gains from <em>gating</em>.</p>
+  <div class="g2">
+    <div class="card"><div class="t">Every block starts as the identity</div>
+      <p><span class="m">beta</span> and <span class="m">gamma</span> initialise to <strong>zero</strong>, so a
+        36-block network begins life as a plain U-Net skip path and switches depth on by gradient descent.
+        Hence <span class="m">warmup_iter: -1</span> in the config.</p></div>
+    <div class="card a"><div class="t">A loss that is the metric</div>
+      <p><span class="m">PSNRLoss = (10/ln10)&middot;mean(log(MSE per image))</span> &mdash; literally &minus;PSNR.
+        The log sits inside the batch mean, so easy images stop dominating the gradient.
+        Not perceptual, not adversarial: metric-aligned.</p></div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="slide" data-gut="hybrid &middot; scan">
+  <div class="eyebrow">14 <i>/</i> Architecture branch, 2023&ndash;24 &middot; two more answers</div>
+  <h2>SCUNet refuses to choose. MambaIR changes the mathematics.</h2>
+  <div class="g2">
+    <div class="card"><div class="t">SCUNet &middot; split the channels</div>
+<pre class="sm">conv_x, trans_x = torch.split(...)
+conv_x  = conv_block(conv_x) + conv_x
+trans_x = trans_block(trans_x)   <span class="c"># Swin</span>
+x = x + conv1_2(cat(conv_x, trans_x))</pre>
+      <p style="margin-top:12px">Half the channels take a 3&times;3 conv for texture, half take windowed attention
+        for structure. Its real edge is elsewhere: a randomised degradation pipeline &mdash; blur, Poisson, JPEG,
+        ISP &mdash; which is why its blind weights survive real photographs.</p></div>
+    <div class="card v"><div class="t">MambaIR &middot; scan instead of attend</div>
+<pre class="sm">A_log_init(d_state, d_inner,
+           copies=<span class="n">4</span>, merge=<span class="k">True</span>)
+<span class="c"># an image has no scan order,</span>
+<span class="c"># so scan four ways and merge</span></pre>
+      <p style="margin-top:12px">A selective state-space recurrence with input-dependent A, B, C.
+        Linear cost and global context &mdash; but paid for in a different currency, as the next slide shows.</p></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" data-gut="what a modern repo is">
+  <div class="eyebrow">15 <i>/</i> Engineering reality</div>
+  <h2>What a modern denoising repository actually is</h2>
+  <div class="g2">
+    <div>
+      <div class="card v" style="margin-bottom:16px"><div class="t">Not a library &mdash; a fork of a training harness</div>
+        <p>Restormer, NAFNet and MambaIR each vendor a modified copy of <strong>BasicSR</strong> into a local
+          <span class="m">basicsr/</span>. Importing one architecture file runs the whole package
+          <span class="m">__init__</span> chain: <span class="m">NAFNet_arch</span> pulled in
+          <span class="m">lmdb</span>, which the forward pass never touches. Two of these repos cannot coexist
+          in one Python process &mdash; they collide on the <span class="m">basicsr</span> namespace.</p></div>
+      <div class="card e"><div class="t">And one of them will not run at all</div>
+        <p>MambaIR line 11 is an unconditional <span class="m">from mamba_ssm &hellip; import</span> &mdash;
+          no try/except, no CPU fallback. <span class="m">ModuleNotFoundError</span>.
+          Pinned to CUDA 11.7 / PyTorch 2.0.1.</p></div>
+    </div>
+    <div class="card a"><div class="t">The model is now a YAML entry</div>
+<pre class="sm"><span class="f">network_g</span>:
+  <span class="f">type</span>: NAFNet
+  <span class="f">width</span>: <span class="n">64</span>
+  <span class="f">enc_blk_nums</span>: [<span class="n">2</span>,<span class="n">2</span>,<span class="n">4</span>,<span class="n">8</span>]
+  <span class="f">middle_blk_num</span>: <span class="n">12</span>
+<span class="f">datasets</span>:
+  <span class="f">type</span>: PairedImageDataset
+  <span class="f">io_backend</span>: {<span class="f">type</span>: lmdb}</pre>
+      <p style="margin-top:12px">In 2017 the model was <span class="m">DnCNN(nc=64, nb=20)</span> in a script.
+        Today architecture, data, optimiser, loss and metrics are one declarative file resolved through a
+        registry &mdash; so a reproduction attempt is a <strong>diff between two YAMLs</strong>.</p></div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="slide" data-gut="the prior as a file">
+  <div class="eyebrow">16 <i>/</i> Engineering reality &middot; how the weights reach you</div>
+  <h2>The classical era shipped nothing. This is what replaced it.</h2>
+  <table>
+    <thead><tr><th>Model</th><th>How the weights are distributed</th><th>Robustness</th></tr></thead>
+    <tbody>
+      <tr><td>DnCNN &middot; SCUNet</td><td class="m">github.com/cszn/KAIR/releases/download/v1.0/&hellip;pth</td><td>Versioned, scriptable</td></tr>
+      <tr class="bad"><td>Restormer</td><td>Hard-coded Google Drive file IDs; <span class="m">torch.load(w)['params']</span></td><td>Opaque, unversioned</td></tr>
+      <tr><td>NAFNet</td><td>GitHub releases + an official Hugging Face Space</td><td>Mixed</td></tr>
+      <tr><td>MambaIR</td><td>Releases + a Colab notebook</td><td>Needs a GPU runtime</td></tr>
+      <tr class="hi"><td>P2N+</td><td>Checkpoint committed into the repo &mdash; then <strong>50 gradient steps on your one image</strong></td><td>A starting point, not a product</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><p>Each of these also pads the input up to its own stride multiple and crops the result back:
+    Restormer 8, NAFNet 16, SCUNet 64, P2N+ 32. Same idiom, four constants &mdash; which matters the moment you
+    chain two of them in one pipeline.</p></div>
+</section>
+
+<!-- 17 -->
+<section class="slide" data-gut="we ran them">
+  <div class="eyebrow">17 <i>/</i> Measured, not quoted</div>
+  <h2>We instantiated each model from its own repo and timed it</h2>
+  <table>
+    <thead><tr><th>Model</th><th>Configuration</th><th class="n">Parameters</th><th class="n">CPU &middot; 256&sup2;</th></tr></thead>
+    <tbody>
+      <tr><td>DnCNN-B</td><td class="m">nc=64, nb=20</td><td class="n">0.668 M</td><td class="n">1.015 s</td></tr>
+      <tr><td>P2N+ &middot; SPI off</td><td class="m">UNet_n2n_un</td><td class="n">0.991 M</td><td class="n">0.286 s</td></tr>
+      <tr><td>P2N+ &middot; SPI on</td><td class="m">conv_type='SPI'</td><td class="n">0.925 M</td><td class="n">0.710 s</td></tr>
+      <tr><td>SCUNet</td><td class="m">dim=64</td><td class="n">9.663 M</td><td class="n">1.685 s</td></tr>
+      <tr class="hi"><td>Restormer</td><td class="m">dim=48, [4,6,6,8]</td><td class="n">26.127 M</td><td class="n">10.436 s</td></tr>
+      <tr class="hi"><td>NAFNet</td><td class="m">width=64, SIDD</td><td class="n">115.983 M</td><td class="n">1.899 s</td></tr>
+      <tr class="bad"><td>MambaIR</td><td>&mdash;</td><td class="n">not measurable</td><td class="n">import failed</td></tr>
+    </tbody>
+  </table>
+  <div class="g2" style="margin-top:4px">
+    <div class="card v"><div class="t">Parameters do not predict speed</div>
+      <p>NAFNet carries <strong>4.4&times;</strong> Restormer's parameters and runs <strong>5.5&times; faster</strong>.
+        1&times;1 and depth-wise convs hit fast kernels; <span class="m">rearrange</span> forces layout changes.</p></div>
+    <div class="card e"><div class="t">And a parameter table can mislead</div>
+      <p>Turning SPI on <em>cuts</em> parameters 6.7% and <em>raises</em> latency 2.5&times; &mdash; every layer
+        runs twice, on x and &minus;x. MambaIR's own changelog admits its published
+        <span class="m">thop</span> figures were wrong and are larger under <span class="m">fvcore</span>.</p></div>
+  </div>
+</section>
+
+<!-- 18 -->
+<section class="slide" data-gut="the arc, in one table">
+  <div class="eyebrow">18 <i>/</i> Where this leaves us</div>
+  <h2>Where the prior lives, across three eras</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Classical &mdash; TV, BM3D, WNNM</th><th>Deep &mdash; DnCNN &rarr; Restormer, NAFNet</th><th>Self-supervised &mdash; P2N, 2025</th></tr></thead>
+    <tbody>
+      <tr><td>Where the prior lives</td><td>Hand-written in the objective</td><td>Learned into a <span class="m">state_dict</span></td><td>Learned per image, at test time</td></tr>
+      <tr><td>What ships</td><td>An algorithm + tuned constants</td><td>A <span class="m">.pth</span> on GitHub Releases</td><td>A <span class="m">.pth</span> as initialisation</td></tr>
+      <tr><td>Test-time work</td><td>An optimisation per image</td><td>One forward pass</td><td>~50 gradient steps per image</td></tr>
+      <tr><td>Reuse</td><td>None; every image restarts</td><td>Downloaded once, reused forever</td><td>Partial; adapts to each image</td></tr>
+      <tr class="hi"><td>Training data</td><td>None</td><td>Large paired corpora &mdash; SIDD, DIV2K</td><td><strong>One noisy image</strong></td></tr>
+      <tr><td>512&sup2; runtime (DnCNN paper)</td><td>BM3D 2.85 s &middot; WNNM 773 s</td><td>DnCNN-B 0.060 s, GPU</td><td>Seconds &mdash; but per image, always</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:24px;color:var(--tx);margin-top:8px"><strong>The prior moved out of the algorithm into the
+    weights &mdash; then, in the self-supervised branch, back out of the weights into a per-image optimisation
+    that needs no clean data at all.</strong></p>
+  <p style="font-size:20px">Which one to deploy depends on the constraint: NAFNet on a GPU with paired data,
+    SCUNet when memory is tight, P2N when no clean image exists. The fork has not closed &mdash; and the code shows why.</p>
+</section>
+
+<script>
+(function(){
+  var s = Array.prototype.slice.call(document.querySelectorAll('.slide')), i = 0;
+  document.getElementById('tot').textContent = s.length;
+  s.forEach(function(el){
+    var g = document.createElement('div'); g.className='gut';
+    var t = document.createElement('span'); t.textContent = el.dataset.gut || '';
+    g.appendChild(t); el.insertBefore(g, el.firstChild);
+  });
+  function show(n){
+    i = Math.max(0, Math.min(s.length-1, n));
+    s.forEach(function(el,k){ el.classList.toggle('on', k===i); });
+    document.getElementById('cur').textContent = i+1;
+    document.getElementById('bar').style.width = ((i+1)/s.length*100)+'%';
+    s[i].scrollTop = 0;
+  }
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    if(e.key==='Home')show(0); if(e.key==='End')show(s.length-1);
+  });
+  show(0);
+})();
+</script>
+</body>
+</html>
