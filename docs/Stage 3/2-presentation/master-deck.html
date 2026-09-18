@@ -37,11 +37,11 @@ h2{font-size:46px;line-height:1.08;letter-spacing:-1.1px;margin:0 0 16px}
 .rule{width:120px;height:4px;background:var(--acc);margin:0 0 26px}
 /* embedded figures from the source papers */
 .figband{margin:6px 0 26px;text-align:center}
-.figband img{max-width:100%;max-height:360px;width:auto;height:auto;border:1px solid var(--rule2);
+.figband img{max-width:100%;max-height:520px;width:auto;height:auto;border:1px solid var(--rule2);
 background:#fff;padding:14px;box-shadow:0 1px 3px rgba(20,18,15,.08)}
 .figcap{margin-top:10px;font-size:14px;color:var(--muted);font-style:italic;max-width:900px;
 margin-left:auto;margin-right:auto;line-height:1.4}
-@media (max-width:1560px){.figband img{max-height:280px}}
+@media (max-width:1560px){.figband img{max-height:400px}}
 
 /* title slide */
 .sl.title{padding:0 72px}
@@ -233,7 +233,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <button id="bNotes">Speaker notes (n)</button>
 <button id="bPrint">Print / PDF</button>
 <span style="flex:1"></span><span id="pos">1 / 100</span></div>
-<div id="nav"><div class="nv part" data-go="1">Image Denoising: From Foundations to State-of-the-Art</div><div class="nv" data-go="2"><span>02</span>Every claim carries its source</div><div class="nv" data-go="3"><span>03</span>One thesis, stated before the evidence</div><div class="nv" data-go="4"><span>04</span>Eight parts, mapped onto the brief's required structure</div><div class="nv part" data-go="5">The Problem</div><div class="nv" data-go="6"><span>06</span>One equation, and it has never changed</div><div class="nv" data-go="7"><span>07</span>Additive white Gaussian noise, one word at a time</div><div class="nv" data-go="8"><span>08</span>The problem is ill-posed — and no amount of compute fixes that</div><div class="nv" data-go="9"><span>09</span>From Bayes to the objective everyone optimises</div><div class="nv" data-go="10"><span>10</span>PSNR — what it measures, and what it cannot</div><div class="nv" data-go="11"><span>11</span>SSIM — structure, not pixels</div><div class="nv" data-go="12"><span>12</span>Nine datasets, and what each one is actually testing</div><div class="nv" data-go="13"><span>13</span>Denoising is rarely the product — it is the substrate</div><div class="nv part" data-go="14">The Classical DIP Foundation</div><div class="nv" data-go="15"><span>15</span>Averaging: why it works, and exactly how much</div><div class="nv" data-go="16"><span>16</span>Gaussian, median, and the first hard-coded threshold</div><div class="nv" data-go="17"><span>17</span>Sparsity: the idea that a clean image is compressible and noise is not</div><div class="nv" data-go="18"><span>18</span>ROF: the first prior that treats edges as information rather than error</div><div class="nv" data-go="19"><span>19</span>Non-local self-similarity — stop looking nearby</div><div class="nv" data-go="20"><span>20</span>The algorithm that defined the benchmark for a decade</div><div class="nv" data-go="21"><span>21</span>Why collaborative filtering beats filtering each patch alone</div><div class="nv" data-go="22"><span>22</span>Why BM3D was the benchmark, not merely a benchmark</div><div class="nv" data-go="23"><span>23</span>The classical peak: low-rank recovery on stacks of similar patches</div><div class="nv" data-go="24"><span>24</span>The theorem that makes it tractable, and the price it charges</div><div class="nv" data-go="25"><span>25</span>Where nine years of hand-designed priors finished</div><div class="nv" data-go="26"><span>26</span>Why the field had to leave — in the words of the paper that left</div><div class="nv part" data-go="27">The Deep Learning Transition</div><div class="nv" data-go="28"><span>28</span>MLP, 2012 — a plain neural network reaches BM3D</div><div class="nv" data-go="29"><span>29</span>Unrolling — turn the iterations into layers</div><div class="nv" data-go="30"><span>30</span>Trainable Nonlinear Reaction Diffusion — a PDE with learned parameters</div><div class="nv" data-go="31"><span>31</span>DnCNN — the four questions it set out to answer</div><div class="nv" data-go="32"><span>32</span>Three layer types, one global skip, and nothing else</div><div class="nv" data-go="33"><span>33</span>Residual learning — predict the dirt, not the photograph</div><div class="nv" data-go="34"><span>34</span>Residual learning and batch normalisation need each other</div><div class="nv" data-go="35"><span>35</span>Why 17 layers — a hyperparameter with a documented derivation</div><div class="nv" data-go="36"><span>36</span>The pipeline that made it work</div><div class="nv" data-go="37"><span>37</span>BSD68 — the headline benchmark</div><div class="nv" data-go="38"><span>38</span>Where it loses — and why losing is the interesting result</div><div class="nv" data-go="39"><span>39</span>Runtime — the commercial argument, stated honestly</div><div class="nv" data-go="40"><span>40</span>One model, three tasks — 'beyond a Gaussian denoiser'</div><div class="nv" data-go="41"><span>41</span>What DnCNN settled, and the bill it left behind</div><div class="nv part" data-go="42">The Data Branch</div><div class="nv" data-go="43"><span>43</span>The statistical argument that removed the clean image</div><div class="nv" data-go="44"><span>44</span>Noisy targets cost essentially nothing</div><div class="nv" data-go="45"><span>45</span>Blind-spot networks — removing the second noisy copy</div><div class="nv" data-go="46"><span>46</span>What self-supervision costs, measured</div><div class="nv" data-go="47"><span>47</span>Zero-shot — removing the training set entirely</div><div class="nv" data-go="48"><span>48</span>Positive2Negative — removing the information loss</div><div class="nv" data-go="49"><span>49</span>The network never moved. The target did.</div><div class="nv part" data-go="50">The Architecture Branch</div><div class="nv" data-go="51"><span>51</span>Convolution cannot see far enough — and here is the receipt</div><div class="nv" data-go="52"><span>52</span>Self-attention — the obvious fix, and why it does not fit</div><div class="nv" data-go="53"><span>53</span>MDTA — self-attention across channels, not pixels</div><div class="nv" data-go="54"><span>54</span>GDFN and progressive learning</div><div class="nv" data-go="55"><span>55</span>The ablation that isolates every claim</div><div class="nv" data-go="56"><span>56</span>Gaussian denoising — and the shape of the win</div><div class="nv" data-go="57"><span>57</span>NAFNet — the paper that asked whether any of this is necessary</div><div class="nv" data-go="58"><span>58</span>The ablation ladder — every rung is a controlled experiment</div><div class="nv" data-go="59"><span>59</span>SCUNet — fix the training data, not only the network</div><div class="nv" data-go="60"><span>60</span>State-space models — a third answer to bottleneck 3</div><div class="nv" data-go="61"><span>61</span>Adapting a sequence model to a 2-D image</div><div class="nv" data-go="62"><span>62</span>Three live answers, and no winner</div><div class="nv part" data-go="63">Engineering Reality</div><div class="nv" data-go="64"><span>64</span>Open the source file. Where is the prior?</div><div class="nv" data-go="65"><span>65</span>Repositories inspected, at pinned commits</div><div class="nv" data-go="66"><span>66</span>The classical prior is a while loop you can read</div><div class="nv" data-go="67"><span>67</span>DnCNN is a list comprehension</div><div class="nv" data-go="68"><span>68</span>Noise2Noise is an if-statement, and P2N is three forward passes</div><div class="nv" data-go="69"><span>69</span>One rearrange is the difference between O(HW·HW) and O(C·C)</div><div class="nv" data-go="70"><span>70</span>SimpleGate and SCA are smaller than their descriptions</div><div class="nv" data-go="71"><span>71</span>How the field's software stack moved, dated by repository</div><div class="nv" data-go="72"><span>72</span>Where the noise is added, and why that choice matters</div><div class="nv" data-go="73"><span>73</span>What modern denoisers actually optimise — and what they conspicuously do not</div><div class="nv" data-go="74"><span>74</span>The prior became a file you download</div><div class="nv" data-go="75"><span>75</span>Every model pads — and they all pad differently</div><div class="nv" data-go="76"><span>76</span>Seven architectures, instantiated and timed</div><div class="nv" data-go="77"><span>77</span>Four conclusions, none of them visible from a paper</div><div class="nv part" data-go="78">Comparative Analysis</div><div class="nv" data-go="79"><span>79</span>Five rules, so that the comparison survives scrutiny</div><div class="nv" data-go="80"><span>80</span>BSD68 grayscale — eighteen years, one benchmark</div><div class="nv" data-go="81"><span>81</span>Urban100 — the same five years, five times the gain</div><div class="nv" data-go="82"><span>82</span>Real sensor noise — and a 16 dB collapse</div><div class="nv" data-go="83"><span>83</span>Cost, measured three different ways — with three different answers</div><div class="nv" data-go="84"><span>84</span>What supervision costs, in decibels</div><div class="nv" data-go="85"><span>85</span>Eighteen years, seven methods, one table</div><div class="nv part" data-go="86">Open Problems &amp; Conclusion</div><div class="nv" data-go="87"><span>87</span>Real noise, and the perception–distortion trade-off</div><div class="nv" data-go="88"><span>88</span>Efficiency, evaluation, and the self-supervision gap</div><div class="nv" data-go="89"><span>89</span>What we would deploy, and on what evidence</div><div class="nv" data-go="90"><span>90</span>Four current methods — each leads a different benchmark</div><div class="nv" data-go="91"><span>91</span>Four reasons the field has not converged on one method</div><div class="nv" data-go="92"><span>92</span>Every step, as an implementation change</div><div class="nv" data-go="93"><span>93</span>The architecture branch, as an implementation change</div><div class="nv" data-go="94"><span>94</span>Four research directions the limitations actually justify</div><div class="nv" data-go="95"><span>95</span>The condensed executive summary, and what it leaves out</div><div class="nv" data-go="96"><span>96</span>The thesis, restated</div><div class="nv" data-go="97"><span>97</span>Category A — twelve peer-reviewed papers</div><div class="nv" data-go="98"><span>98</span>Category B — three auxiliary sources, and why each is here</div><div class="nv" data-go="99"><span>99</span>Declared limitations — stated, not discovered</div><div class="nv" data-go="100"><span>100</span>Where to find the answer to the question you are about to be asked</div></div>
+<div id="nav"><div class="nv part" data-go="1">Image Denoising: From Foundations to State-of-the-Art</div><div class="nv" data-go="2"><span>02</span>Every claim carries its source</div><div class="nv" data-go="3"><span>03</span>One thesis, stated before the evidence</div><div class="nv" data-go="4"><span>04</span>Eight parts, mapped onto the brief's required structure</div><div class="nv part" data-go="5">The Problem</div><div class="nv" data-go="6"><span>06</span>One equation, and it has never changed</div><div class="nv" data-go="7"><span>07</span>Additive white Gaussian noise, one word at a time</div><div class="nv" data-go="8"><span>08</span>The problem is ill-posed — and no amount of compute fixes that</div><div class="nv" data-go="9"><span>09</span>From Bayes to the objective everyone optimises</div><div class="nv" data-go="10"><span>10</span>PSNR — what it measures, and what it cannot</div><div class="nv" data-go="11"><span>11</span>SSIM — structure, not pixels</div><div class="nv" data-go="12"><span>12</span>Nine datasets, and what each one is actually testing</div><div class="nv" data-go="13"><span>13</span>Denoising is rarely the product — it is the substrate</div><div class="nv part" data-go="14">The Classical DIP Foundation</div><div class="nv" data-go="15"><span>15</span>Averaging: why it works, and exactly how much</div><div class="nv" data-go="16"><span>16</span>Gaussian, median, and the first hard-coded threshold</div><div class="nv" data-go="17"><span>17</span>Sparsity: the idea that a clean image is compressible and noise is not</div><div class="nv" data-go="18"><span>18</span>ROF: the first prior that treats edges as information rather than error</div><div class="nv" data-go="19"><span>19</span>Non-local self-similarity — stop looking nearby</div><div class="nv" data-go="20"><span>20</span>The algorithm that defined the benchmark for a decade</div><div class="nv" data-go="21"><span>21</span>Why collaborative filtering beats filtering each patch alone</div><div class="nv" data-go="22"><span>22</span>Why BM3D was the benchmark, not merely a benchmark</div><div class="nv" data-go="23"><span>23</span>The classical peak: low-rank recovery on stacks of similar patches</div><div class="nv" data-go="24"><span>24</span>The theorem that makes it tractable, and the price it charges</div><div class="nv" data-go="25"><span>25</span>Where nine years of hand-designed priors finished</div><div class="nv" data-go="26"><span>26</span>Why the field had to leave — in the words of the paper that left</div><div class="nv part" data-go="27">The Deep Learning Transition</div><div class="nv" data-go="28"><span>28</span>MLP, 2012 — a plain neural network reaches BM3D</div><div class="nv" data-go="29"><span>29</span>Unrolling — turn the iterations into layers</div><div class="nv" data-go="30"><span>30</span>Trainable Nonlinear Reaction Diffusion — a PDE with learned parameters</div><div class="nv" data-go="31"><span>31</span>DnCNN — the four questions it set out to answer</div><div class="nv" data-go="32"><span>32</span>Three layer types, one global skip, and nothing else</div><div class="nv" data-go="33"><span>33</span>Residual learning — predict the dirt, not the photograph</div><div class="nv" data-go="34"><span>34</span>Residual learning and batch normalisation need each other</div><div class="nv" data-go="35"><span>35</span>Why 17 layers — a hyperparameter with a documented derivation</div><div class="nv" data-go="36"><span>36</span>The pipeline that made it work</div><div class="nv" data-go="37"><span>37</span>BSD68 — the headline benchmark</div><div class="nv" data-go="38"><span>38</span>Where it loses — and why losing is the interesting result</div><div class="nv" data-go="39"><span>39</span>Runtime — the commercial argument, stated honestly</div><div class="nv" data-go="40"><span>40</span>One model, three tasks — 'beyond a Gaussian denoiser'</div><div class="nv" data-go="41"><span>41</span>What DnCNN settled, and the bill it left behind</div><div class="nv part" data-go="42">The Data Branch</div><div class="nv" data-go="43"><span>43</span>The statistical argument that removed the clean image</div><div class="nv" data-go="44"><span>44</span>Noisy targets cost essentially nothing</div><div class="nv" data-go="45"><span>45</span>Blind-spot networks — removing the second noisy copy</div><div class="nv" data-go="46"><span>46</span>What self-supervision costs, measured</div><div class="nv" data-go="47"><span>47</span>Zero-shot — removing the training set entirely</div><div class="nv" data-go="48"><span>48</span>Positive2Negative — removing the information loss</div><div class="nv" data-go="49"><span>49</span>The network never moved. The target did.</div><div class="nv part" data-go="50">The Architecture Branch</div><div class="nv" data-go="51"><span>51</span>Convolution cannot see far enough — and here is the receipt</div><div class="nv" data-go="52"><span>52</span>Self-attention — the obvious fix, and why it does not fit</div><div class="nv" data-go="53"><span>53</span>MDTA — self-attention across channels, not pixels</div><div class="nv" data-go="54"><span>54</span>GDFN and progressive learning</div><div class="nv" data-go="55"><span>55</span>The ablation that isolates every claim</div><div class="nv" data-go="56"><span>56</span>Gaussian denoising — and the shape of the win</div><div class="nv" data-go="57"><span>57</span>NAFNet — the paper that asked whether any of this is necessary</div><div class="nv" data-go="58"><span>58</span>The ablation ladder — every rung is a controlled experiment</div><div class="nv" data-go="59"><span>59</span>SCUNet — fix the training data, not only the network</div><div class="nv" data-go="60"><span>60</span>State-space models — a third answer to bottleneck 3</div><div class="nv" data-go="61"><span>61</span>Adapting a sequence model to a 2-D image</div><div class="nv" data-go="62"><span>62</span>Three live answers, and no winner</div><div class="nv part" data-go="63">Engineering Reality</div><div class="nv" data-go="64"><span>64</span>Open the source file. Where is the prior?</div><div class="nv" data-go="65"><span>65</span>Repositories inspected, at pinned commits</div><div class="nv" data-go="66"><span>66</span>The classical prior is a while loop you can read</div><div class="nv" data-go="67"><span>67</span>DnCNN is a list comprehension</div><div class="nv" data-go="68"><span>68</span>Noise2Noise is an if-statement, and P2N is three forward passes</div><div class="nv" data-go="69"><span>69</span>One rearrange is the difference between O(HW·HW) and O(C·C)</div><div class="nv" data-go="70"><span>70</span>SimpleGate and SCA are smaller than their descriptions</div><div class="nv" data-go="71"><span>71</span>MambaIR’s block, and why SCUNet has no code slide</div><div class="nv" data-go="72"><span>72</span>How the field's software stack moved, dated by repository</div><div class="nv" data-go="73"><span>73</span>Where the noise is added, and why that choice matters</div><div class="nv" data-go="74"><span>74</span>What modern denoisers actually optimise — and what they conspicuously do not</div><div class="nv" data-go="75"><span>75</span>The prior became a file you download</div><div class="nv" data-go="76"><span>76</span>Every model pads — and they all pad differently</div><div class="nv" data-go="77"><span>77</span>Seven architectures, instantiated and timed</div><div class="nv" data-go="78"><span>78</span>Four conclusions, none of them visible from a paper</div><div class="nv part" data-go="79">Comparative Analysis</div><div class="nv" data-go="80"><span>80</span>Five rules, so that the comparison survives scrutiny</div><div class="nv" data-go="81"><span>81</span>BSD68 grayscale — eighteen years, one benchmark</div><div class="nv" data-go="82"><span>82</span>Urban100 — the same five years, five times the gain</div><div class="nv" data-go="83"><span>83</span>Real sensor noise — and a 16 dB collapse</div><div class="nv" data-go="84"><span>84</span>Cost, measured three different ways — with three different answers</div><div class="nv" data-go="85"><span>85</span>What supervision costs, in decibels</div><div class="nv" data-go="86"><span>86</span>Eighteen years, seven methods, one table</div><div class="nv part" data-go="87">Open Problems &amp; Conclusion</div><div class="nv" data-go="88"><span>88</span>Real noise, and the perception–distortion trade-off</div><div class="nv" data-go="89"><span>89</span>Efficiency, evaluation, and the self-supervision gap</div><div class="nv" data-go="90"><span>90</span>What we would deploy, and on what evidence</div><div class="nv" data-go="91"><span>91</span>Four current methods, two historical baselines — each strong on a different axis</div><div class="nv" data-go="92"><span>92</span>Four reasons the field has not converged on one method</div><div class="nv" data-go="93"><span>93</span>Every step, as an implementation change</div><div class="nv" data-go="94"><span>94</span>The architecture branch, as an implementation change</div><div class="nv" data-go="95"><span>95</span>Four research directions the limitations actually justify</div><div class="nv" data-go="96"><span>96</span>The condensed executive summary, and what it leaves out</div><div class="nv" data-go="97"><span>97</span>The thesis, restated</div><div class="nv" data-go="98"><span>98</span>Category A — twelve peer-reviewed papers</div><div class="nv" data-go="99"><span>99</span>Category B — three auxiliary sources, and why each is here</div><div class="nv" data-go="100"><span>100</span>Declared limitations — stated, not discovered</div><div class="nv" data-go="101"><span>101</span>Where to find the answer to the question you are about to be asked</div></div>
 <div id="prog"></div>
 <div id="deck"><section class="sl title" id="s1" style="--era:#14343F">
 <div class="kick accent">DIGITAL IMAGE PROCESSING · FINAL PROJECT · STAGE 3</div>
@@ -340,7 +340,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <td class="r">95–99</td>
 </tr>
 </tbody></table></div>
-<div class="foot">Back matter — bibliography, verification notes, and the defence map: slides 97–100.</div>
+<div class="foot">Back matter — bibliography, verification notes, and the defence map: slides 98–101.</div>
 <div class="cite">brief §3, Guidelines for Structuring the Final Slide Deck</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Point at the third column. The TA wrote that column. Showing that the deck is indexed against their own structure removes an entire class of question.</div>
 </section>
@@ -960,7 +960,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 </tbody></table></div>
 <div class="foot"><b>Hyperparameters.</b> MSE on the residual · SGD with momentum 0.9 and weight decay 1e⁻⁴ · learning rate decayed exponentially from 1e⁻¹ to 1e⁻⁴ over 50 epochs · mini-batch 128 · He initialisation · <b>MatConvNet</b>, a MATLAB library. Trained on an Intel i7-5820K @ 3.30 GHz with an Nvidia Titan X: <b>≈ 6 hours</b> for DnCNN-S, <b>one day</b> for DnCNN-B/CDnCNN-B, <b>three days</b> for DnCNN-3.</div>
 <div class="cite"><span class="cref">[1]</span> DnCNN17 §IV-A&emsp;<span class="cref">[2]</span> training-time figures from §IV-A</div><div class="spine"><i style="left:50.00%;width:11.11%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
-<div class="notes"><b>Speaker notes.</b> Flag MatConvNet out loud. Essentially nothing in modern denoising is MATLAB, and tracing that migration is a direct answer to the brief's question about how pre-trained weights are used today versus before. It returns on slide 71.</div>
+<div class="notes"><b>Speaker notes.</b> Flag MatConvNet out loud. Essentially nothing in modern denoising is MATLAB, and tracing that migration is a direct answer to the brief's question about how pre-trained weights are used today versus before. It returns on slide 72.</div>
 </section>
 <section class="sl table" id="s37" style="--era:#1C6151">
 <div class="rail"><div class="folio">37</div><div class="eralbl">DEEP CNN</div></div>
@@ -1320,7 +1320,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="card"><div class="big">29.06</div><div class="lab">Traditional · clean targets</div><p>Supervised U-Net, depth 2, 96 initial feature maps. The ceiling.</p></div>
 <div class="card"><div class="big">28.86</div><div class="lab">Noise2Noise · noisy pairs</div><p>−0.20 dB for giving up the clean image.</p></div>
 <div class="card"><div class="big">28.59</div><div class="lab">BM3D · no training at all</div><p>The classical zero-shot baseline, seventeen years old.</p></div>
-<div class="card"><div class="big">27.71</div><div class="lab">Noise2Void · single noisy images</div><p>−1.35 dB from supervised, and 0.88 dB <b>below</b> BM3D.</p></div>
+<div class="card"><div class="big">27.71</div><div class="lab">Noise2Void · single noisy images</div><p>−1.35 dB from supervised, and 0.88 dB <b>below</b> BM3D in N2V's own table.</p></div>
 </div>
 <ul class="b"><li><b>Read the ladder honestly, and say it before you are asked.</b> On natural images with plentiful clean data, N2V is <i>worse than a 2007 algorithm</i>. The paper does not hide this — it states that its performance <i>only drops moderately</i> and notes it still outperforms BM3D on its other benchmarks.</li><li><b>So why does N2V matter?</b> Because the comparison above is the one case where the alternatives exist. The paper's real argument is the three biomedical datasets where they do not: cryo-TEM, and two Cell Tracking Challenge sets. For CTC-MSC and CTC-N2DH <i>only single noisy images exist</i>, so neither traditional nor N2N training is applicable — and the ground-truth column in the paper's figure is literally captioned <i>does not exist</i>.</li><li><b>The correct framing for the defence.</b> Self-supervision is not a quality technique. It is an <i>availability</i> technique. It trades PSNR for applicability, and in the domains it targets, the alternative is not a lower score — it is no denoiser at all.</li></ul>
 <div class="cite">N2V19 §4.1, Fig. 4 — PSNR values as printed</div><div class="spine"><i style="left:61.11%;width:38.89%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
@@ -1732,7 +1732,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 </div>
 <div class="foot"><b>The lesson worth stating.</b> Every other paper in Part V competes on the architecture. SCUNet's four contributions include <i>a hand-designed noise synthesis model, which can be used to train a general-purpose blind image denoising model</i>. The distribution you train on is a design surface, and it is the one that most directly attacks the AWGN assumption named on slide 7.</div>
 <div class="cite"><span class="cref">[1]</span> SCUNet23 abstract, §1, §3.1, §3.2, Fig. 1&emsp;<span class="cref">[2]</span> parameter count [measured], commit 52e440a</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
-<div class="notes"><b>Speaker notes.</b> SCUNet is the bridge between Part V and Part VII. It is the paper that says the benchmark itself is the problem, which is the argument slide 82 then proves with the SIDD numbers.</div>
+<div class="notes"><b>Speaker notes.</b> SCUNet is the bridge between Part V and Part VII. It is the paper that says the benchmark itself is the problem, which is the argument slide 83 then proves with the SIDD numbers.</div>
 </section>
 <section class="sl math" id="s60" style="--era:#C0451A">
 <div class="rail"><div class="folio">60</div><div class="eralbl">ARCHITECTURE</div></div>
@@ -1762,7 +1762,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="card"><h4>The two failure modes<span class="cref">[1]</span></h4><ul class="b"><li><b>Local pixel forgetting.</b> To run the state-space equation, the feature map must be flattened into a sequence. Two pixels that are vertically adjacent may land hundreds of steps apart in that sequence, so the model forgets its own neighbourhood.</li><li><b>Channel redundancy.</b> The <i>excessive hidden state number</i> produces highly redundant channels, wasting capacity.</li><li><b>The fixes, inside the Residual State Space Block (RSSB):</b> a local convolution to restore neighbourhood awareness, and <b>channel attention</b> to suppress redundancy — plus a learnable factor controlling the skip connection.</li><li>Ablation: removing the convolution costs Urban100 accuracy (34.15 → 34.04); removing convolution <i>and</i> channel attention gives 34.06; replacing the block with an MLP gives 34.22 against the 34.15 baseline configuration.</li></ul></div>
 <div class="card"><h4>Scanning, structure, and results<span class="cref">[1]</span></h4><ul class="b"><li><b>Four-directional scan.</b> The feature map is unfolded in four directions and the results summed, so no single raster order dominates. Ablation: one-direction 34.06, two-direction 33.96, four-direction (baseline) 34.15 on Urban100.</li><li><b>Three stages</b>, structurally identical to SwinIR: shallow feature extraction (one 3×3 convolution) → deep feature extraction (stacked RSSBs grouped into RSSGs) → high-quality reconstruction aggregating shallow and deep features.</li><li><b>Colour denoising, Urban100</b> (σ = 15/25/50): SwinIR 35.13 / 32.90 / 29.82 · Restormer 35.13 / 32.96 / 30.02 · <b>MambaIR 35.37 / 33.21 / 30.30</b>.</li><li><b>Real noise:</b> SIDD 39.89 dB, DND <b>40.04 dB</b> — the best DND figure in the table, 0.01 dB above Restormer.</li><li><b>Super-resolution</b>, where the receptive field matters most: MambaIR outperforms SwinIR by <b>0.41 dB on Manga109 at ×2</b>.</li></ul></div>
 </div>
-<div class="foot"><b>A Stage 2 finding worth knowing.</b> MambaIR's own repository changelog records that published complexity figures computed with <code>thop</code> were wrong and were later corrected. The model also cannot be imported at all without compiled CUDA extensions — <code>ModuleNotFoundError: mamba_ssm</code>. That is a deployment fact no paper reports, and it appears again on slide 77. <code>[measured]</code></div>
+<div class="foot"><b>A Stage 2 finding worth knowing.</b> MambaIR's own repository changelog records that published complexity figures computed with <code>thop</code> were wrong and were later corrected. The model also cannot be imported at all without compiled CUDA extensions — <code>ModuleNotFoundError: mamba_ssm</code>. That is a deployment fact no paper reports, and it appears again on slide 78. <code>[measured]</code></div>
 <div class="cite"><span class="cref">[1]</span> MambaIR24 abstract, §3.2, §4.2, Tables 1, 2, 5, 6&emsp;<span class="cref">[2]</span> repository `csguoh/MambaIR`, commit 33d7b34 [measured]</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The import failure is a real Stage 2 result and a good one to volunteer. It shows you ran the code rather than reading about it.</div>
 </section>
@@ -1786,7 +1786,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <h4>SCUNet<span class="cref">[4]</span> — change the training distribution</h4><p>The orthogonal answer, and arguably the most practical. <b>9.7 M parameters</b>, smallest of the four, with a synthetic degradation pipeline built to survive real photographs rather than benchmarks. <code>[measured: 1.69 s at 256²]</code><span class="cref">[5]</span></p></div>
 </div>
 <div class="foot"><b>Say this in the defence.</b> A narrative that ends 'and then X won' would be false. The field currently holds three architectural answers and one data-side answer to the same bottleneck, published across three years, none of which has displaced the others. That is what an unresolved research question looks like from the inside.</div>
-<div class="cite"><span class="cref">[1]</span> Restormer22&emsp;<span class="cref">[2]</span> NAFNet22&emsp;<span class="cref">[3]</span> MambaIR24&emsp;<span class="cref">[4]</span> SCUNet23&emsp;<span class="cref">[5]</span> parameter counts and CPU latencies [measured], see slide 76</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
+<div class="cite"><span class="cref">[1]</span> Restormer22&emsp;<span class="cref">[2]</span> NAFNet22&emsp;<span class="cref">[3]</span> MambaIR24&emsp;<span class="cref">[4]</span> SCUNet23&emsp;<span class="cref">[5]</span> parameter counts and CPU latencies [measured], see slide 77</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> This is the intellectual high point of the deck. The willingness to end on an open question is what separates a literature review from a synthesis, and the brief grades synthesis.</div>
 </section>
 <section class="sl section" id="s63" style="--era:#14343F">
@@ -1962,7 +1962,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <span>    def forward(self, x):</span>
 <span>        n = self.model(x)</span>
 <span class="cm">        return x-n                             # ← residual learning</span>
-</pre></div><div class="codenotes"><ul class="b"><li><b>The architecture is one line.</b> <code>m_body</code> is a list comprehension of <code>nb-2</code> identical blocks. The three layer types from slide 32 are literally <code>m_head</code>, <code>m_body</code>, <code>m_tail</code>. There is no architectural cleverness to read because there is none in the paper.</li><li><b>mode='C'+act_mode is the whole layer grammar.</b> <code>'CBR'</code> = Convolution → BatchNorm → ReLU for the body; <code>'CR'</code> = Convolution → ReLU for the head; <code>'C'</code> = Convolution alone for the tail. Exactly the paper's Fig. 1, encoded as a three-character string.</li><li><b>return x-n is the paper's central idea, in eight characters.</b> Note the subtlety: the <i>paper's network</i> outputs v̂, and the subtraction happens outside. KAIR folds the subtraction inside <code>forward</code>, so the module returns the clean image. The residual mapping is still what the weights learn — only the boundary of the module moved.</li><li><b>Where is the prior?</b> Nowhere in this file. It is in the <code>.pth</code> checkpoint this class will load. The file describes a <i>shape</i>; the prior is the tensor poured into it. This is the moment the prior stops being readable.</li></ul></div></div>
+</pre></div><div class="codenotes"><ul class="b"><li><b>The architecture is one line.</b> <code>m_body</code> is a list comprehension of <code>nb-2</code> identical blocks. The three layer types from slide 32 are literally <code>m_head</code>, <code>m_body</code>, <code>m_tail</code>. There is no architectural cleverness to read because there is none in the paper.</li><li><b>mode='C'+act_mode is the whole layer grammar.</b> <code>'CBR'</code> = Convolution → BatchNorm → ReLU for the body; <code>'CR'</code> = Convolution → ReLU for the head; <code>'C'</code> = Convolution alone for the tail. Exactly the paper's Fig. 1, encoded as a three-character string.</li><li><b>return x-n is the paper's central idea, a single subtraction.</b> Note the subtlety: the <i>paper's network</i> outputs v̂, and the subtraction happens outside. KAIR folds the subtraction inside <code>forward</code>, so the module returns the clean image. The residual mapping is still what the weights learn — only the boundary of the module moved.</li><li><b>Where is the prior?</b> Nowhere in this file. It is in the <code>.pth</code> checkpoint this class will load. The file describes a <i>shape</i>; the prior is the tensor poured into it. This is the moment the prior stops being readable.</li></ul></div></div>
 <div class="cite">measured — <code>cszn/KAIR</code>, <code>models/network_dncnn.py</code>, verbatim</div><div class="spine"><i style="left:50.00%;width:11.11%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Best single slide for the 'do you understand the code' question. Put the TV while-loop and this side by side mentally: the prior moved from line 11 of one file into a binary file that is not in the repository at all.</div>
 </section>
@@ -2038,8 +2038,40 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">measured — <code>megvii-research/NAFNet</code>, <code>NAFNet_arch.py</code>, verbatim</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The beta/gamma skip-init detail is a good one to have: it is in the code, mentioned only briefly in the paper, and shows you read past the block diagram.</div>
 </section>
-<section class="sl table" id="s71" style="--era:#14343F">
-<div class="rail"><div class="folio">71</div></div>
+<section class="sl code" id="s71" style="--era:#C0451A">
+<div class="rail"><div class="folio">71</div><div class="eralbl">ARCHITECTURE</div></div>
+<div class="kick">MAMBAIR IN CODE · AND WHERE SCUNET LIVES</div>
+<h2>MambaIR’s block — and why SCUNet has no code slide</h2>
+<p class="lead">The code deep‑dive reads one representative file per bottleneck, so the two architecture‑branch papers that are not DnCNN, Restormer or NAFNet are read where their contribution lives. SCUNet’s is its degradation pipeline — <b>slide 73</b> — not its Swin‑conv U‑Net. MambaIR’s is a state‑space operator that lives in a compiled CUDA dependency; the operator itself is a kernel call, but the block that wraps it into an image model reads plainly. Here it is.</p>
+<div class="g-code"><div class="codebox"><div class="fname">MambaIR/basicsr/archs/mambair_arch.py — VSSBlock + CAB (condensed: reshape/permute plumbing and DropPath elided; the two-branch residual is faithful)</div><pre>
+<span>class VSSBlock(nn.Module):          # the paper's RSSB</span>
+<span>    def __init__(self, dim, d_state=16):</span>
+<span>        self.ln_1 = LayerNorm(dim)</span>
+<span>        self.self_attention = SS2D(dim, d_state)  # scan</span>
+<span>        self.skip_scale  = Parameter(ones(dim))   # factor</span>
+<span>        self.conv_blk    = CAB(dim)        # conv + CA</span>
+<span>        self.ln_2        = LayerNorm(dim)</span>
+<span>        self.skip_scale2 = Parameter(ones(dim))</span>
+<span>&nbsp;</span>
+<span>    def forward(self, x, x_size):</span>
+<span>        x = x.view(B, *x_size, C)          # [B,H,W,C]</span>
+<span>        h = self.ln_1(x)</span>
+<span class="cm">        x = x*self.skip_scale  + self.self_attention(h)</span>
+<span class="cm">        x = x*self.skip_scale2 + self.conv_blk(self.ln_2(x))</span>
+<span>        return x.view(B, -1, C)</span>
+<span>&nbsp;</span>
+<span class="cm"># CAB - the local branch, no state-space at all:</span>
+<span>CAB = nn.Sequential(</span>
+<span>    nn.Conv2d(dim, dim//r, 3,1,1), nn.GELU(),</span>
+<span>    nn.Conv2d(dim//r, dim, 3,1,1),</span>
+<span>    ChannelAttention(dim))       # pool-&gt;1x1-&gt;ReLU-&gt;1x1-&gt;Sig</span>
+</pre></div><div class="codenotes"><ul class="b"><li><b>Two branches, one block.</b> MambaIR’s RSSB (class <code>VSSBlock</code>) is not a Mamba layer dropped into a U‑Net. It is a state‑space branch (<code>SS2D</code>) for global context <i>and</i> a convolution‑plus‑channel‑attention branch (<code>CAB</code>) for the local detail the scan discards, each wrapped in a learnable‑scaled residual.</li><li><b>SS2D is the operator — and the reason it would not run.</b> <code>SS2D</code> is the four‑directional selective scan of slide 61; it is the one call into the compiled <code>mamba_ssm</code> CUDA extension, which is exactly why the model could not be instantiated in our benchmark (slide 77). The scan is the mechanism; the block above is only how it is wired into an image model.</li><li><b>conv_blk = CAB is ordinary.</b> Two 3×3 convolutions, a <code>GELU</code>, and an RCAN‑style channel attention (pool → 1×1 → ReLU → 1×1 → Sigmoid). This is the local convolution and channel attention whose ablation on slide 61 is worth <b>+0.11 dB</b> on Urban100.</li><li><b>skip_scale / skip_scale2 are the learnable factors</b> named on slide 61 — one per branch, initialised to ones, so the block starts near identity and training decides how much of each branch to admit.</li><li><b>Why SCUNet is read on slide 73, not here.</b> SCUNet’s contribution is its degradation pipeline, not its Swin‑conv U‑Net — so its code that matters is the dataloader, read where the data pipelines are. Showing <code>SCUNet.forward</code> would show the least novel part of the paper. The code section reads one representative file per bottleneck, and these two papers are read where their contribution actually lives.</li></ul></div></div>
+<div class="cite">read — <code>csguoh/MambaIR</code>, <code>basicsr/archs/mambair_arch.py</code>, at the commit on slide 65</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
+<div class="notes"><b>Speaker notes.</b> If pushed on MambaIR specifically: the selective‑scan kernel is the mechanism and it is a compiled dependency, but reading the repository still shows how MambaIR <i>uses</i> it — this slide is that read. SCUNet’s code that matters is the dataloader on slide 73.</div>
+</section>
+
+<section class="sl table" id="s72" style="--era:#14343F">
+<div class="rail"><div class="folio">72</div></div>
 <div class="kick">FRAMEWORKS AND CONFIGURATION</div>
 <h2>How the field's software stack moved, dated by repository</h2>
 <p class="lead">The brief asks what frameworks these models use and how pre-trained weights are used today compared with older manual methods. The answer is best given as a migration with dates attached to actual commits.</p>
@@ -2102,8 +2134,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">measured — repositories at the commits on slide 65</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> This slide is the direct answer to the brief's framework question. Have the BasicSR registry point ready; it is the strongest single observation here.</div>
 </section>
-<section class="sl two" id="s72" style="--era:#14343F">
-<div class="rail"><div class="folio">72</div></div>
+<section class="sl two" id="s73" style="--era:#14343F">
+<div class="rail"><div class="folio">73</div></div>
 <div class="kick">DATA PIPELINES</div>
 <h2>Where the noise is added, and why that choice matters</h2>
 <p class="lead">The brief asks how modern data pipelines work. The interesting axis is not the <code>Dataset</code> boilerplate — it is <i>when</i> the degradation is applied, because that determines what the network can possibly learn.</p>
@@ -2115,8 +2147,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> DnCNN17 §IV-A&emsp;<span class="cref">[2]</span> SCUNet23 §3.2&emsp;<span class="cref">[3]</span> Restormer22 §4&emsp;<span class="cref">[4]</span> MambaIR24 §4.1&emsp;<span class="cref">[5]</span> NAFNet22 §5.1</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> 'In 2017 the pipeline was infrastructure; by 2023 it is the method' is a line worth memorising. It connects Part VI back to Parts IV and V in one sentence.</div>
 </section>
-<section class="sl cards" id="s73" style="--era:#14343F">
-<div class="rail"><div class="folio">73</div></div>
+<section class="sl cards" id="s74" style="--era:#14343F">
+<div class="rail"><div class="folio">74</div></div>
 <div class="kick">LOSS FUNCTIONS</div>
 <h2>What modern denoisers actually optimise — and what they conspicuously do not</h2>
 <p class="lead">The brief asks specifically about the modern loss functions being used. The finding is a negative one and it is more interesting than the positive list.</p>
@@ -2138,8 +2170,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> Restormer22 §4&emsp;<span class="cref">[2]</span> NAFNet22 §5.1&emsp;<span class="cref">[3]</span> measured — P2N-plus loss code&emsp;<span class="cref">[4]</span> reading</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The perceptual-loss absence is a strong observation and an obvious question hook. Do not overclaim it — say 'we observed' and name the five repositories.</div>
 </section>
-<section class="sl two" id="s74" style="--era:#14343F">
-<div class="rail"><div class="folio">74</div></div>
+<section class="sl two" id="s75" style="--era:#14343F">
+<div class="rail"><div class="folio">75</div></div>
 <div class="kick">PRE-TRAINED WEIGHTS</div>
 <h2>The prior became a file you download</h2>
 <p class="lead">This is the brief's sharpest comparison: how pre-trained weights are used today versus older manual feature-extraction methods. The contrast is total, and it is best stated in terms of what each era ships.</p>
@@ -2151,8 +2183,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> measured — checkpoint loading in KAIR, Restormer, NAFNet, SCUNet&emsp;<span class="cref">[2]</span> brief §2 on pre-trained weights</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> This is the slide that directly answers a question the brief asks in so many words. Expect it to be asked and answer with the two-artefact framing.</div>
 </section>
-<section class="sl table" id="s75" style="--era:#14343F">
-<div class="rail"><div class="folio">75</div></div>
+<section class="sl table" id="s76" style="--era:#14343F">
+<div class="rail"><div class="folio">76</div></div>
 <div class="kick">A DEPLOYMENT DETAIL NO PAPER REPORTS</div>
 <h2>Every model pads — and they all pad differently</h2>
 <p class="lead">A U-Net that downsamples k times requires input dimensions divisible by 2ᵏ. Every architecture-branch model solves this with the same pad-then-crop idiom and a different constant, which becomes a real problem the moment two are chained in one pipeline.</p>
@@ -2191,8 +2223,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">measured — verbatim from the four repositories at the commits on slide 65</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> A favourite because it is concrete, verifiable, and invisible from the literature. Good answer to 'what did you learn from the code that you could not learn from the papers?'</div>
 </section>
-<section class="sl table" id="s76" style="--era:#14343F">
-<div class="rail"><div class="folio">76</div></div>
+<section class="sl table" id="s77" style="--era:#14343F">
+<div class="rail"><div class="folio">77</div></div>
 <div class="kick">WHAT WE MEASURED</div>
 <h2>Seven architectures, instantiated and timed</h2>
 <p class="lead">Each model was instantiated from its own repository at the commit on slide 65, in the configuration that repository uses for denoising. Parameters are <code>sum(p.numel() for p in model.parameters())</code>. Latency is the mean of three forward passes at 256×256 after one warm-up, under <code>torch.no_grad()</code>, <b>CPU only</b>, PyTorch 2.13.0, no CUDA.</p>
@@ -2249,8 +2281,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">measured — Stage 2 benchmark, CPU-only container, PyTorch 2.13.0</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Declaring the random-tensor caveat unprompted is important. The obvious attack is 'did you verify the PSNRs yourself?' — the answer is no, and saying so first is much stronger than conceding it.</div>
 </section>
-<section class="sl cards" id="s77" style="--era:#14343F">
-<div class="rail"><div class="folio">77</div></div>
+<section class="sl cards" id="s78" style="--era:#14343F">
+<div class="rail"><div class="folio">78</div></div>
 <div class="kick">WHAT THE MEASUREMENTS SAY</div>
 <h2>Four conclusions, none of them visible from a paper</h2>
 <p class="lead">These are the readings that justify having run the code at all. Each contradicts something a reader would reasonably assume from the published tables.</p>
@@ -2271,14 +2303,14 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> measured — Stage 2 benchmark&emsp;<span class="cref">[2]</span> MambaIR repository changelog</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Reading (a) is the one to lead with. It is a clean, falsifiable, counterintuitive claim backed by a number you produced, which is exactly what the brief's Practical Integration criterion rewards.</div>
 </section>
-<section class="sl section" id="s78" style="--era:#14343F">
+<section class="sl section" id="s79" style="--era:#14343F">
 <div class="secL"><div class="ghost">VII</div><div class="rule"></div><h1 class="sec">Comparative Analysis</h1><div class="kick">PART VII</div></div>
 <div class="secR"><div class="kick">In this part</div><div class="seclist"><div><s>01</s><span>The rules we followed</span></div><div><s>02</s><span>BSD68 — the long ladder</span></div><div><s>03</s><span>Urban100 — where the gap is</span></div><div><s>04</s><span>Real noise — where the assumption breaks</span></div><div><s>05</s><span>Efficiency</span></div><div><s>06</s><span>Supervision cost</span></div><div><s>07</s><span>The whole arc in one view</span></div></div><p class="lede">Eighteen years of numbers, assembled under rules strict enough that the comparison means something.</p></div>
 <div class="cite">brief §6</div>
 <div class="notes"><b>Speaker notes.</b> Open with the rules slide, not with a table. Numbers assembled without a stated methodology are the easiest thing in a deck to attack.</div>
 </section>
-<section class="sl content" id="s79" style="--era:#14343F">
-<div class="rail"><div class="folio">79</div></div>
+<section class="sl content" id="s80" style="--era:#14343F">
+<div class="rail"><div class="folio">80</div></div>
 <div class="kick">METHODOLOGY</div>
 <h2>Five rules, so that the comparison survives scrutiny</h2>
 <p class="lead">Cross-paper PSNR tables are the most commonly abused artefact in this field. These are the constraints we imposed on ourselves, and they are worth stating before any number appears.</p>
@@ -2286,8 +2318,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">reading — methodology adopted for this deck</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Rule 2 is the one a careful TA will care about most, and rule 5 is the one that demonstrates you actually read the tables rather than copied them.</div>
 </section>
-<section class="sl table" id="s80" style="--era:#14343F">
-<div class="rail"><div class="folio">80</div></div>
+<section class="sl table" id="s81" style="--era:#14343F">
+<div class="rail"><div class="folio">81</div></div>
 <div class="kick">THE LONG LADDER</div>
 <h2>BSD68 grayscale — eighteen years, one benchmark</h2>
 <p class="lead">Average PSNR in dB. The 2007–2017 block is from DnCNN Table II; the 2017–2022 block is from Restormer Table 4, which re-evaluated DnCNN under its own protocol. The two DnCNN rows differ slightly for exactly that reason, and that difference is itself worth knowing.</p>
@@ -2402,10 +2434,10 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 </tbody></table></div>
 <div class="foot"><b>Read the σ = 25 column as a single story.</b> 2007 → 2014, seven years of hand-designed priors: <b>+0.26 dB</b>. 2014 → 2017, one architectural idea: <b>+0.40 dB</b>. 2017 → 2022, five years and an entire Transformer revolution: <b>+0.36 dB</b>. On ordinary natural images the field is deep into diminishing returns, and has been since roughly 2018. <b>This table is the argument that BSD68 has stopped being informative</b> — which is why the next two slides exist.</div>
 <div class="cite"><span class="cref">[1]</span> DnCNN17 Table II&emsp;<span class="cref">[2]</span> Restormer22 Table 4 — source column names the origin of every row</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
-<div class="notes"><b>Speaker notes.</b> The saturation reading is the intellectually honest one and it sets up slide 81 and 82. Do not present this table as 'and progress continued'. Present it as 'and here is where the benchmark died'.</div>
+<div class="notes"><b>Speaker notes.</b> The saturation reading is the intellectually honest one and it sets up slide 82 and 83. Do not present this table as 'and progress continued'. Present it as 'and here is where the benchmark died'.</div>
 </section>
-<section class="sl stats" id="s81" style="--era:#C0451A">
-<div class="rail"><div class="folio">81</div><div class="eralbl">ARCHITECTURE</div></div>
+<section class="sl stats" id="s82" style="--era:#C0451A">
+<div class="rail"><div class="folio">82</div><div class="eralbl">ARCHITECTURE</div></div>
 <div class="kick">WHERE THE GAP ACTUALLY IS</div>
 <h2>Urban100 — the same five years, five times the gain</h2>
 <p class="lead">Identical models, identical table, identical noise level. The only thing that changes is the dataset — from ordinary natural images to photographs of buildings, where structure repeats across hundreds of pixels.</p>
@@ -2418,8 +2450,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> Restormer22 Table 4 (BSD68 and Urban100 columns)&emsp;<span class="cref">[2]</span> DnCNN17 Table III (Barbara) — ratio computed by us from published values</div><div class="spine"><i style="left:77.78%;width:16.67%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> This is the analytical high point of Part VII. It is your own analysis of published numbers, which is exactly what 'synthesis' means in the grading criteria. Say 'computed from Table 4' so the provenance is unambiguous.</div>
 </section>
-<section class="sl table" id="s82" style="--era:#14343F">
-<div class="rail"><div class="folio">82</div></div>
+<section class="sl table" id="s83" style="--era:#14343F">
+<div class="rail"><div class="folio">83</div></div>
 <div class="kick">THE ASSUMPTION BREAKS</div>
 <h2>Real sensor noise — and a 16 dB collapse</h2>
 <p class="lead">SIDD and DND contain photographs of real scenes taken with real smartphone cameras, where noise is signal-dependent, spatially correlated, and processed by an imaging pipeline. Both tables below are from Restormer's Table 6, evaluated under one protocol.</p>
@@ -2500,8 +2532,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> Restormer22 Table 6&emsp;<span class="cref">[2]</span> NAFNet22 abstract&emsp;<span class="cref">[3]</span> MambaIR24 Table 6&emsp;<span class="cref">[4]</span> SCUNet23 §1</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Lead the condensed 30-minute presentation's comparative section with this slide, not with BSD68. 23.66 against 40.02 is the number that makes the whole evolutionary argument land in one breath.</div>
 </section>
-<section class="sl table" id="s83" style="--era:#14343F">
-<div class="rail"><div class="folio">83</div></div>
+<section class="sl table" id="s84" style="--era:#14343F">
+<div class="rail"><div class="folio">84</div></div>
 <div class="kick">EFFICIENCY</div>
 <h2>Cost, measured three different ways — with three different answers</h2>
 <p class="lead">Quality is only half of a comparison. The left block is reproduced from the DnCNN paper; the right block is our own measurement. They are kept separate deliberately, per rule 3.</p>
@@ -2590,8 +2622,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> DnCNN17 Table IV&emsp;<span class="cref">[2]</span> measured, Stage 2&emsp;<span class="cref">[3]</span> Restormer22 §4.4</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The three-incompatible-rankings observation is a good closing line for the efficiency discussion and a genuinely useful thing for the TA to hear.</div>
 </section>
-<section class="sl table" id="s84" style="--era:#7E3247">
-<div class="rail"><div class="folio">84</div><div class="eralbl">DATA BRANCH</div></div>
+<section class="sl table" id="s85" style="--era:#7E3247">
+<div class="rail"><div class="folio">85</div><div class="eralbl">DATA BRANCH</div></div>
 <div class="kick">THE OTHER AXIS</div>
 <h2>What supervision costs, in decibels</h2>
 <p class="lead">Parts IV and V are usually compared on quality alone, which misses the point of Part IV entirely. The right comparison sets quality against <i>what the method demands of you before it will run at all</i>.</p>
@@ -2636,8 +2668,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> N2V19 §4.1 and Fig. 4&emsp;<span class="cref">[2]</span> DnCNN17 Table II — all values as printed</div><div class="spine"><i style="left:61.11%;width:38.89%"></i><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Note the two BM3D figures, 28.57 and 31.59, from two different papers on the same dataset and noise level. Mentioning that discrepancy unprompted is a small, cheap demonstration of care.</div>
 </section>
-<section class="sl table" id="s85" style="--era:#14343F">
-<div class="rail"><div class="folio">85</div></div>
+<section class="sl table" id="s86" style="--era:#14343F">
+<div class="rail"><div class="folio">86</div></div>
 <div class="kick">SYNTHESIS</div>
 <h2>Eighteen years, seven methods, one table</h2>
 <p class="lead">The comparative analysis compressed to the rows that carry the argument. Read down the last two columns: the story is not that the numbers went up, but that <i>what they are measuring</i> changed.</p>
@@ -2718,21 +2750,21 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> DnCNN17 Table II&emsp;<span class="cref">[2]</span> Restormer22 Tables 4 and 7&emsp;<span class="cref">[3]</span> NAFNet22 abstract&emsp;<span class="cref">[4]</span> MambaIR24 Table 6</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The closing sentence is the single strongest line in the deck. Deliver it, pause, and move on. Do not elaborate.</div>
 </section>
-<section class="sl section" id="s86" style="--era:#14343F">
+<section class="sl section" id="s87" style="--era:#14343F">
 <div class="secL"><div class="ghost">VIII</div><div class="rule"></div><h1 class="sec">Open Problems &amp; Conclusion</h1><div class="kick">PART VIII</div></div>
 <div class="secR"><div class="kick">In this part</div><div class="seclist"><div><s>01</s><span>Real noise modelling</span></div><div><s>02</s><span>The perception–distortion trade-off</span></div><div><s>03</s><span>Efficiency and deployment</span></div><div><s>04</s><span>Evaluation itself</span></div><div><s>05</s><span>Self-supervision's remaining gap</span></div><div><s>06</s><span>What we would build today</span></div><div><s>07</s><span>The thesis, restated</span></div></div><p class="lede">What eighteen years did not solve, and what we would build tomorrow morning.</p></div>
 <div class="cite">brief §7</div>
 <div class="notes"><b>Speaker notes.</b> Keep this part fast. Its function is to prove the field is alive, not to survey it.</div>
 </section>
-<section class="sl cards" id="s87" style="--era:#14343F">
-<div class="rail"><div class="folio">87</div></div>
+<section class="sl cards" id="s88" style="--era:#14343F">
+<div class="rail"><div class="folio">88</div></div>
 <div class="kick">UNSOLVED, 1 AND 2</div>
 <h2>Real noise, and the perception–distortion trade-off</h2>
 <p class="lead">The two open problems for which this deck already contains hard evidence, rather than speculation.</p>
 <div class="cards c2">
 <div class="card">
 <div class="tag">OPEN PROBLEM 1</div>
-<h4>A general-purpose blind real denoiser</h4><p>SCUNet's<span class="cref">[1]</span> abstract states the position as of 2023: <i>a general-purpose blind denoising method for real images remains unsolved.</i> The evidence on slide 82 is stark — DnCNN scores 23.66 dB on SIDD. SCUNet's answer is to synthesise realistic degradations; Restormer and NAFNet's answer is to train directly on SIDD's 320 captured scenes.<span class="cref">[3]</span> <b>Neither generalises to an unseen camera with an unseen ISP</b>, and no benchmark currently measures that.</p></div>
+<h4>A general-purpose blind real denoiser</h4><p>SCUNet's<span class="cref">[1]</span> abstract states the position as of 2023: <i>a general-purpose blind denoising method for real images remains unsolved.</i> The evidence on slide 83 is stark — DnCNN scores 23.66 dB on SIDD. SCUNet's answer is to synthesise realistic degradations; Restormer and NAFNet's answer is to train directly on SIDD's 320 captured scenes.<span class="cref">[3]</span> <b>Neither generalises to an unseen camera with an unseen ISP</b>, and no benchmark currently measures that.</p></div>
 <div class="card">
 <div class="tag">WHY IT IS HARD</div>
 <h4>Noise is a pipeline, not a distribution</h4><p>Real noise is read noise plus shot noise in the raw domain, then transformed by demosaicing, white balance, colour conversion, tone mapping and gamma — each of which correlates it spatially and across channels. SCUNet<span class="cref">[1]</span> models this by <i>inverting</i> the ISP, adding noise in raw, and running it forward again. That is an engineering simulation of a physical device, not a probability model, and it is as good as the device model it assumes.</p></div>
@@ -2741,13 +2773,13 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <h4>Fidelity metrics reward blur</h4><p>Every loss in Part VI is L1, L2 or PSNR. All three recover a conditional mean, and the conditional mean of the plausible clean images is smoother than any of them. <b>Noise2Noise<span class="cref">[2]</span> names this mechanism explicitly:</b> an L2-trained regressor <i>learns to output the average of all plausible explanations, which results in spatial blurriness</i>. The field's default objective is structurally biased toward the very over-smoothing that BM3D was criticised for.</p></div>
 <div class="card">
 <div class="tag">WHY IT PERSISTS</div>
-<h4>The metric constrains the loss</h4><p>Perceptual and adversarial losses would fix the blur and would score <i>worse</i> on PSNR, because they hallucinate plausible texture that does not match the ground truth pixel for pixel. As long as leaderboards are PSNR-ranked, the incentive points the wrong way. This is why, as slide 73 observes, perceptual losses are common in super-resolution and essentially absent from denoising.<span class="cref">[4]</span></p></div>
+<h4>The metric constrains the loss</h4><p>Perceptual and adversarial losses would fix the blur and would score <i>worse</i> on PSNR, because they hallucinate plausible texture that does not match the ground truth pixel for pixel. As long as leaderboards are PSNR-ranked, the incentive points the wrong way. This is why, as slide 74 observes, perceptual losses are common in super-resolution and essentially absent from denoising.<span class="cref">[4]</span></p></div>
 </div>
 <div class="cite"><span class="cref">[1]</span> SCUNet23 abstract, §3.2&emsp;<span class="cref">[2]</span> N2N18 §2&emsp;<span class="cref">[3]</span> Restormer22 Table 6&emsp;<span class="cref">[4]</span> reading</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The observation that Noise2Noise names the blur mechanism while proposing an L2 method is a nice piece of close reading. It is in §2 of the paper, in the super-resolution example.</div>
 </section>
-<section class="sl cards" id="s88" style="--era:#14343F">
-<div class="rail"><div class="folio">88</div></div>
+<section class="sl cards" id="s89" style="--era:#14343F">
+<div class="rail"><div class="folio">89</div></div>
 <div class="kick">UNSOLVED, 3 TO 5</div>
 <h2>Efficiency, evaluation, and the self-supervision gap</h2>
 <p class="lead">Three further open problems, each of which this deck has produced direct evidence for rather than inherited from a survey.</p>
@@ -2768,8 +2800,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> measured, Stage 2&emsp;<span class="cref">[2]</span> N2V19 §4.1&emsp;<span class="cref">[3]</span> P2N25&emsp;<span class="cref">[4]</span> Restormer22 Table 4&emsp;<span class="cref">[5]</span> reading</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Open problem 6 is the one to offer if asked 'what would you research?'. It falls directly out of your own two-branch framing and is a genuine, specific, testable gap.</div>
 </section>
-<section class="sl flow" id="s89" style="--era:#14343F">
-<div class="rail"><div class="folio">89</div></div>
+<section class="sl flow" id="s90" style="--era:#14343F">
+<div class="rail"><div class="folio">90</div></div>
 <div class="kick">THE PRACTICAL ANSWER</div>
 <h2>What we would deploy, and on what evidence</h2>
 <p class="lead">The brief asks what the current industry and academic standard is. The honest answer is that it depends on one constraint, and the fork in this deck's timeline predicts which.</p>
@@ -2784,10 +2816,10 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> NAFNet22&emsp;<span class="cref">[2]</span> SCUNet23&emsp;<span class="cref">[3]</span> Restormer22&emsp;<span class="cref">[4]</span> MambaIR24&emsp;<span class="cref">[5]</span> P2N25&emsp;<span class="cref">[6]</span> ZS-N2N23&emsp;<span class="cref">[7]</span> measured</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Strongest possible answer to 'which one would you use?'. Never answer that question with a single model name — answer it with the constraint that decides.</div>
 </section>
-<section class="sl table" id="s90" style="--era:#14343F">
-<div class="rail"><div class="folio">90</div></div>
+<section class="sl table" id="s91" style="--era:#14343F">
+<div class="rail"><div class="folio">91</div></div>
 <div class="kick">SOTA, QUALIFIED</div>
-<h2>Four current methods — each leads a different benchmark</h2>
+<h2>Four current methods, two historical baselines — each strong on a different axis</h2>
 <p class="lead">A state-of-the-art claim is only checkable when the benchmark and metric are named, alongside what distinguishes each method from the others leading elsewhere. This table supplies both, and declines to estimate what no source reports.</p>
 <div class="tw"><table><thead><tr>
 <th class="l">Method</th>
@@ -2823,8 +2855,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 </tr>
 <tr class="">
 <td class="l"><b>SCUNet</b> (2023)</td>
-<td class="l">Blind denoising on synthesised real-world degradation</td>
-<td class="l">—</td>
+<td class="l">Robustness to synthesised real-world degradation</td>
+<td class="l">no single-table lead</td>
 <td class="l">Mach. Intell. Res. 2023</td>
 <td class="l">Competes on the <b>training distribution</b> rather than the architecture</td>
 <td class="l"><b>9.7 M</b> · 1.69 s CPU</td>
@@ -2846,12 +2878,12 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <td class="l">no training · 2.85 s</td>
 </tr>
 </tbody></table></div>
-<div class="foot"><b>No source states a SOTA window, so this deck does not assert one.</b> The published date is verifiable; which table a method leads is verifiable from the cited comparison. For how long it held that position is not reported by any paper here, and we do not estimate it. Read the <i>Leads on</i> column: these methods are not ranked on one axis — they lead <b>different benchmarks</b>, and those benchmarks measure different capabilities.</div>
+<div class="foot"><b>No source states a SOTA window, so this deck does not assert one.</b> The published date is verifiable; which table a method leads is verifiable from the cited comparison. For how long it held that position is not reported by any paper here, and we do not estimate it. Read the <i>Leads on</i> column: these methods are not ranked on one axis — they are strong on <b>different axes</b>, and those benchmarks measure different capabilities.</div>
 <div class="cite"><span class="cref">[1]</span> NAFNet22 abstract&emsp;<span class="cref">[2]</span> Restormer22 Tables 4, 6&emsp;<span class="cref">[3]</span> MambaIR24 Table 6&emsp;<span class="cref">[4]</span> DnCNN17 Table II&emsp;<span class="cref">[5]</span> measured, Stage 2</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The single most useful slide for a SOTA question. Walk the 'Leads on' column and then deliver the foot. Windows are ours, inferred from publication dates and from which method holds each table — say so if pressed.</div>
 </section>
-<section class="sl cards" id="s91" style="--era:#14343F">
-<div class="rail"><div class="folio">91</div></div>
+<section class="sl cards" id="s92" style="--era:#14343F">
+<div class="rail"><div class="folio">92</div></div>
 <div class="kick">WHY SEVERAL SOTAS</div>
 <h2>Four reasons the field has not converged on one method</h2>
 <p class="lead">Newer does not automatically mean universally better. 'Best' is only defined relative to a benchmark, a cost metric and a supervision regime — and the current leaders differ on all three.</p>
@@ -2872,8 +2904,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> Restormer22 Table 4&emsp;<span class="cref">[2]</span> NAFNet22&emsp;<span class="cref">[3]</span> MambaIR24&emsp;<span class="cref">[4]</span> N2V19 §4.1&emsp;<span class="cref">[5]</span> measured, Stage 2</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Expect this question verbatim. Four reasons, each with a number. If time is short, give reason 1 and reason 4 — they are the structural ones.</div>
 </section>
-<section class="sl table" id="s92" style="--era:#14343F">
-<div class="rail"><div class="folio">92</div></div>
+<section class="sl table" id="s93" style="--era:#14343F">
+<div class="rail"><div class="folio">93</div></div>
 <div class="kick">BEFORE → AFTER, PART 1</div>
 <h2>Every step, as an implementation change</h2>
 <p class="lead">The same evolution read through the code rather than the papers. Each row names the smallest change that carries the innovation — the connection from contribution, through algorithmic change, to implementation change, to measured improvement.</p>
@@ -2920,12 +2952,12 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <td class="l">−1.15 dB · applicable where no pair exists<span class="cref">[3]</span></td>
 </tr>
 </tbody></table></div>
-<div class="foot"><b>Read the fourth column down the page.</b> An iterated SVD, then a training loop, then eight characters, then one assignment, then a masking trick. The size of the code change is uncorrelated with the size of the conceptual change — which is why reading the repositories was worth doing.</div>
+<div class="foot"><b>Read the fourth column down the page.</b> An iterated SVD, then a training loop, then a single subtraction, then one assignment, then a masking trick. The size of the code change is uncorrelated with the size of the conceptual change — which is why reading the repositories was worth doing.</div>
 <div class="cite"><span class="cref">[1]</span> DnCNN17 Tables II, IV&emsp;<span class="cref">[2]</span> N2N18 Table 1&emsp;<span class="cref">[3]</span> N2V19 Fig. 4&emsp;<span class="cref">[4]</span> code measured at the commits on slide 65</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The brief asks for contribution → algorithmic change → implementation change → improvement as one chain. This table is that chain, five times.</div>
 </section>
-<section class="sl table" id="s93" style="--era:#14343F">
-<div class="rail"><div class="folio">93</div></div>
+<section class="sl table" id="s94" style="--era:#14343F">
+<div class="rail"><div class="folio">94</div></div>
 <div class="kick">BEFORE → AFTER, PART 2</div>
 <h2>The architecture branch, as an implementation change</h2>
 <p class="lead">The same treatment for the three operators that answer bottleneck 3, plus the one method that answers it from the data side instead.</p>
@@ -2969,8 +3001,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> Restormer22 §3.1, Tables 4, 7&emsp;<span class="cref">[2]</span> NAFNet22 §4, §5&emsp;<span class="cref">[3]</span> MambaIR24 §3.2&emsp;<span class="cref">[4]</span> SCUNet23 §3.2&emsp;<span class="cref">[5]</span> code measured</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> The LayerNorm footnote is the most intellectually honest line in Part VII. Volunteer it — it demonstrates you read the ablation rather than the abstract.</div>
 </section>
-<section class="sl table" id="s94" style="--era:#14343F">
-<div class="rail"><div class="folio">94</div></div>
+<section class="sl table" id="s95" style="--era:#14343F">
+<div class="rail"><div class="folio">95</div></div>
 <div class="kick">PROPOSAL DIRECTIONS</div>
 <h2>Four research directions the limitations actually justify</h2>
 <p class="lead">Each is tied to a specific documented gap — from the papers' own words or from our measurements — and each states what would change and how it would be measured. None claims a paper achieved something it did not.</p>
@@ -3009,8 +3041,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite"><span class="cref">[1]</span> reading, grounded in P2N25&emsp;<span class="cref">[2]</span> SCUNet23 abstract&emsp;<span class="cref">[3]</span> N2N18 §2&emsp;<span class="cref">[4]</span> MambaIR24 changelog&emsp;<span class="cref">[5]</span> measured, Stage 2</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Answers 'can you identify a research direction'. Commit to the first row and have a reason ready. The negative-result clause matters — a proposal that cannot fail is not a proposal.</div>
 </section>
-<section class="sl two" id="s95" style="--era:#14343F">
-<div class="rail"><div class="folio">95</div></div>
+<section class="sl two" id="s96" style="--era:#14343F">
+<div class="rail"><div class="folio">96</div></div>
 <div class="kick">HOW TO PRESENT THIS DECK</div>
 <h2>The condensed executive summary, and what it leaves out</h2>
 <p class="lead">The brief is explicit that a four-hour presentation is impossible: you present a highly condensed executive summary and are questioned on any part of the full deck. This slide states how that summary is cut, so the choice is deliberate rather than improvised.</p>
@@ -3022,8 +3054,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">brief §9, TA Presentation 3 — format and deliverable</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Put this slide where the TA will see it early if they browse. It shows the presentation strategy was designed, not improvised.</div>
 </section>
-<section class="sl quote" id="s96" style="--era:#14343F">
-<div class="rail"><div class="folio">96</div></div>
+<section class="sl quote" id="s97" style="--era:#14343F">
+<div class="rail"><div class="folio">97</div></div>
 <div class="kick accent">CONCLUSION</div>
 <h1>The thesis, restated</h1>
 <blockquote><p>Image denoising is the cleanest available case study in how computer vision replaced hand-designed priors with learned ones.</p><p>Its history divides into four eras separated by three identifiable bottlenecks — manual prior design, the clean-data requirement, and the receptive-field limits of convolution. Each bottleneck was named by the paper that broke it, so the arc is evidenced from the primary sources rather than imposed in hindsight.</p><p>In 2018 the response forked. One branch changed what the network is shown; the other changed what the network is. They have never merged.</p><p>And because the field currently holds three competing answers to the third bottleneck and none to the first open problem, the story ends in a genuine open question rather than a winner.</p></blockquote>
@@ -3031,8 +3063,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">reading — the organising claim, carried since Stage 1</div>
 <div class="notes"><b>Speaker notes.</b> Deliver this from memory with the slide behind you. Roughly fifty seconds. It is the last substantive thing the TAs hear before questions begin, which makes it the part most worth rehearsing word for word.</div>
 </section>
-<section class="sl table" id="s97" style="--era:#14343F">
-<div class="rail"><div class="folio">97</div></div>
+<section class="sl table" id="s98" style="--era:#14343F">
+<div class="rail"><div class="folio">98</div></div>
 <div class="kick">BIBLIOGRAPHY</div>
 <h2>Category A — twelve peer-reviewed papers</h2>
 <p class="lead">Citation counts are Google Scholar figures checked on 9 August 2026, except P2N, which was not verified. Counts move continuously; the date is quoted alongside every figure.</p>
@@ -3129,20 +3161,20 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 </tr>
 </tbody></table></div>
 <div class="foot"><b>Two observations worth making aloud rather than leaving in the table.</b> BM3D and DnCNN sit near twelve thousand citations each, which is precisely why both remain universal baselines nineteen and nine years after publication — the counts corroborate the narrative rather than decorating it. Conversely ZS-N2N at 266 and SCUNet at 391 are low because they are recent, not because they are weak; recency and citation count are confounded, and saying so pre-empts the obvious challenge.</div>
-<div class="cite"><span class="cref">[1]</span> Google Scholar, checked 9 August 2026&emsp;<span class="cref">[2]</span> venues verified per slide 99</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
+<div class="cite"><span class="cref">[1]</span> Google Scholar, checked 9 August 2026&emsp;<span class="cref">[2]</span> venues verified per slide 100</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Recheck the counts the morning of the defence, and update the date. If a TA asks why P2N has no count, say it was not verified and you do not report unverified numbers.</div>
-</section>
-<section class="sl content" id="s98" style="--era:#14343F">
-<div class="rail"><div class="folio">98</div></div>
-<div class="kick">BIBLIOGRAPHY</div>
-<h2>Category B — three auxiliary sources, and why each is here</h2>
-<p class="lead">Three of fifteen sources, or 20.0%, against the brief's 30% ceiling. Category A is 80.0%, against a 70% floor. Each Category B item is included because it does something no paper in the roster does.</p>
-<ul class="b"><li><b>B1 · Stanford CS231n</b>, <i>Convolutional Neural Networks for Visual Recognition</i>. A recognised academic lecture series, explicitly permitted by the brief. It supplies the backpropagation, convolution-arithmetic and optimisation background that every Category A paper from A4 onward assumes without stating. <b>Role in the narrative:</b> it is the reason slides 32–34 can discuss receptive fields and batch normalisation as shared vocabulary rather than deriving them.</li><li><b>B2 · Google Research</b>, <i>Night Sight</i> / HDR+ technical blog. A highly technical developer publication from an industry leader, explicitly permitted by the brief. It separates photon shot noise from read noise, explains that SNR rises with the square root of exposure time, and describes how a burst of frames is captured, aligned in software and merged. <b>Role in the narrative:</b> it is the only source in the roster describing denoising as a <i>shipped consumer product</i>, and it supplies the physical grounding for the real-noise argument on slide 82 and 87.</li><li><b>B3 · Gonzalez &amp; Woods</b>, <i>Digital Image Processing</i> — the Image Restoration chapter. A textbook chapter, explicitly permitted. It supplies the formal treatment of noise models (Gaussian, Rayleigh, Poisson, salt-and-pepper) and of mean, order-statistic and adaptive filters that Part II's first three slides rest on. <b>Role in the narrative:</b> it is the bottom rung of the timeline, below BM3D, and it is the reference against which SCUNet's synthetic degradation pipeline reads critically — SCUNet's noise list is essentially the textbook's noise list, industrialised.</li><li><b>Verification note.</b> Chapter number and page range differ between the 3rd and 4th editions of Gonzalez &amp; Woods. Cite the exact edition physically in use.</li><li><b>The arithmetic.</b> 15 sources total. 12 Category A = 80.0% (floor 70%). 3 Category B = 20.0% (ceiling 30%). Compliant with margin on both sides.</li></ul>
-<div class="cite">brief §2, Source Distribution Rules</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
-<div class="notes"><b>Speaker notes.</b> Each Category B item has a 'role in the narrative' clause. That is what converts a compliance list into evidence of curation, which is what the Rigor of Research criterion actually grades.</div>
 </section>
 <section class="sl content" id="s99" style="--era:#14343F">
 <div class="rail"><div class="folio">99</div></div>
+<div class="kick">BIBLIOGRAPHY</div>
+<h2>Category B — three auxiliary sources, and why each is here</h2>
+<p class="lead">Three of fifteen sources, or 20.0%, against the brief's 30% ceiling. Category A is 80.0%, against a 70% floor. Each Category B item is included because it does something no paper in the roster does.</p>
+<ul class="b"><li><b>B1 · Stanford CS231n</b>, <i>Convolutional Neural Networks for Visual Recognition</i>. A recognised academic lecture series, explicitly permitted by the brief. It supplies the backpropagation, convolution-arithmetic and optimisation background that every Category A paper from A4 onward assumes without stating. <b>Role in the narrative:</b> it is the reason slides 32–34 can discuss receptive fields and batch normalisation as shared vocabulary rather than deriving them.</li><li><b>B2 · Google Research</b>, <i>Night Sight</i> / HDR+ technical blog. A highly technical developer publication from an industry leader, explicitly permitted by the brief. It separates photon shot noise from read noise, explains that SNR rises with the square root of exposure time, and describes how a burst of frames is captured, aligned in software and merged. <b>Role in the narrative:</b> it is the only source in the roster describing denoising as a <i>shipped consumer product</i>, and it supplies the physical grounding for the real-noise argument on slide 83 and 88.</li><li><b>B3 · Gonzalez &amp; Woods</b>, <i>Digital Image Processing</i> — the Image Restoration chapter. A textbook chapter, explicitly permitted. It supplies the formal treatment of noise models (Gaussian, Rayleigh, Poisson, salt-and-pepper) and of mean, order-statistic and adaptive filters that Part II's first three slides rest on. <b>Role in the narrative:</b> it is the bottom rung of the timeline, below BM3D, and it is the reference against which SCUNet's synthetic degradation pipeline reads critically — SCUNet's noise list is essentially the textbook's noise list, industrialised.</li><li><b>Verification note.</b> Chapter number and page range differ between the 3rd and 4th editions of Gonzalez &amp; Woods. Cite the exact edition physically in use.</li><li><b>The arithmetic.</b> 15 sources total. 12 Category A = 80.0% (floor 70%). 3 Category B = 20.0% (ceiling 30%). Compliant with margin on both sides.</li></ul>
+<div class="cite">brief §2, Source Distribution Rules</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
+<div class="notes"><b>Speaker notes.</b> Each Category B item has a 'role in the narrative' clause. That is what converts a compliance list into evidence of curation, which is what the Rigor of Research criterion actually grades.</div>
+</section>
+<section class="sl content" id="s100" style="--era:#14343F">
+<div class="rail"><div class="folio">100</div></div>
 <div class="kick">HONESTY</div>
 <h2>Declared limitations — stated, not discovered</h2>
 <p class="lead">A gap that is stated is a smaller problem than a gap that is found. These are every known weakness in this deck.</p>
@@ -3150,8 +3182,8 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="cite">reading — self-assessment</div><div class="spine"><u style="left:0.00%"><b>2007</b></u><u style="left:38.89%"><b>2014</b></u><u style="left:55.56%"><b>2017</b></u><u style="left:83.33%"><b>2022</b></u><u style="left:100.00%"><b>2025</b></u></div>
 <div class="notes"><b>Speaker notes.</b> Volunteer the MambaIR exclusion and the P2N 404 if the conversation allows. Both are small, specific, and demonstrate that you read the primary material rather than aggregated it.</div>
 </section>
-<section class="sl table" id="s100" style="--era:#14343F">
-<div class="rail"><div class="folio">100</div></div>
+<section class="sl table" id="s101" style="--era:#14343F">
+<div class="rail"><div class="folio">101</div></div>
 <div class="kick">DEFENCE MAP</div>
 <h2>Where to find the answer to the question you are about to be asked</h2>
 <p class="lead">The deck is indexed by likely question rather than by topic, because that is how it will be interrogated.</p>
@@ -3226,7 +3258,7 @@ margin-top:14px;padding-top:10px;border-top:1px solid #2C2822}
 <div class="notes"><b>Speaker notes.</b> Print this slide. It is the single most useful page to have in front of you while the TAs are asking questions.</div>
 </section></div>
 <script>
-const N=100;
+const N=101;
 const bar=document.getElementById('bar');
 function go(n){const el=document.getElementById('s'+n);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 document.querySelectorAll('.nv').forEach(e=>e.onclick=()=>{go(+e.dataset.go);document.body.classList.remove('nav');});

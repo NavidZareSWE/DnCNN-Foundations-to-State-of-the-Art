@@ -2,15 +2,15 @@ Stage3_ImageDenoising — manifest
 ==============================================================
 file                                              bytes  sha256 (first 16)
 ------------------------------------------------------------------------
-1-deliverable/Stage3_Master_Deck.pdf            3619506  2e841c6e3fbee943
-1-deliverable/Stage3_Master_Deck.pptx           2971123  a19f8a3bf691a439
+1-deliverable/Stage3_Master_Deck.pdf            3675620  026ec38950d1f6d5
+1-deliverable/Stage3_Master_Deck.pptx           2977873  d2605206fd3612a2
 1-deliverable/Stage3_Report.md                    50322  f64b9f844e784f75
-2-presentation/Presentation_30min.html          2827465  47edd1ccda82ac8e
-2-presentation/Presentation_30min.pdf           2755069  0c29ec9128137b1b
-2-presentation/Presentation_30min.pptx          2156376  3d31b745529a87be
+2-presentation/Presentation_30min.html          2833357  45e535753126fafc
+2-presentation/Presentation_30min.pdf           2815159  a2e1bd3ad818d2ce
+2-presentation/Presentation_30min.pptx          2165830  b2eab428c5705fc8
 2-presentation/companion.html                   1272310  4ddf6ca924ac8d91
 2-presentation/defence.html                       94870  60836ce0514bcdb1
-2-presentation/master-deck.html                 3684491  5fcaa2b1941293df
+2-presentation/master-deck.html                 3689363  fdbecbe88b830afa
 2-presentation/presenter-30min.html               69402  795f47f8ccefeca1
 3-study/oral-exam.html                           248040  e33511698bdf6adf
 4-evidence/bench/RESULTS.txt                       1940  59037006e61de880
