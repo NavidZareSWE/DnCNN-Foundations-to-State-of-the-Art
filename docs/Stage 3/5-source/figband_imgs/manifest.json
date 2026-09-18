@@ -1,0 +1,57 @@
+{
+ "12": {
+  "file": "s12.png",
+  "alt": "The 20 standard grayscale/colour test images used across the classical era — Cameraman, Barbara, Lena and the rest.",
+  "cap": "The 20 standard grayscale/colour test images used across the classical era — Cameraman, Barbara, Lena and the rest. [WNNM14 · Fig. 1]"
+ },
+ "21": {
+  "file": "s21.jpg",
+  "alt": "Block matching in practice: the reference patch R (red) and the similar patches BM3D groups with it before collaborative 3-D filtering.",
+  "cap": "Block matching in practice: the reference patch R (red) and the similar patches BM3D groups with it before collaborative 3-D filtering. [BM3D07 · Fig. 2]"
+ },
+ "30": {
+  "file": "s30.png",
+  "alt": "The diffusion network unrolled as a feed-forward graph: each stage applies the learned filters, the trainable nonlinearity, and the reaction force in sequence.",
+  "cap": "The diffusion network unrolled as a feed-forward graph: each stage applies the learned filters, the trainable nonlinearity, and the reaction force in sequence. [TNRD16/17 · Fig. 1]"
+ },
+ "32": {
+  "file": "s32.png",
+  "alt": "The DnCNN architecture: a noisy image enters a stack of Conv(+BN)+ReLU layers and the network predicts the residual noise image, not the clean image.",
+  "cap": "The DnCNN architecture: a noisy image enters a stack of Conv(+BN)+ReLU layers and the network predicts the residual noise image, not the clean image. [DnCNN17 · Fig. 1]"
+ },
+ "44": {
+  "file": "s44.png",
+  "alt": "Denoising PSNR on Kodak as training progresses: networks trained on noisy targets (orange) track clean-target training (blue) almost exactly, for white and correlated Gaussian noise alike.",
+  "cap": "Denoising PSNR on Kodak as training progresses: networks trained on noisy targets (orange) track clean-target training (blue) almost exactly, for white and correlated Gaussian noise alike. [N2N18 · Fig. 1]"
+ },
+ "45": {
+  "file": "s45.png",
+  "alt": "The three training schemes side by side: conventional noisy/clean pairs, Noise2Noise's noisy/noisy pairs, and Noise2Void's single noisy image with a blind spot.",
+  "cap": "The three training schemes side by side: conventional noisy/clean pairs, Noise2Noise's noisy/noisy pairs, and Noise2Void's single noisy image with a blind spot. [N2V19 · Fig. 1]"
+ },
+ "47": {
+  "file": "s47.png",
+  "alt": "ZS-N2N's own benchmark: PSNR against noise level for Gaussian and Poisson noise, and quality against wall-clock time on CPU and GPU, against DIP, S2S and BM3D.",
+  "cap": "ZS-N2N's own benchmark: PSNR against noise level for Gaussian and Poisson noise, and quality against wall-clock time on CPU and GPU, against DIP, S2S and BM3D. [ZS-N2N23 · Fig. 1]"
+ },
+ "48": {
+  "file": "s48.png",
+  "alt": "The information-lossy barrier, made visible: ZS-N2N, MASH and ATBSN all lose fine text and fabric structure that P2N's renoise-and-agree supervision preserves.",
+  "cap": "The information-lossy barrier, made visible: ZS-N2N, MASH and ATBSN all lose fine text and fabric structure that P2N's renoise-and-agree supervision preserves. [P2N25 · Fig. 2]"
+ },
+ "57": {
+  "file": "s57.png",
+  "alt": "The lineage the paper derives in one figure: the Restormer transformer block simplified step by step — ReLU in place of softmax attention, then GELU with channel attention, then NAFNet's SimpleGate and SCA.",
+  "cap": "The lineage the paper derives in one figure: the Restormer transformer block simplified step by step — ReLU in place of softmax attention, then GELU with channel attention, then NAFNet's SimpleGate and SCA. [NAFNet22 · Fig. 3]"
+ },
+ "59": {
+  "file": "s59.png",
+  "alt": "The Swin-Conv-UNet pipeline: a noisy image passes through strided SC blocks (Swin Transformer + residual convolution in parallel) on the way down, and transposed-convolution SC blocks on the way back up, with a global residual connection.",
+  "cap": "The Swin-Conv-UNet pipeline: a noisy image passes through strided SC blocks (Swin Transformer + residual convolution in parallel) on the way down, and transposed-convolution SC blocks on the way back up, with a global residual connection. [SCUNet23 · Fig. 1]"
+ },
+ "60": {
+  "file": "s60.png",
+  "alt": "Effective receptive field, visualised: CNN backbones (EDSR, RCAN) stay tightly local, Transformers (SwinIR, HAT) spread further, and the Mamba-based backbone activates the widest, most global field.",
+  "cap": "Effective receptive field, visualised: CNN backbones (EDSR, RCAN) stay tightly local, Transformers (SwinIR, HAT) spread further, and the Mamba-based backbone activates the widest, most global field. [MambaIR24 · Fig. 1]"
+ }
+}

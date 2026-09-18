@@ -1,0 +1,31 @@
+Stage 2/3 benchmark — recorded output
+=====================================
+PyTorch 2.13.0 | CUDA available: False | CPU-only container
+
+model                              configuration                              params      256^2
+DnCNN-B                            DnCNN(in_nc=1, nc=64, nb=20)                0.668 M    1.015 s
+P2N+ backbone, SPI off             UNet_n2n_un(conv_type='plain')              0.991 M    0.286 s
+P2N+ backbone, SPI on              UNet_n2n_un(conv_type='SPI')                0.925 M    0.710 s
+SCUNet                             config=[2]*7, dim=64                        9.663 M    1.685 s
+Restormer                          dim=48, [4,6,6,8]                          26.127 M   10.436 s
+NAFNet                             width=64, enc [2,2,4,8], mid 12           115.983 M    1.899 s
+MambaIR                            -                                     not measurable   ModuleNotFoundError: mamba_ssm
+
+CAVEATS
+  * Inputs were random tensors. No PSNR or SSIM was measured by this script.
+    Every quality figure in the deck comes from a published table.
+  * Absolute CPU latencies are not comparable to published GPU timings.
+    Only the ratios between rows are informative.
+  * MambaIR's import failure is a reported result, not a gap: the model cannot
+    be instantiated without compiled CUDA extensions.
+
+REPOSITORY COMMITS
+  scikit-image 0.26.0 (PyPI)         classical exemplar, denoise_tv_chambolle
+  cszn/DnCNN                         e93b278...   MatConvNet (MATLAB) original
+  cszn/KAIR                          fc1732f...   PyTorch DnCNN + SCUNet weights
+  NVlabs/noise2noise                 7355519...   TensorFlow
+  swz30/Restormer                    68dc6ac...
+  megvii-research/NAFNet             2b4af71...
+  cszn/SCUNet                        52e440a...
+  csguoh/MambaIR                     33d7b34...
+  Li-Tong-621/P2N-plus               8a117db...   (paper's printed URL 404s)
